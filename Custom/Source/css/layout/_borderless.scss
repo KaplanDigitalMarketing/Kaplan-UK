@@ -1,0 +1,95 @@
+
+.borderless {
+  padding: 0;
+  display: table;
+
+
+  &__image {
+      @media(min-width: $screen-md) { height: ($screen-md / 32) * 9; }
+      @media(min-width: $screen-lg) { height: ($screen-lg / 32) * 9; }
+      @media(min-width: 1400px) {height: (1400px / 32) * 9; }
+      @media(min-width: 1600px) { height: (1600px / 32) * 9; }
+
+    @media (min-width: $screen-md) {
+      overflow: hidden;
+    }
+
+    & img {
+      width: 100%;
+      @media (min-width: $screen-md) {
+        display: block;
+        width: auto;
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__content {
+       vertical-align: middle;
+  }
+
+  & > .sf_colsOut {
+    padding: 0;
+    @media (min-width: $screen-md) {
+      display: table-cell;
+      width: 50%;
+      float: none;
+      position: relative;
+    }
+
+    & > .sf_colsIn {
+      margin: 0;
+    }
+  }
+
+  &__content > .sf_colsIn > .sfContentBlock {
+    padding: $gutter 2*$gutter;
+    text-align: center;
+    width: 100%;
+    @media (min-width: $screen-md) {
+      padding: 2*$gutter;
+      text-align: left;
+    }
+    @media (min-width: $screen-md)  { width: (970px / 2); }
+    @media (min-width: $screen-lg) { width: (1170px / 2); }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    li {
+      text-align: left;
+    }
+  }
+
+  &.is-reversed {
+    @media (min-width: $screen-md) { direction: rtl; }
+
+    & > .sf_colsOut {
+      @media (min-width: $screen-md) { direction: ltr; }
+
+      &.borderless__content > .sf_colsIn .sfContentBlock {
+        float: right;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:0\0) { // IE9+
+  @media (min-width: $screen-md) {
+    .borderless__image img {
+      top: 0;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+.sfPageEditor & .borderless__image img {
+  position: static;
+  transform: none;
+}

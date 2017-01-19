@@ -1,0 +1,145 @@
+.kaplan-panel {
+  margin: 15px 0;
+
+  @media (max-width: $screen-sm-max) {
+    margin: 0;
+  }
+
+  .kaplan-panel_link {
+    color: #00a5d9;
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: 15px;
+    text-decoration: none;
+  }
+
+  /* PRIMARY */
+
+  &__primary {
+    position: relative;
+
+    @media (min-width: $screen-md-min) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .kaplan-panel_body {
+      padding: 24px 29px;
+      background: #f2eee9;
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        display: block;
+        background: url(/images/default-source/responsive-theme/grey-pointer.png) no-repeat;
+        position: absolute;
+        bottom: -29px;
+        left: 50%;
+
+        @media (min-width: $screen-md-min) {
+          left: 5%;
+        }
+      }
+    }
+
+    .kaplan-panel_heading {
+      color: #383a3c;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .kaplan-panel_image {
+      width: 100%;
+    }
+  }
+
+  /* SECONDARY */
+
+  &__secondary {
+    background: #fff;
+    border: 1.5px solid #efebe7;
+    text-align: center;
+
+    .kaplan-panel_body {
+      padding: 20px;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .kaplan-panel_heading {
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .kaplan-panel_image {
+      margin-left: -20px;
+      margin-right: -20px;
+      width: 100%;
+    }
+  }
+
+  /* FILLED */
+
+  &__filled {
+    .kaplan-panel_body {
+      padding: 20px;
+      font-size: 18px;
+      font-style: italic;
+      color: #383a3c;
+      text-align: center;
+      position: relative;
+      z-index: 100;
+
+      a {
+        word-break: break-all;
+      }
+
+      > div {
+        position: relative;
+      }
+
+      &__blue { background-color: $c-blue; }
+      &__pink { background-color: $c-pink; }
+      &__yellow { background-color: $c-yellow-panel; }
+      &__green { background-color: $c-green; }
+
+      &__image {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background-color: rgba(255,255,255,.8);
+        }
+      }
+    }
+
+    .kaplan-panel_heading {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .kaplan-panel_footer {
+      padding: 20px;
+      background: #fff;
+      text-align: center;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

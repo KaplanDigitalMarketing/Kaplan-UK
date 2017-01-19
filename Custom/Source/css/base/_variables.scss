@@ -1,0 +1,71 @@
+//
+// Base -> Variables
+// 
+// Use this file to customise Bootstrap variables
+// ahead of compilation.
+// (See vendor/bootstrap/_variables.scss)
+// --------------------------------------------------
+
+/* Colour Palette Colours */
+$brand-colour-primary: #1e0576;
+$brand-colour-secondary: red;
+
+// Internal Variables
+$x-darkGrey: #666;
+$x-deepGrey: #383a3c;
+
+// Bootstrap containers
+$c-yellow: #FED266;
+$c-deepBlue: #0069AA;
+$c-tranquil: #DEF5F2;
+$c-icecold: #ADE1DB;
+$c-lightgray: #f7f7f7; 
+$c-bonjour: #E1DCD9;
+$c-darkgrey:    #383A3C;
+$c-salmon:      #EC796B;
+
+$c-link:        #00A5D9;
+
+// Older Variables
+$c-lightblue:   #E3EEF8;
+$c-primary:     #ED164F;
+$c-text:        #383A3C;
+
+$c-blue: #7bcce5;
+$c-pink: #f0a3c7;
+$c-yellow-panel:  #ffc425;
+$c-green:  #c1d82f;
+
+$gutter: 15px;
+
+$link-color: $c-link;
+
+
+$body-colour: $x-darkGrey;
+$text-colour: $x-darkGrey;
+$nav-color: $body-colour;
+
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+$headings-font-weight: 300;
+
+/* Brand Colour Updates */
+$brand-primary: $brand-colour-primary; 
+$brand-success: $brand-colour-secondary;
+
+$accent-border-height: 6px;
+
+$font-size-h2: 40px;
+$font-size-h3: 23px;
+$font-size-h4: 23px;
+
+$heading-transform: uppercase;
+
+$header-tagline-weight: bold;
+
+/* Reset the mobile menu breakpoint */
+$grid-float-breakpoint: 992px; /* $screen-md-min */
+
+$font-family-sans-serif: "Open Sans", Arial, sans-serif;

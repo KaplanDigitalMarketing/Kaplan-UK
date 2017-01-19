@@ -1,0 +1,168 @@
+.page-header {
+  position: relative;
+  background-size: contain;
+  background-color: $c-lightgray;
+  background-repeat: no-repeat;
+  margin-bottom: 0.75rem;
+  padding-top: 40%;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  text-align: center;
+  overflow: hidden;
+  @media (min-width: $screen-md-min) {
+    background-size: cover;
+    height: 445px;
+    padding-top: 3rem;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+  @media (min-width: $screen-lg) {
+    padding-top: 5rem;
+    height: 590px;
+  }
+
+  .sf_colsOut {
+    padding: 0;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 40%;
+    @media (min-width: $screen-md-min) {
+      position: static;
+      padding-bottom: 0;
+    }
+
+    .sfimageWrp {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @media (min-width: $screen-md-min) {
+        padding: 0;
+      }
+    }
+
+    img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    @media (min-width: $screen-md-min) {
+      padding: 0;
+    }
+
+    img {
+      margin-bottom: 0.5rem;
+      @media (min-width: $screen-md-min) {
+        margin-left: 4rem;
+        margin-bottom: 1rem;
+      }
+      @media (min-width: $screen-lg) {
+        margin-left: 6rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: $c-text;
+      margin-top: 0;
+      letter-spacing: 0;
+      @media (min-width: $screen-md-min) {
+        color: #fff;
+        font-size: 2.3rem;
+        line-height: 3rem;
+        margin-left: 4rem;
+        width: 45%;
+      }
+      @media (min-width: $screen-lg) {
+        font-size: 2.4rem;
+        line-height: 3rem;
+        margin-left: 6rem;
+        padding-top: 0.3rem;
+        width: 37%;
+      }
+      @media (min-width: 1400px) {
+        width: 35%;
+      }
+      @media (min-width: 1500px) {
+        width: 34%;
+      }
+      @media (min-width: 1600px) {
+        font-size: 3.25rem;
+        line-height: 3.7rem;
+      }
+    }
+
+    p {
+      display: block;
+      font-size: 1.3125rem;
+      line-height: 1.9rem;
+      margin-left: auto;
+      margin-right: auto;
+      @media (min-width: $screen-md-min) {
+        color: #FFF;
+        margin-left: 4rem;
+        width: 40%;
+      }
+      @media (min-width: $screen-lg) {
+        margin-top: 1.5rem;
+        margin-left: 6.2rem;
+        width: 30%;
+      }
+    }
+  }
+
+  &.is-dark {
+    h1, p {
+      color: $c-text;
+    }
+  }
+}
+
+.sfPageEditor & .page-header {
+  height: auto;
+
+  .sf_colsOut {
+    width: 100% !important;
+  }
+
+  .page-header__image {
+    height: auto;
+  }
+
+  .sfimageWrp {
+    position: static;
+  }
+
+  &__image img {
+    position: static;
+    transform: none;
+  }
+}
+
+@media screen and (min-width:0\0) { // IE9+
+  .page-header__image {
+    padding-bottom: 38.5%;
+    @media (min-width: $screen-md-min) {
+      padding-bottom: 0;
+    }
+  }
+}

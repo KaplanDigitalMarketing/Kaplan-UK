@@ -1,0 +1,26 @@
+.btn-primary {
+    background-color: #0069AA;
+    border: 1px solid #015081;
+    border-radius: 4px;
+    color: #FFF;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 5em;
+    padding: 0.5rem 3rem;
+}
+
+.cta-btn, .mod-content-promo .download-btn {
+    color: #fff;
+    padding: 8px 48px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    display: inline-block;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    &.primary-btn {
+        background: #0069aa;
+        border-color: #015081;
+    }
+}

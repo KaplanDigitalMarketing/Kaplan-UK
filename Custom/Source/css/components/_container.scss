@@ -1,0 +1,17 @@
+﻿.container-wrapper {
+  color: $body-colour;
+  padding: 60px 20px;
+
+  @media (max-width: $screen-sm-max) {
+    padding: 40px 0;
+  }
+
+  &.white { background-color: white; }
+  &.deepblue { background-color: $c-deepBlue; color: white;}
+  &.yellow  { background-color: $c-yellow; }
+  &.lightgrey  { background-color: $c-lightgray; }
+  &.icecold { background-color: $c-icecold; }
+  &.darkgrey { background-color: $c-darkgrey; }
+  &.salmon { background-color: $c-salmon;}
+  &.tranquil { background-color: $c-tranquil;}
+}

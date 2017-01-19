@@ -1,0 +1,385 @@
+﻿.primary-navigation-container { @media (max-screen: $screen-md-max) { display: none; }}
+.non-mobile-nav-container > .col-md-12 { padding: 0; }
+.kaplan__page-header {
+    background-color: $brand-colour-primary;
+    @media (min-width: $grid-float-breakpoint) {
+        padding-top: 5px;
+        .container { padding: 0; }
+    }
+    .navbar-header {
+        width: 100%;
+        @media (min-width: $grid-float-breakpoint) {
+            height: 58px;
+            float: left;
+            width: 15%;
+        }
+    }
+
+    .footer-brand, .navbar-brand {
+        display: block;
+        text-indent: -5000px;
+        width: 74px;
+        margin-top: 5px;
+    }
+
+    .navbar-brand {
+        background: url(/images/default-source/responsive-theme/kaplan-logo-mobile-header.png) 0 1px no-repeat;
+        padding-left: 0;
+        height: 60px;
+        @media (min-width: 992px) { margin-left: 0; }
+        @media (min-width: $grid-float-breakpoint) {
+            background: url(/images/default-source/responsive-theme/kaplan-logo.png) -20px 0 no-repeat;
+            width: 175px;
+            height: 80px;
+            margin-left: 0;
+        }
+        @media (min-width: $screen-md-min) {  margin-top: 16px; }       
+    }
+
+    .navbar-toggle {
+        margin-right: 16px;
+        float: right;
+        background: 0;
+        border: 0;
+        margin-top: 11px;
+        display: block;
+        @media (min-width: $grid-float-breakpoint) { display: none;  }
+        .sr-only {
+            position: relative;
+            background: url(/images/default-source/responsive-theme/hamburger-menu.svg) no-repeat;
+            background-size: 27px 20px;
+            margin-top: 2px;
+            display: block;
+            width: 26px;
+            height: 19px;
+            text-indent: -5000px;
+            margin-right: -16px;
+        }
+    }
+
+    #navbar-content {
+        background: url(/images/default-source/responsive-theme/navigation-pointer.png) 100% center no-repeat;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        width: 88%;
+        z-index: 100;
+        @media (min-width: 500px) {
+            background-position: 93.5% center;
+            width: 75%;
+        }
+        @media (min-width: 700px) { width: 65%;}
+        @media (min-width: 700px) {
+            position: relative;
+            left: 0;
+            background: 0;
+            width: 85%;
+            float: left;
+            margin-left: 0;
+        }
+    }
+
+    #navbar-content nav {
+        background: #fff;
+        width: 98.5%;
+        border-right: 8px solid #eb529d;
+        position: absolute;
+        height: 100%;
+
+        @media (min-width: 500px) { width: 92%; }
+        @media (min-width: $screen-md-min) {
+            background: 0;
+            position: relative;
+            border-right: 0;
+            width: 100%;
+        }
+    }
+
+    .navbar-top-support { display: none; }
+
+    @media (min-width: $screen-md-min) {
+        .navbar-top-support {
+            float: right;
+            display: block;
+            margin-top: -16px;
+            margin-right: 29px;
+            width: 155px;
+            height: 49px;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .navbar-top-support {
+            margin-top: 0;
+            height: 33px;
+            width: 219px;
+        }
+    }
+    .navbar-top-level {
+        position: absolute;
+        width: 99%;
+        @media (min-width: $screen-md-min) {
+            position: relative;
+            float: left;
+            padding-left: 0;
+            height: 67px;
+        }
+        .pages-list {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            background: #fff;
+            @media (min-width: $screen-md-min) {
+                background: 0;
+                min-height: auto;
+                display: flex;
+            }
+            li:hover {
+                > .top-level-title {
+                    background: url(/images/default-source/responsive-theme/navigation-pointer-up.png) center 92% no-repeat;
+                    background-position: center bottom;
+                }
+                .navbar-sub-item {
+                    display: block;
+                    visibility: visible;
+                    .pages-list {
+                        display: block;
+                        li {
+                            display: block;
+                            a {
+                                color: #333;
+                                display: block;
+                                float: none;
+                            }
+                        }
+
+                    }
+                    @media (max-width: $screen-xs-max) { display:none; }
+                }
+            }
+        }
+        .top-level-title {
+            font-size: 14px;
+            text-align: center;
+            padding: 8px 25px 19px 25px;
+        }
+    }
+
+    .pages-list {
+        width: 100%;
+        padding-left: 0;
+        @media (min-width: $screen-md-min) {
+            padding-top: 8px;
+            padding-bottom: 16px;
+            .mobile-only-item { display: none; }
+        }
+        li { list-style: none; }
+    }
+
+
+    .nav-section-heading, .page-title {
+        display: block;
+        @media (min-width: $screen-md-min) {
+            float: left;
+            background: 0;
+            color: #fff;
+            border-top: 0;
+            font-size: 12px;
+            font-weight: normal;
+            padding: 19px 5px;
+        }
+        
+        @media (min-width: $screen-lg) {
+            padding: 0 0 0 43px;
+        }
+    }
+
+    .navbar-heading {
+        font-family: arial, sans-serif;
+        font-weight: 600;
+        border-bottom: 1.5px solid #919195;
+        font-size: 15px;
+        line-height: 24px;
+        padding: 16px 32px;
+        margin: 0;
+        @media (min-width: $screen-md-min) {
+            display: none;
+        }
+        .home-link { color: #333;}
+    }
+
+    .navbar-sub-item {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 8;
+        color: #333;
+        top: 67px;
+        @media (min-widh: $screen-md-min) {
+            left: 0;
+            width: 100%;
+            top: 68px;
+            background: #f5f1ee;
+            border-top: 8px solid #eb529d;
+            padding-top: 19px;
+            padding-bottom: 13px;
+            font-weight: 600;
+            box-shadow: 6px 18px 19px 4px rgba(0, 0, 0, 0.2);
+            visibility: hidden;
+        }
+        @media (min-widh: $screen-md-min) {
+
+            .page-title {
+                color: #383a3c;
+                display: block;
+                float: none;
+                padding-left: 16px;
+            }
+        }
+    }
+
+    #lpd-nav-item {
+        @media (min-width: $screen-md-min) {
+            left: -8px;
+            width: 33%;
+        }
+        @media (min-width: $screen-lg) {
+            left: 16px;
+            width: 27.5%;
+        }
+
+        @media (min-width: 1600px) { left: 0; }
+    }
+
+    .navbar-back {
+        background: #f0ebe6;
+        display: block;
+        color: #383a3c;
+        font-weight: 600;
+        padding: 8px 0 10px 16px;
+        font-size: 13px;
+        text-transform: uppercase;
+        span { font-size: 20px; }
+    }
+
+    @media (min-width: $screen-md-min) {
+        .navbar-sub-item .navbar-back, .navbar-sub-item .navbar-heading { display: none; }
+        #insights-nav-title { padding-bottom: 39px; }
+    }
+
+    .nav-block .pages-list a {
+        font-size: 16px;
+        padding-bottom: 14px;
+        font-weight: 300;
+        padding-left: 32px;
+        @media (min-width: $screen-md-min) {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: arial, sans-serif;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+    }
+
+    .navbar-sub-item .pages-list a {
+        padding-left: 48px;
+        @media (min-width: $screen-md-min) { padding-left: 16px;  }
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .navbar-sub-item {
+        left: 0;
+        width: 100%;
+        /*top: 4.25rem;*/
+        background: #f5f1ee;
+        border-top: 8px solid #eb529d;
+        padding-top: 19px;
+        padding-bottom: 13px;
+        font-weight: 600;
+        box-shadow: 6px 18px 19px 4px rgba(0, 0, 0, 0.2);
+        visibility: hidden;
+    }
+}
+
+
+
+/* Specific tabs */
+
+.full-width-link {
+    color: #383a3c;
+    display: block;
+    margin-bottom: 11px;
+    padding: 16px 8px 8px 35px;
+    border-top: 1px solid #dededc;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    @media (min-width: $screen-md-min) {
+        font-size: 14px;
+        margin-left: 16px;
+        font-weight: 400;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 8px;
+        border-top: 0;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .navbar-sub-item .column-block {
+        float: left;
+        width: 48%;
+        padding-top: 0;
+        &.solo-list {
+            .pages-list li {
+                float: none;
+                width: 100%;
+            }
+            .nav-section-heading {
+                float: none; 
+            }
+        }
+        .pages-list li {
+            width: 48%;
+            float: left;
+            a {
+                font-size: 14px;
+                font-weight: 400;
+                font-family: arial,sans-serif;
+                padding: 5px 0 5px 26px;
+            }
+        }
+    }
+
+    .three-col-sub-item .column-block { width: 32%; } 
+    .column-block:first-child { border-right: 1px solid #dededc; }
+    .three-col-sub-item .right-column-block { border-left: 1px solid #dededc; }
+    
+    .kaplan__page-header .nav-section-heading {
+        padding: 8px 0 0 15px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: #383a3c;
+        font-family: "Open Sans", sans-serif;
+        text-transform: none;
+    }
+    .text-promo-block {
+        .nav-section-heading { float: none; }
+        .highlight {
+            display: block;
+            color: #00a5d9;
+            font-size: 14px;
+            margin-left: 16px;
+            font-weight: 400;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 8px;
+        }
+    }
+
+    #about-nav-item { left: 70%; width: 29%; }
+    #insights-materials-nav-item { left: 39%; width: 59%; }
+    #study-materials-nav-item { width: 63%; left: 39%; }
+}

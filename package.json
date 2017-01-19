@@ -1,0 +1,31 @@
+{
+  "name": "kaplan-build",
+  "version": "1.0.0",
+  "description": "A standalone FED build system for the kaplan.co.uk templates",
+  "scripts": {
+    "start": "appius-build.cmd"
+  },
+  "author": "Phil Hazelton <phil@appius.com>",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-bytediff": "^1.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-csso": "^2.0.0",
+    "gulp-debug": "^3.0.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-help": "^1.6.1",
+    "gulp-include": "^2.3.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-prompt": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^1.2.2",
+    "yargs": "^6.6.0"
+  }
+}
