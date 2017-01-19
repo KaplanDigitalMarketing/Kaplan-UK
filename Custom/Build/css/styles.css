@@ -3,6 +3,7 @@
 /* Brand Colour Updates */
 /* Reset the mobile menu breakpoint */
 /* $screen-md-min */
+/* Icons / Logos Path */
 .sf_cols.row {
   width: auto !important; }
 
@@ -6950,7 +6951,7 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   line-height: 5em;
   padding: 0.5rem 3rem; }
 
-.cta-btn, .mod-content-promo .download-btn {
+.cta-btn, .mod-content-promo .download-btn, .btn-download {
   color: #fff;
   padding: 8px 48px;
   font-size: 13px;
@@ -6960,9 +6961,12 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   display: inline-block;
   margin-bottom: 16px;
   margin-right: 16px; }
-  .cta-btn.primary-btn, .mod-content-promo .download-btn.primary-btn {
+  .cta-btn.primary-btn, .mod-content-promo .download-btn.primary-btn, .btn-download.primary-btn {
     background: #0069aa;
     border-color: #015081; }
+
+.btn-download {
+  background: #abe400 url(/images/default-source/icons-and-logos/download-icon.png) 0 0 no-repeat; }
 
 .blue-quote-block,
 .blue-quote-block .sf_colsOut {
@@ -7735,6 +7739,12 @@ table {
     background: #fff;
     color: #0069aa;
     font-weight: 700; }
+
+.confirmation-banner {
+  background: #0069aa;
+  color: #fff;
+  padding: 30px;
+  padding: 3rem; }
 
 body > form {
   position: relative;

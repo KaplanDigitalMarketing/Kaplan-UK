@@ -1,6 +1,6 @@
 //
 // Base -> Variables
-// 
+//
 // Use this file to customise Bootstrap variables
 // ahead of compilation.
 // (See vendor/bootstrap/_variables.scss)
@@ -19,7 +19,7 @@ $c-yellow: #FED266;
 $c-deepBlue: #0069AA;
 $c-tranquil: #DEF5F2;
 $c-icecold: #ADE1DB;
-$c-lightgray: #f7f7f7; 
+$c-lightgray: #f7f7f7;
 $c-bonjour: #E1DCD9;
 $c-darkgrey:    #383A3C;
 $c-salmon:      #EC796B;
@@ -35,6 +35,8 @@ $c-blue: #7bcce5;
 $c-pink: #f0a3c7;
 $c-yellow-panel:  #ffc425;
 $c-green:  #c1d82f;
+
+$c-download: #abe400;
 
 $gutter: 15px;
 
@@ -52,7 +54,7 @@ $border-radius-small: 0;
 $headings-font-weight: 300;
 
 /* Brand Colour Updates */
-$brand-primary: $brand-colour-primary; 
+$brand-primary: $brand-colour-primary;
 $brand-success: $brand-colour-secondary;
 
 $accent-border-height: 6px;
@@ -69,3 +71,8 @@ $header-tagline-weight: bold;
 $grid-float-breakpoint: 992px; /* $screen-md-min */
 
 $font-family-sans-serif: "Open Sans", Arial, sans-serif;
+
+
+/* Icons / Logos Path */
+
+$iconLogoPath: '/images/default-source/icons-and-logos'

@@ -9,7 +9,7 @@
     padding: 0.5rem 3rem;
 }
 
-.cta-btn, .mod-content-promo .download-btn {
+.cta-btn, .mod-content-promo .download-btn, .btn-download {
     color: #fff;
     padding: 8px 48px;
     font-size: 13px;
@@ -23,4 +23,9 @@
         background: #0069aa;
         border-color: #015081;
     }
+}
+
+
+.btn-download {
+  background: $c-download url(#{$iconLogoPath}/download-icon.png) 0 0 no-repeat;
 }
