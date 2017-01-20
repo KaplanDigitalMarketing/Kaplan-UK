@@ -16,6 +16,12 @@
             background: #f4f1ed;
             padding: 8px 13px;
         }
+
+        a {
+          display: block;
+          margin-top: 16px;
+        }
+
     }
     .content-expander {
         display: block;
@@ -35,4 +41,10 @@
         width: 848px;
         margin: -8px auto 15px;
     }
+}
+
+// Current vacancy accordion
+
+.accordion--vacancy {
+  padding-top: 0;
 }

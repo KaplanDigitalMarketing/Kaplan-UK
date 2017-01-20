@@ -1,0 +1,43 @@
+.confirmation {
+  padding-bottom: 0;
+
+  .col-sm-12 {
+    text-align: center;
+
+    @media(min-width: 992px) {
+      text-align: left;
+    }
+
+  }
+}
+
+.confirmation__blog {
+  padding-top: 37px;
+}
+
+.confirmation-banner {
+  background: #0069aa;
+  color: #fff;
+  padding: 30px;
+  padding: 3rem;
+
+  .btn {
+    min-width: 220px;
+    font-weight: normal;
+
+    @media(min-width: 992px) {
+      min-width: 180px;
+      margin-top: 5rem;
+      float: right
+    }
+
+  }
+
+  img {
+    @media(min-width: 992px) {
+      margin-top: 1.4rem;
+    }
+  }
+
+
+}

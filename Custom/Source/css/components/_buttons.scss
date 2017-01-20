@@ -2,9 +2,9 @@
     background-color: $c-download;
     border-radius: 4px;
     color:$x-deepGrey;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    line-height: 3em;
+    line-height: 2em;
     padding: 0.5rem 3rem;
     border: none;
 
@@ -18,14 +18,12 @@
 .cta-btn, .mod-content-promo .download-btn, .btn-download {
     color: #fff;
     padding: 11px 16px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 14px;
     border-radius: 5px;
     border: 1px solid #fff;
     display: inline-block;
-    margin-bottom: 16px;
-    margin-right: 16px;
     min-width: 150px;
+
     &.primary-btn {
         background: #0069aa;
         border-color: #015081;

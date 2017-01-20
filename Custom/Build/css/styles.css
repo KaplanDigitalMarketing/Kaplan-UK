@@ -5652,6 +5652,9 @@ body {
   font-weight: 200;
   font-size: 16px; }
 
+strong {
+  font-weight: 600; }
+
 .h2 .highlight {
   color: #1e0576; }
 
@@ -6357,10 +6360,10 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 
 .container-wrapper {
   color: #666;
-  padding: 60px 20px; }
-  @media (max-width: 991px) {
+  padding: 44px 20px; }
+  @media (min-width: 992px) {
     .container-wrapper {
-      padding: 40px 0; } }
+      padding: 46px 0; } }
   .container-wrapper.white {
     background-color: white; }
   .container-wrapper.deepblue {
@@ -6945,9 +6948,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   background-color: #abe400;
   border-radius: 4px;
   color: #383a3c;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  line-height: 3em;
+  line-height: 2em;
   padding: 0.5rem 3rem;
   border: none; }
   .btn-primary:hover {
@@ -6957,13 +6960,10 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 .cta-btn, .mod-content-promo .download-btn, .btn-download {
   color: #fff;
   padding: 11px 16px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
   border-radius: 5px;
   border: 1px solid #fff;
   display: inline-block;
-  margin-bottom: 16px;
-  margin-right: 16px;
   min-width: 150px; }
   .cta-btn.primary-btn, .mod-content-promo .download-btn.primary-btn, .btn-download.primary-btn {
     background: #0069aa;
@@ -7194,6 +7194,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
       text-transform: uppercase;
       background: #f4f1ed;
       padding: 8px 13px; }
+    .mod-expandable-tabs .content a, .accordion .content a {
+      display: block;
+      margin-top: 16px; }
   .mod-expandable-tabs .content-expander, .accordion .content-expander {
     display: block;
     padding: 7px 20px;
@@ -7211,6 +7214,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     .mod-expandable-tabs, .accordion {
       width: 848px;
       margin: -8px auto 15px; } }
+
+.accordion--vacancy {
+  padding-top: 0; }
 
 .kaplan__search-box {
   width: 100%;
@@ -7749,6 +7755,11 @@ table {
 
 .confirmation {
   padding-bottom: 0; }
+  .confirmation .col-sm-12 {
+    text-align: center; }
+    @media (min-width: 992px) {
+      .confirmation .col-sm-12 {
+        text-align: left; } }
 
 .confirmation__blog {
   padding-top: 37px; }
@@ -7759,8 +7770,16 @@ table {
   padding: 30px;
   padding: 3rem; }
   .confirmation-banner .btn {
-    margin-top: 5rem;
-    margin-left: 5rem; }
+    min-width: 220px;
+    font-weight: normal; }
+    @media (min-width: 992px) {
+      .confirmation-banner .btn {
+        min-width: 180px;
+        margin-top: 5rem;
+        float: right; } }
+  @media (min-width: 992px) {
+    .confirmation-banner img {
+      margin-top: 1.4rem; } }
 
 body > form {
   position: relative;
@@ -8048,6 +8067,9 @@ body > form {
 
 .mp-level .mp-level .mp-level {
   border-right-color: #eb529d; }
+
+.page__careers .container-wrapper h3 {
+  margin-top: 30px; }
 
 li.tick-list {
   list-style: none;
