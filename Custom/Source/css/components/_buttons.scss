@@ -1,17 +1,23 @@
 .btn-primary {
-    background-color: #0069AA;
-    border: 1px solid #015081;
+    background-color: $c-download;
     border-radius: 4px;
-    color: #FFF;
-    font-size: 0.8125rem;
+    color:$x-deepGrey;
+    font-size: 1.2rem;
     font-weight: 600;
-    line-height: 5em;
+    line-height: 3em;
     padding: 0.5rem 3rem;
+    border: none;
+
+    &:hover {
+      background-color: $c-download;
+      color:$x-deepGrey;
+    }
+
 }
 
 .cta-btn, .mod-content-promo .download-btn, .btn-download {
     color: #fff;
-    padding: 8px 48px;
+    padding: 11px 16px;
     font-size: 13px;
     font-weight: 600;
     border-radius: 5px;
@@ -19,6 +25,7 @@
     display: inline-block;
     margin-bottom: 16px;
     margin-right: 16px;
+    min-width: 150px;
     &.primary-btn {
         background: #0069aa;
         border-color: #015081;
@@ -27,5 +34,8 @@
 
 
 .btn-download {
-  background: $c-download url(#{$iconLogoPath}/download-icon.png) 0 0 no-repeat;
+  background: $c-download url(#{$iconLogoPath}/download-icon.png) 92% center no-repeat;
+  border: none;
+  color: #383a3c;
+  text-align: left;
 }

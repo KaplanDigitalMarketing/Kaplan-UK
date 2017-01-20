@@ -6942,31 +6942,38 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     margin: 0 10px; } }
 
 .btn-primary {
-  background-color: #0069AA;
-  border: 1px solid #015081;
+  background-color: #abe400;
   border-radius: 4px;
-  color: #FFF;
-  font-size: 0.8125rem;
+  color: #383a3c;
+  font-size: 1.2rem;
   font-weight: 600;
-  line-height: 5em;
-  padding: 0.5rem 3rem; }
+  line-height: 3em;
+  padding: 0.5rem 3rem;
+  border: none; }
+  .btn-primary:hover {
+    background-color: #abe400;
+    color: #383a3c; }
 
 .cta-btn, .mod-content-promo .download-btn, .btn-download {
   color: #fff;
-  padding: 8px 48px;
+  padding: 11px 16px;
   font-size: 13px;
   font-weight: 600;
   border-radius: 5px;
   border: 1px solid #fff;
   display: inline-block;
   margin-bottom: 16px;
-  margin-right: 16px; }
+  margin-right: 16px;
+  min-width: 150px; }
   .cta-btn.primary-btn, .mod-content-promo .download-btn.primary-btn, .btn-download.primary-btn {
     background: #0069aa;
     border-color: #015081; }
 
 .btn-download {
-  background: #abe400 url(/images/default-source/icons-and-logos/download-icon.png) 0 0 no-repeat; }
+  background: #abe400 url(/images/default-source/icons-and-logos/download-icon.png) 92% center no-repeat;
+  border: none;
+  color: #383a3c;
+  text-align: left; }
 
 .blue-quote-block,
 .blue-quote-block .sf_colsOut {
@@ -7740,11 +7747,20 @@ table {
     color: #0069aa;
     font-weight: 700; }
 
+.confirmation {
+  padding-bottom: 0; }
+
+.confirmation__blog {
+  padding-top: 37px; }
+
 .confirmation-banner {
   background: #0069aa;
   color: #fff;
   padding: 30px;
   padding: 3rem; }
+  .confirmation-banner .btn {
+    margin-top: 5rem;
+    margin-left: 5rem; }
 
 body > form {
   position: relative;
