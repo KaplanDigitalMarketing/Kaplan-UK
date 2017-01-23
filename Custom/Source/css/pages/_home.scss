@@ -1,0 +1,16 @@
+.page__home {
+
+  .panel__professional-quals {
+    @media(min-width: $screen-md-min) {
+      padding-right: 7px;
+    }
+  }
+
+
+  .panel__lpd {
+    @media(min-width: $screen-md-min) {
+      padding-left: 7px;
+    }
+  }
+
+}

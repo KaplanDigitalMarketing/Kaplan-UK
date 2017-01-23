@@ -1,6 +1,11 @@
 ﻿.container-insights-nav {
     padding-bottom: 16px;
     position: relative;
+
+    @media (min-width: $screen-md-min) {
+      padding-bottom: 35px;
+    }
+
 }
 .container-insights-content {
     background-color: #f7f7f7;
@@ -24,7 +29,13 @@
         margin: 0;
     }
 }
- #insight-type-dropdown { left: 50%; }
+ #insight-type-dropdown {
+   left: 50%;
+   @media (min-width: $screen-md-min) {
+     left: 0;
+   }
+
+ }
 
  #blog__archive-articles {
     padding-top: 22px;
@@ -70,7 +81,7 @@
             display: block;
             margin: 0 auto;
             width: 100%;
-            @media (min-width: $screen-md-min) { 
+            @media (min-width: $screen-md-min) {
                 margin: 0;
             }
         }
@@ -103,7 +114,7 @@
                 font-size: 16px;
             }
         }
-        
+
         &-single  {
             h1 {
                 font-size: 30px;
@@ -118,8 +129,8 @@
                 height: 48px;
                 margin: 0;
             }
-            .sshLinkItem {  
-                display: block; 
+            .sshLinkItem {
+                display: block;
                 .sshShareOnFacebook { background-position: -18px 0; }
                 .sshShareOnTwitter{ background-position: -92px 0; }
                 .sshLinkedIn { background-position: -163px 0; }
@@ -168,6 +179,7 @@
                 border: 0;
                 border-top: 1px solid #e9e9e9;
                 margin-top: 27px;
+                padding-top: 25px;
             }
         }
     }
@@ -200,7 +212,7 @@
                 &:hover { text-decoration: none; }
             }
         }
-    }  
+    }
 }
 
 .hero-article.col-md-6 h2 {
@@ -304,11 +316,58 @@
     }
 }
 
+.insights-see-more {
+  text-align: center;
+  padding-top: 3.2rem;
+  padding-bottom: 4.2rem;
+  display: block;
+}
+
+.row.insights__callout-banner {
+  background: #0069aa;
+  padding: 2.1rem;
+  margin-left: 0;
+  margin-right: 0;
+  width: 99.8% !important;
+  padding: 2rem;
+
+  @media(min-width:$screen-md-min) {
+    width: 98.5% !important;
+  }
+
+
+  p {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+
+    @media(min-width:$screen-md-min) {
+      text-align: left;
+    }
+  }
+
+  a {
+    display: block;
+    margin: 0 auto 2rem;
+
+    @media(min-width:$screen-md-min) {
+      margin-top: 5rem;
+      margin-bottom: 0;
+      float: right;
+    }
+
+
+  }
+}
+
+
+
 .tag-cloud {
     background: #fff;
     padding: 16px 16px 0;
     margin-top: 24px;
-    .sfTagsList { 
+    .sfTagsList {
         list-style: none; padding-left: 0;
         li {
             display: inline-block;

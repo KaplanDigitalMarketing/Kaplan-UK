@@ -6471,7 +6471,8 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   .hero-banner--standard .promo-text p {
     text-align: left; } }
 
-.header-promo-white .promo-text h1 {
+.header-promo-white .promo-text h1,
+.header-promo-white .promo-text p {
   color: #fff; }
 
 .hero-banner--promo .promo-text h1 {
@@ -6538,7 +6539,7 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 
 @media (min-width: 992px) {
   .hero-banner--promo .promo-logo {
-    width: 26%;
+    width: 26% !important;
     right: 0;
     bottom: 0;
     display: block;
@@ -6560,6 +6561,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 
 .hero-banner--promo .cta-box {
   margin: 32px auto 0; }
+  @media (min-width: 992px) {
+    .hero-banner--promo .cta-box {
+      margin: 32px 0 0 0; } }
 
 .hero-banner--promo .promo-text {
   width: 100%; }
@@ -7117,6 +7121,8 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
       color: #383a3c;
       font-size: 25px;
       font-weight: 400; }
+      .kaplan-panel__primary .kaplan-panel_heading a {
+        color: #383a3c; }
     .kaplan-panel__primary .kaplan-panel_image {
       width: 100%; }
   .kaplan-panel__secondary {
@@ -7265,6 +7271,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 .container-insights-nav {
   padding-bottom: 16px;
   position: relative; }
+  @media (min-width: 992px) {
+    .container-insights-nav {
+      padding-bottom: 35px; } }
 
 .container-insights-content {
   background-color: #f7f7f7;
@@ -7284,6 +7293,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 
 #insight-type-dropdown {
   left: 50%; }
+  @media (min-width: 992px) {
+    #insight-type-dropdown {
+      left: 0; } }
 
 #blog__archive-articles {
   padding-top: 22px;
@@ -7413,7 +7425,8 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     .blog__types-title {
       border: 0;
       border-top: 1px solid #e9e9e9;
-      margin-top: 27px; } }
+      margin-top: 27px;
+      padding-top: 25px; } }
 
 .blog__section-nav .insights-menu {
   padding-top: 3px; }
@@ -7531,6 +7544,39 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     .insights-content h1 {
       margin-left: 0;
       margin-bottom: 24px; } }
+
+.insights-see-more {
+  text-align: center;
+  padding-top: 3.2rem;
+  padding-bottom: 4.2rem;
+  display: block; }
+
+.row.insights__callout-banner {
+  background: #0069aa;
+  padding: 2.1rem;
+  margin-left: 0;
+  margin-right: 0;
+  width: 99.8% !important;
+  padding: 2rem; }
+  @media (min-width: 992px) {
+    .row.insights__callout-banner {
+      width: 98.5% !important; } }
+  .row.insights__callout-banner p {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center; }
+    @media (min-width: 992px) {
+      .row.insights__callout-banner p {
+        text-align: left; } }
+  .row.insights__callout-banner a {
+    display: block;
+    margin: 0 auto 2rem; }
+    @media (min-width: 992px) {
+      .row.insights__callout-banner a {
+        margin-top: 5rem;
+        margin-bottom: 0;
+        float: right; } }
 
 .tag-cloud {
   background: #fff;
@@ -8068,8 +8114,23 @@ body > form {
 .mp-level .mp-level .mp-level {
   border-right-color: #eb529d; }
 
+@media (min-width: 992px) {
+  .page__home .panel__professional-quals {
+    padding-right: 7px; } }
+
+@media (min-width: 992px) {
+  .page__home .panel__lpd {
+    padding-left: 7px; } }
+
 .page__careers .container-wrapper h3 {
   margin-top: 30px; }
+
+.page__kaplan-connects iframe {
+  display: block;
+  margin: 0 auto; }
+
+.page__kaplan-connects h2 {
+  margin-bottom: 24px; }
 
 li.tick-list {
   list-style: none;
