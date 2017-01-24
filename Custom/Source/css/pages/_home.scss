@@ -1,16 +1,53 @@
 .page__home {
 
-  .panel__professional-quals {
+  .panel__professional-quals,
+  .panel__apprenticeships {
     @media(min-width: $screen-md-min) {
       padding-right: 7px;
     }
   }
 
-
-  .panel__lpd {
+  .panel__lpd,
+  .panel__study-materials {
     @media(min-width: $screen-md-min) {
       padding-left: 7px;
     }
   }
+
+  .panel__apprenticeships,
+  .panel__study-materials {
+    .kaplan-panel__primary {
+      @media(min-width: $screen-md-min) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .panel__home-support {
+    @media(min-width: $screen-md-min) {
+      padding-top: 0;
+    }
+  }
+
+  .panel__home-quote {
+
+    @media(min-width: $screen-md-min) {
+      padding-right: 7px;
+    }
+
+  }
+
+  .award-training {
+    @media(min-width: $screen-md-min) {
+      padding-left: 7px;
+    }
+  }
+
+  .home__latest-news {
+    @media(min-width: $screen-md-min) {
+      padding-top: 0;
+    }
+  }
+
 
 }

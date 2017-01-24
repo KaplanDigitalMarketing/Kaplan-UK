@@ -5655,6 +5655,9 @@ body {
 strong {
   font-weight: 600; }
 
+.container {
+  padding: 0; }
+
 .h2 .highlight {
   color: #1e0576; }
 
@@ -5677,7 +5680,6 @@ a, p {
   font-size: 36px;
   font-weight: 300;
   display: inline-block;
-  margin-top: 16px;
   margin-bottom: 16px;
   color: #383a3c;
   padding-left: 0;
@@ -6363,7 +6365,7 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   padding: 44px 20px; }
   @media (min-width: 992px) {
     .container-wrapper {
-      padding: 46px 0; } }
+      padding: 49px 0; } }
   .container-wrapper.white {
     background-color: white; }
   .container-wrapper.deepblue {
@@ -6941,6 +6943,16 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
       border-width: 0 0.5rem 0.5rem 0.5rem;
       border-color: transparent transparent #ffffff transparent; }
 
+/* Talent Academy */
+.academy__categories a {
+  color: #ec174e; }
+
+.academy__category-list a {
+  margin-right: 2rem; }
+  @media (min-width: 992px) {
+    .academy__category-list a {
+      margin-right: 5rem; } }
+
 @media all and (min-width: 0\0) and (min-resolution: 0.001dpcm) {
   .apprenticeships__navigation ul {
     text-align: center; }
@@ -7268,17 +7280,6 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   float: left;
   margin-top: 8px; }
 
-.container-insights-nav {
-  padding-bottom: 16px;
-  position: relative; }
-  @media (min-width: 992px) {
-    .container-insights-nav {
-      padding-bottom: 35px; } }
-
-.container-insights-content {
-  background-color: #f7f7f7;
-  padding: 10px 0; }
-
 @media (min-width: 992px) {
   .blog__page-content .row {
     margin-left: 0;
@@ -7349,10 +7350,8 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     color: #383a3c; }
     .blog__article .title > a:hover {
       text-decoration: none; }
-  .blog__article h2.article-title {
-    margin-top: 20px; }
   .blog__article-content {
-    padding: 3px 16px 16px;
+    padding: 13px 16px 16px;
     background: #fff;
     width: 100%;
     display: block; }
@@ -7438,7 +7437,7 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 .blog__latest-insights h2 {
   font-size: 16px;
   font-weight: 600;
-  margin: 16px 0 24px 13px;
+  margin: 0px 0 24px 13px;
   line-height: 24px; }
 
 @media (min-width: 992px) {
@@ -7827,6 +7826,90 @@ table {
     .confirmation-banner img {
       margin-top: 1.4rem; } }
 
+.promo {
+  color: #000; }
+  @media (min-width: 768px) {
+    .promo {
+      width: 75%;
+      margin: 0 auto; } }
+  @media (min-width: 992px) {
+    .promo {
+      width: 848px; } }
+  .promo .promo__title {
+    text-align: center; }
+
+.promo__sign-up .btn {
+  background: #4ea844;
+  border: .1rem solid #5b7917;
+  color: #fff;
+  margin: 3.2rem auto 1.4rem;
+  display: block;
+  width: 50%; }
+  @media (min-width: 768px) {
+    .promo__sign-up .btn {
+      width: 30%; } }
+
+.promo__app-social a {
+  background: url(/images/default-source/responsive-theme/apps-social-icons.png) no-repeat;
+  display: block;
+  width: 75px;
+  height: 75px;
+  text-indent: -5000px;
+  margin: 0 auto; }
+
+.promo__app-social ul {
+  padding-left: 0; }
+  .promo__app-social ul {
+    *zoom: 1; }
+  .promo__app-social ul:before, .promo__app-social ul:after {
+    content: "";
+    display: table; }
+  .promo__app-social ul:after {
+    clear: both; }
+  @media (min-width: 768px) {
+    .promo__app-social ul {
+      margin-top: 5.8rem;
+      margin-bottom: 5.5rem; } }
+  @media (min-width: 992px) {
+    .promo__app-social ul {
+      width: 648px;
+      margin: 5.8rem auto 5.5rem; } }
+
+@media (min-width: 768px) {
+  .promo__app-social li {
+    float: left;
+    width: 33%; } }
+
+.promo__app-social p {
+  font-size: 24px;
+  text-align: center; }
+
+.promo__app-social .facebook-icon {
+  background-position: 0 0; }
+
+.promo__app-social .twitter-icon {
+  background-position: 50% 0; }
+
+.promo__app-social .instagram-icon {
+  background-position: 100% 0; }
+
+.page__talent-academy-detail .promo__submit-cv {
+  background: #3f4142;
+  width: 100%;
+  padding: 30px;
+  padding: 3rem; }
+  .page__talent-academy-detail .promo__submit-cv h2 {
+    color: #e6bf5e;
+    font-size: 32px;
+    line-height: 4rem; }
+  .page__talent-academy-detail .promo__submit-cv .btn {
+    width: 130px;
+    margin: 2rem auto 0;
+    display: block; }
+  .page__talent-academy-detail .promo__submit-cv .btn-primary {
+    background: #4aaa42;
+    color: #fff; }
+
 body > form {
   position: relative;
   overflow: hidden; }
@@ -8115,12 +8198,35 @@ body > form {
   border-right-color: #eb529d; }
 
 @media (min-width: 992px) {
-  .page__home .panel__professional-quals {
+  .page__home .panel__professional-quals,
+  .page__home .panel__apprenticeships {
     padding-right: 7px; } }
 
 @media (min-width: 992px) {
-  .page__home .panel__lpd {
+  .page__home .panel__lpd,
+  .page__home .panel__study-materials {
     padding-left: 7px; } }
+
+@media (min-width: 992px) {
+  .page__home .panel__apprenticeships .kaplan-panel__primary,
+  .page__home .panel__study-materials .kaplan-panel__primary {
+    margin-top: 0; } }
+
+@media (min-width: 992px) {
+  .page__home .panel__home-support {
+    padding-top: 0; } }
+
+@media (min-width: 992px) {
+  .page__home .panel__home-quote {
+    padding-right: 7px; } }
+
+@media (min-width: 992px) {
+  .page__home .award-training {
+    padding-left: 7px; } }
+
+@media (min-width: 992px) {
+  .page__home .home__latest-news {
+    padding-top: 0; } }
 
 .page__careers .container-wrapper h3 {
   margin-top: 30px; }
@@ -8131,6 +8237,58 @@ body > form {
 
 .page__kaplan-connects h2 {
   margin-bottom: 24px; }
+
+.page__talent-academy .blog__articles {
+  padding-top: 0; }
+
+.page__talent-academy .insights-see-more {
+  padding-bottom: 0; }
+
+.page__talent-academy .talent-academy__navigation {
+  padding-bottom: 23px;
+  padding-top: 42px; }
+
+.page__talent-academy .talent-academy__content {
+  padding-top: 21px; }
+
+/* Advice & Tips / Archive page fixes */
+@media (min-width: 992px) {
+  .talent-academy__advice-tips-additional .blog__article:nth-child(9) {
+    clear: left; } }
+
+@media (min-width: 992px) {
+  .talent-academy__archive .blog__article:nth-child(5) {
+    clear: left; } }
+
+/* Talent Academy detail */
+.page__talent-academy-detail h1 {
+  color: #ec174e;
+  font-weight: 800;
+  border-bottom: 0.1rem solid #e9e9e9;
+  padding-bottom: 3.2rem; }
+
+.page__talent-academy-detail .insight_title {
+  font-weight: 600;
+  font-size: 30px;
+  color: #000; }
+
+.page__talent-academy-detail .academy__categories {
+  margin-top: 4rem; }
+
+.page__talent-academy-detail .academy__page--single {
+  padding-top: 21px; }
+
+.page__talent-academy-detail .article-category {
+  margin-bottom: 2.4rem; }
+
+.page__talent-academy-detail .talent-academy__header {
+  padding-bottom: 2.5rem; }
+
+.page__talent-academy-detail .talent-academy__article .blog__article-content {
+  padding-top: 30px; }
+
+.page__talent-academy-detail .article-category li {
+  color: #ec174e; }
 
 li.tick-list {
   list-style: none;

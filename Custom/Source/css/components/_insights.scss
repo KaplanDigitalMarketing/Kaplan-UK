@@ -1,18 +1,4 @@
-﻿.container-insights-nav {
-    padding-bottom: 16px;
-    position: relative;
-
-    @media (min-width: $screen-md-min) {
-      padding-bottom: 35px;
-    }
-
-}
-.container-insights-content {
-    background-color: #f7f7f7;
-    padding: 10px 0;
-}
-
- @media (min-width: $screen-md-min) {
+@media (min-width: $screen-md-min) {
     .blog__page-content .row {
         margin-left: 0;
         margin-right: 0;
@@ -90,9 +76,9 @@
             color: #383a3c;
             > a:hover { text-decoration: none; }
         }
-        h2.article-title { margin-top: 20px; }
+
         &-content {
-            padding: 3px 16px 16px;
+            padding: 13px 16px 16px;
             background: #fff;
             width: 100%;
             display: block;
@@ -194,7 +180,7 @@
         h2 {
             font-size: 16px;
             font-weight: 600;
-            margin: 16px 0 24px 13px;
+            margin: 0px 0 24px 13px;
             line-height: 24px;
         }
         .blog__article {
@@ -230,6 +216,7 @@
     display: block;
     color: #383a3c;
     line-height: 19px;
+
     @media (min-width: $screen-lg) {
         font-size: 12px;
     }

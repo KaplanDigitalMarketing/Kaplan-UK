@@ -1,0 +1,115 @@
+.promo {
+
+  color: #000;
+
+  @media (min-width: $screen-sm-min) {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  @media(min-width: $screen-md-min) {
+    width: 848px;
+  }
+
+  .promo__title {
+    text-align: center;
+  }
+
+}
+
+.promo__sign-up {
+
+  .btn {
+    background: #4ea844;
+    border: .1rem solid #5b7917;
+    color: #fff;
+    margin: 3.2rem auto 1.4rem;
+    display: block;
+    width: 50%;
+
+    @media (min-width: $screen-sm-min) {
+      width: 30%;
+    }
+  }
+}
+
+.promo__app-social {
+
+   a {
+     background: url(/images/default-source/responsive-theme/apps-social-icons.png) no-repeat;
+     display: block;
+     width: 75px;
+     height: 75px;
+     text-indent: -5000px;
+     margin: 0 auto;
+   }
+
+   ul {
+     padding-left: 0;
+
+     @include clearfix-micro();
+
+     @media(min-width: $screen-sm-min) {
+       margin-top: 5.8rem;
+       margin-bottom: 5.5rem;
+     }
+
+     @media(min-width: $screen-md-min) {
+       width: 648px;
+       margin: 5.8rem auto 5.5rem;
+     }
+
+   }
+
+   li {
+     @media (min-width: $screen-sm-min) {
+       float: left;
+       width: 33%;
+     }
+   }
+
+   p {
+     font-size: 24px;
+     text-align: center;
+   }
+
+   .facebook-icon {
+     background-position: 0 0;
+   }
+
+   .twitter-icon {
+     background-position: 50% 0;
+   }
+
+   .instagram-icon {
+     background-position: 100% 0;
+   }
+
+}
+
+.page__talent-academy-detail {
+  .promo__submit-cv {
+    background: #3f4142;
+    width: 100%;
+    padding: 30px;
+    padding: 3rem;
+
+    h2 {
+      color: #e6bf5e;
+      font-size: 32px;
+      line-height: 4rem;
+    }
+
+    .btn {
+      width: 130px;
+      margin: 2rem auto 0;
+      display: block;
+    }
+
+    .btn-primary {
+      background: #4aaa42;
+      color: #fff;
+    }
+
+  }
+}

@@ -1,0 +1,88 @@
+.page__talent-academy {
+
+  .blog__articles {
+    padding-top: 0;
+  }
+
+  .insights-see-more {
+    padding-bottom: 0;
+  }
+
+  .talent-academy__navigation {
+    padding-bottom: 23px;
+    padding-top: 42px;
+  }
+
+  .talent-academy__content {
+    padding-top: 21px;
+  }
+
+}
+
+
+/* Advice & Tips / Archive page fixes */
+
+.talent-academy__advice-tips-additional {
+  .blog__article:nth-child(9) {
+    @media(min-width: $screen-md-min) {
+      clear: left;
+    }
+  }
+}
+
+.talent-academy__archive {
+  .blog__article:nth-child(5) {
+    @media(min-width: $screen-md-min) {
+      clear: left;
+    }
+  }
+}
+
+/* Talent Academy detail */
+
+.page__talent-academy-detail {
+
+  h1 {
+    color: #ec174e;
+    font-weight: 800;
+    border-bottom: 0.1rem solid #e9e9e9;
+    padding-bottom: 3.2rem;
+  }
+
+  .insight_title {
+    font-weight: 600;
+    font-size: 30px;
+    color: #000;
+  }
+
+  .academy__categories {
+    margin-top: 4rem;
+  }
+
+  .academy__page--single {
+    padding-top: 21px;
+  }
+
+  .article-category {
+    margin-bottom: 2.4rem;
+  }
+
+  .talent-academy__header {
+    padding-bottom: 2.5rem;
+  }
+
+  .talent-academy__article {
+
+    .blog__article-content {
+      padding-top: 30px;
+    }
+
+  }
+
+  .article-category {
+    li {
+      color: #ec174e;
+    }
+  }
+
+}

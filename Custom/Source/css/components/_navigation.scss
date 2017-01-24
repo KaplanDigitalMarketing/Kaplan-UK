@@ -42,6 +42,29 @@
   }
 }
 
+
+/* Talent Academy */
+
+.academy__categories {
+
+  a {
+    color: #ec174e;
+  }
+
+}
+
+.academy__category-list {
+
+  a {
+    margin-right: 2rem;
+
+    @media(min-width: $screen-md-min) {
+        margin-right: 5rem;
+    }
+  }
+
+}
+
 @media all and (min-width:0\0) and (min-resolution:.001dpcm) { // IE9
   .apprenticeships__navigation {
     ul {
@@ -53,5 +76,3 @@
     }
   }
 }
-
-
