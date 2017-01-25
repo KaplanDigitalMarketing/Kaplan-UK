@@ -8,11 +8,13 @@
   }
 
   &.white { background-color: white; }
-  &.deepblue { background-color: $c-deepBlue; color: white;}
+  &.deepblue { background-color: $c-deepBlue; color: white; }
   &.yellow  { background-color: $c-yellow; }
   &.lightgrey  { background-color: $c-lightgray; }
   &.icecold { background-color: $c-icecold; }
-  &.darkgrey { background-color: $c-darkgrey; }
-  &.salmon { background-color: $c-salmon;}
-  &.tranquil { background-color: $c-tranquil;}
+  &.darkgrey { background-color: $c-darkgrey; color: #fff; }
+  &.salmon { background-color: $c-salmon; }
+  &.tranquil { background-color: $c-tranquil; }
+  &.beige { background-color: $c-beige; }
+  &.stone { background-color: $c-stone; }
 }

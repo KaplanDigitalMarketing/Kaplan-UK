@@ -1,260 +1,124 @@
-﻿.hero-banner {
-    &__content {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+.hero-banner {
+  background-repeat: no-repeat;
+  background-position: center top;
 
-    &__cta-box {
-        border: 3px solid $c-lightgray;
-        border-radius: 5px;
-        background: #fff;
-        padding: 20px;
-        width: 350px;
-        text-align: center;
-    }
-    .btn {
-        background: $c-deepBlue;
-        display: block;
-        border-radius: 4px;
-        color: #fff;
-        margin-right: 0;
-        margin-top: 1rem;
-        margin-bottom: 0;
-    }
-    &--standard {
-        background-position: center;
-        background-size: cover;
-        height: 0;
-        padding-top: 50%;
-        position: relative;
-        margin-bottom: 448px;
-        .promo-text {
-            h1, p {
-                color: #333;
-                text-transform: none;
-            }
-        }
-        .cta-box p { text-align: center }
-        @media(min-width: $screen-md-min) {
-                padding-top: 40%;
-                margin-bottom: 0
-        }
-    }
-}
+  @include rem((
+    padding: 60px 0
+  ));
+
+  /* Block MQ */
+
+  @media(min-width: 768px) {
+    background-color: #fff;
+  }
+
+  @media(min-width: 1024px) {
+    @include rem((
+      padding: 120px 0
+    ));
+  }
+
+  @media(min-width: 1600px) {
+    @include rem((
+      padding: 240px 0
+    ));
+  }
+
+  @media(min-width: 2200px) {
+    @include rem((
+      padding: 320px 0
+    ));
+  }
 
 
-.hero-banner--standard .container,
-.hero-banner--standard .promo__full .col-md-12,
-.promo__full .hero-banner--standard .col-md-12 {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    float: left
-}
+  .container {
+    padding: 0 20px;
+  }
 
-@media(min-width:$screen-md-min) {
-    .hero-banner--standard .container,
-    .hero-banner--standard .promo__full .col-md-12,
-    .promo__full .hero-banner--standard .col-md-12 {
-        position: absolute;
-        top: 12.5%;
-        left: 9%;
-        margin-top: 0;
-        width: 90%
-    }
-    .hero-banner--standard .row {
-        position: relative
-    }
-    .hero-banner--standard .promo-text {
-        padding-left: 0
-    }
-    .hero-banner--standard .promo-text p {
-        text-align: left
-    }
-}
+  img {
+   display: block;
+   margin: 0 auto;
+  }
 
-.header-promo-white .promo-text h1,
-.header-promo-white .promo-text p {
-    color: #fff;
-}
-
-.hero-banner--promo .promo-text h1 {
+  h1, h2, p {
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 40px;
-    font-weight: 400
-}
 
-@media(min-width:$screen-md-min) {
-    .hero-banner--promo .promo-text h1 {
-        text-align: left;
-        width: 60%;
-        font-size: 40px!important;
-        line-height: 48px;
+    @media(min-width: 1024px) {
+      text-align: left;
     }
-    .hero-banner--promo .promo-text p {
-        width: 41%
-    }
-}
 
-.hero-banner--promo .promo-text p {
-    line-height: 22px;
-}
+  }
 
-.hero-banner--promo .promo-text img {
+  h1 {
+    @include rem((
+      margin-bottom: 24px
+    ));
+  }
+
+  .btn {
     display: block;
-    margin: 0 auto
-}
-
-@media(min-width:$screen-md-min) {
-    .hero-banner--promo .promo-text img {
-        margin: 0
-    }
-    .hero-banner--promo .promo-text .cta-box p {
-        color: #383a3c
-    }
-}
-
-.hero-banner--promo .cta-box {
-    margin: 40px 0 0;
-    border: 3px solid #c9cbcc;
-    border-radius: 5px;
-    background: #fff;
-    padding: 19px;
-    width: 100%;
-    text-align: center
-}
-
-@media(min-width:$screen-md-min) {
-    .hero-banner--promo .cta-box {
-        width: 352px;
-    }
-}
-
-.hero-banner--promo .cta-box p {
-    width: 99%;
-    font-size: 16px;
-    margin: 0 auto
-}
-
-.hero-banner--promo .cta-box a {
-    background: #0667b0;
-    display: block;
-    border-radius: 4px;
+    background: #0069aa;
     color: #fff;
-    margin-right: 0;
-    margin-top: 16px;
-    margin-bottom: 0;
-    padding-bottom: 8px;
-    padding-left: 48px;
-    padding-right: 48px;
-    padding-top: 8px;
+
+    @include rem((
+      width: 170px,
+      margin: 24px auto 0,
+      border: 1px solid #015081
+    ));
+  }
+
+  .cta-box {
+    background: #fff;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include rem((
+      border: 2px solid #c9cbcc,
+      padding: 20px,
+      border-radius: 6px,
+      margin-top: 46px,
+      width: 320px
+    ));
+  }
 }
 
-.hero-banner--promo .promo-logo {
-    display: none
-}
 
-@media(min-width:$screen-md-min) {
-    .hero-banner--promo .promo-logo {
-        width: 26% !important;
-        right: 0;
-        bottom: 0;
-        display: block;
-        position: absolute
-    }
-    .header-promo-white .promo-text h2,
-    .header-promo-white .promo-text p {
-        color: #fff
-    }
-}
+.hero-banner__body {
 
-.hero-banner--standard {
-    padding-top: 0;
-    margin-bottom: 0;
-    height: auto;
-    min-height: 434px;
-    .container {
-        float: none;
-        padding: 60px 0;
-        margin: 0 auto;
-        width: 85%;
-    }
-}
+  @include rem((
+    margin-top: 130px
+  ));
 
-.hero-banner--promo {
-    .cta-box {
-      margin: 32px auto 0;
+  @media(min-width: 321px) {
+    @include rem((
+      margin-top: 256px
+    ));
+  }
 
-      @media(min-width: $screen-md-min) {
-        margin: 32px 0 0 0;
-      }
+  @media(min-width: 640px) {
+    @include rem((
+      margin-top: 313px
+    ));
+  }
 
-    }
-    .promo-text {
-        width: 100%;
-        h1 {
-            font-weight: 300;
-            text-transform: none;
-        }
-    }
-    &-white  {
-        .promo-text {
-            h1, p {
-                color: white;
-            }
-        }
-    }
-}
+  @media(min-width: 800px) {
+    @include rem((
+      margin-top: 402px
+    ));
+  }
 
-.header-promo-white .cta-box p { color: #383a3c; }
-
-/* 1000px Media Query */
-@media screen and (min-width: $screen-md-min) {
-    .hero-banner--standard {
-        .container {
-            float: none;
-            padding: 0 0 60px;
-            margin: 0 auto;
-            width: 85%;
-        }
-    }
-    .hero-banner--promo {
-        .promo-text {
-            width: 100%;
-            p {
-                width: 100%;
-                text-align: center;
-            }
-            h1 {
-                text-align: center;
-                width: 100%;
-            }
-        }
-    }
+  @media(min-width: 1024px) {
+    margin-top: 0;
+  }
 
 }
 
-/* 1200px Media Query */
+/* Theming */
+.hero-banner--white {
 
-@media screen and (min-width: $screen-lg) {
-    .hero-banner--standard {
-        height: 0;
-        padding-top: 0;
-        min-height: 500px;
-        .container {
-            padding-top: 0;
-        }
-    }
-    .hero-banner--promo {
-        .promo-text {
-            h1, p {
-                text-align: left;
-                width: 43%;
-            }
-            h1 { width: 59%; }
-            .cta-box p { width: 100%; }
-        }
-        .cta-box { margin: 60px 0 0; }
-    }
+  color: #383a3c;
+
+  @media(min-width: 1024px) {
+    color: #fff;
+  }
 }

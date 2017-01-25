@@ -1,0 +1,16 @@
+.page__apprentice-internships {
+
+  .col-apprenticeships {
+    @media(min-width: $screen-md-min) {
+      padding-right: 7px;
+    }
+  }
+
+  .col-internships {
+    @media(min-width: $screen-md-min) {
+      padding-left: 7px;
+    }
+  }
+
+
+}

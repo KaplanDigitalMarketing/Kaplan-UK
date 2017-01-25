@@ -17,6 +17,42 @@
     padding-top: 21px;
   }
 
+  .promo__submit-cv {
+
+    @include clearfix-micro();
+
+    @media(min-width: $screen-md-min) {
+      width: 98.5%;
+      margin: 0;
+      padding: 2rem 3rem;
+    }
+
+    .promo__title,
+    .btn {
+      @media(min-width: $screen-md-min) {
+        float: left;
+      }
+    }
+
+    .promo__title {
+      @media(min-width: $screen-md-min) {
+        text-align: left;
+        width: 86%;
+        margin-top: 0.7rem;
+      }
+    }
+
+    .btn {
+      width: 150px;
+      margin-top: 3rem;
+
+      @media(min-width: $screen-md-min) {
+        margin-top: 1rem;
+      }
+
+    }
+  }
+
 }
 
 

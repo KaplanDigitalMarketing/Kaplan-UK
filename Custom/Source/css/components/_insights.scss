@@ -1,3 +1,12 @@
+.insights__header {
+  padding-bottom: 25px;
+}
+
+.insights__content {
+  padding-top: 0;
+  padding-bottom: 12px;
+}
+
 @media (min-width: $screen-md-min) {
     .blog__page-content .row {
         margin-left: 0;
@@ -343,12 +352,8 @@
       margin-bottom: 0;
       float: right;
     }
-
-
   }
 }
-
-
 
 .tag-cloud {
     background: #fff;
