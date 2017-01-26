@@ -6422,24 +6422,20 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 .hero-banner {
   background-repeat: no-repeat;
   background-position: center top;
-  padding: 60px 0;
-  padding: 6rem 0;
+  background-size: 100%;
+  min-height: 320px !important;
   /* Block MQ */ }
   @media (min-width: 768px) {
     .hero-banner {
       background-color: #fff; } }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .hero-banner {
-      padding: 120px 0;
-      padding: 12rem 0; } }
-  @media (min-width: 1600px) {
+      min-height: 500px !important;
+      max-height: 500px !important; } }
+  @media (min-width: 2000px) {
     .hero-banner {
-      padding: 240px 0;
-      padding: 24rem 0; } }
-  @media (min-width: 2200px) {
-    .hero-banner {
-      padding: 320px 0;
-      padding: 32rem 0; } }
+      min-height: 680px !important;
+      max-height: 680px !important; } }
   .hero-banner .container {
     padding: 0 20px; }
   .hero-banner img {
@@ -6447,7 +6443,7 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     margin: 0 auto; }
   .hero-banner h1, .hero-banner h2, .hero-banner p {
     text-align: center; }
-    @media (min-width: 1024px) {
+    @media (min-width: 900px) {
       .hero-banner h1, .hero-banner h2, .hero-banner p {
         text-align: left; } }
   .hero-banner h1 {
@@ -6477,30 +6473,25 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     margin-top: 4.6rem;
     width: 320px;
     width: 32rem; }
+    @media (min-width: 900px) {
+      .hero-banner .cta-box {
+        color: #383a3c;
+        margin-left: 0;
+        text-align: center; } }
 
 .hero-banner__body {
-  margin-top: 130px;
-  margin-top: 13rem; }
-  @media (min-width: 321px) {
+  margin-top: 45%; }
+  @media (min-width: 799px) {
     .hero-banner__body {
-      margin-top: 256px;
-      margin-top: 25.6rem; } }
-  @media (min-width: 640px) {
+      margin-top: 50%; } }
+  @media (min-width: 900px) {
     .hero-banner__body {
-      margin-top: 313px;
-      margin-top: 31.3rem; } }
-  @media (min-width: 800px) {
-    .hero-banner__body {
-      margin-top: 402px;
-      margin-top: 40.2rem; } }
-  @media (min-width: 1024px) {
-    .hero-banner__body {
-      margin-top: 0; } }
+      margin: 8% 0; } }
 
 /* Theming */
 .hero-banner--white {
   color: #383a3c; }
-  @media (min-width: 1024px) {
+  @media (min-width: 900px) {
     .hero-banner--white {
       color: #fff; } }
 
