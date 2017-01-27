@@ -50,9 +50,10 @@
     display: block;
     background: #0069aa;
     color: #fff;
+    border-radius: 5px;
 
     @include rem((
-      width: 170px,
+      width: 200px,
       margin: 24px auto 0,
       border: 1px solid #015081
     ));
@@ -66,7 +67,12 @@
     @media(min-width: 900px) {
       color: #383a3c;
       margin-left: 0;
-      text-align: center;
+    }
+
+    p {
+      @media(min-width: 900px) {
+        text-align: center;
+      }
     }
 
     @include rem((
@@ -89,12 +95,49 @@
     margin-top: 50%;
   }
 
-
   @media(min-width: 900px) {
-    margin: 8% 0;
+    margin: 3% 0;
+    padding-left: 0;
+    width: 65%;
+  }
+
+  @media(min-width: 1200px) {
+    margin: 6% 0;
+  }
+
+  @media(min-width: 2000px) {
+    margin: 15% 0 14%;
   }
 
 }
+
+.hero-banner__logo {
+
+  display: none;
+
+  @media(min-width: 1024px) {
+    display: block;
+    min-height: 500px !important;
+    max-height: 500px !important;
+  }
+
+  @media(min-width: 2000px) {
+    min-height: 680px !important;
+    max-height: 680px !important;
+  }
+
+  img {
+    display: none;
+
+    @media(min-width: 1024px) {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 18%;
+    }
+  }
+}
+
 
 /* Theming */
 .hero-banner--white {

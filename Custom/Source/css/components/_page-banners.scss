@@ -14,7 +14,6 @@
   .promo__title {
     text-align: center;
   }
-
 }
 
 .promo__sign-up {
@@ -87,7 +86,6 @@
 
 }
 
-
 .promo__submit-cv {
   background: #3f4142;
   width: 100%;
@@ -109,6 +107,77 @@
   .btn-primary {
     background: #4aaa42;
     color: #fff;
+  }
+}
+
+
+.promo__smarter-apprenticeships {
+  background: #393a3c;
+  color: #fff;
+  text-align: center;
+
+  @include rem((
+    padding: 53px 20px
+  ));
+
+  p {
+    font-weight: 300;
+    max-width: 848px;
+    margin: 0 auto;
+
+    @include rem((
+      font-size: 20px
+    ));
+
+  }
+
+  a {
+    display: block;
+    width: 50%;
+    background: url(/images/default-source/icons/brochure-download.png) center top no-repeat;
+    color: #fff;
+    text-align: center;
+
+    @include rem((
+      padding-top: 90px,
+      margin: 33px auto 0
+    ));
+
+  }
+
+  @media(min-width: 1200px) {
+
+    @include rem((
+      padding: 31px 20px
+    ));
+
+    background: #393a3c url(/images/default-source/study-materials/extra-large/body_apprenticeships_and_internships_smarter_apprenticeships_brochure_download_xlarge.jpg) 60% bottom no-repeat;
+
+    p {
+      text-align: left;
+    }
+
+    a {
+      font-weight: 600;
+
+      @media(min-width: 1200px) {
+
+          @include rem((
+            margin: 33px 0 0,
+            background-position: 0 0
+          ));
+
+          text-align: left;
+      }
+    }
+  }
+
+  @media(min-width: 1316px){
+
+    @include rem((
+      padding: 51px 20px
+    ));
+
   }
 
 }

@@ -5658,6 +5658,14 @@ strong {
 .container {
   padding: 0; }
 
+.btn {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2em;
+  padding: 0.5rem 3rem;
+  border: none;
+  border-radius: 4px; }
+
 .h2 .highlight {
   color: #1e0576; }
 
@@ -6453,8 +6461,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     display: block;
     background: #0069aa;
     color: #fff;
-    width: 170px;
-    width: 17rem;
+    border-radius: 5px;
+    width: 200px;
+    width: 20rem;
     margin: 24px auto 0;
     margin: 2.4rem auto 0;
     border: 1px solid #015081;
@@ -6476,7 +6485,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     @media (min-width: 900px) {
       .hero-banner .cta-box {
         color: #383a3c;
-        margin-left: 0;
+        margin-left: 0; } }
+    @media (min-width: 900px) {
+      .hero-banner .cta-box p {
         text-align: center; } }
 
 .hero-banner__body {
@@ -6486,7 +6497,35 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
       margin-top: 50%; } }
   @media (min-width: 900px) {
     .hero-banner__body {
-      margin: 8% 0; } }
+      margin: 3% 0;
+      padding-left: 0;
+      width: 65%; } }
+  @media (min-width: 1200px) {
+    .hero-banner__body {
+      margin: 6% 0; } }
+  @media (min-width: 2000px) {
+    .hero-banner__body {
+      margin: 15% 0 14%; } }
+
+.hero-banner__logo {
+  display: none; }
+  @media (min-width: 1024px) {
+    .hero-banner__logo {
+      display: block;
+      min-height: 500px !important;
+      max-height: 500px !important; } }
+  @media (min-width: 2000px) {
+    .hero-banner__logo {
+      min-height: 680px !important;
+      max-height: 680px !important; } }
+  .hero-banner__logo img {
+    display: none; }
+    @media (min-width: 1024px) {
+      .hero-banner__logo img {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 18%; } }
 
 /* Theming */
 .hero-banner--white {
@@ -6846,29 +6885,20 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     margin: 0 10px; } }
 
 .btn-primary {
-  background-color: #abe400;
-  border-radius: 4px;
-  color: #383a3c;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 2em;
-  padding: 0.5rem 3rem;
-  border: none; }
+  background-color: #0069aa;
+  color: #fff;
+  border: 1px solid #015081;
+  border: 0.1rem solid #015081; }
   .btn-primary:hover {
+    background-color: #0069aa;
+    color: #fff; }
+
+.btn-cta {
+  background-color: #abe400;
+  color: #383a3c; }
+  .btn-cta:hover {
     background-color: #abe400;
     color: #383a3c; }
-
-.cta-btn, .mod-content-promo .download-btn, .btn-download {
-  color: #fff;
-  padding: 11px 16px;
-  font-size: 14px;
-  border-radius: 5px;
-  border: 1px solid #fff;
-  display: inline-block;
-  min-width: 150px; }
-  .cta-btn.primary-btn, .mod-content-promo .download-btn.primary-btn, .btn-download.primary-btn {
-    background: #0069aa;
-    border-color: #015081; }
 
 .btn-download {
   background: #abe400 url(/images/default-source/icons-and-logos/download-icon.png) 92% center no-repeat;
@@ -7105,11 +7135,11 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     padding: 7px 20px;
     border: 1px solid #bebeb9;
     color: #666;
-    font-weight: 700;
+    font-weight: 600;
     background: url(/images/default-source/responsive-theme/tab-icons.png) 98% 96% no-repeat #e9e3db;
     text-align: left;
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 14px;
     text-decoration: none; }
   .mod-expandable-tabs .plus-expand, .accordion .plus-expand {
     background-position: 98% 0; }
@@ -7171,6 +7201,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 .insights__content {
   padding-top: 0;
   padding-bottom: 12px; }
+
+.insights__detail {
+  margin-top: 2.4rem; }
 
 @media (min-width: 992px) {
   .blog__page-content .row {
@@ -7564,17 +7597,10 @@ table {
 .courselisting.table-responsive {
   overflow-x: visible; }
 
-.web-lead-form {
-  margin: 24px 0 0; }
-
 .web-lead-form h2 {
   font-weight: 300;
   font-size: 20px;
   line-height: 29px; }
-
-.web-lead-form form {
-  background: #f4f1ed;
-  padding: 16px 16px 0; }
 
 .web-lead-form .form-row {
   margin-bottom: 8px; }
@@ -7603,7 +7629,7 @@ table {
 .web-lead-form .lead-source {
   display: none; }
 
-.web-lead-form .cta-btn {
+.web-lead-form .btn {
   margin: 24px auto;
   display: block; }
 
@@ -7801,6 +7827,49 @@ table {
   .promo__submit-cv .btn-primary {
     background: #4aaa42;
     color: #fff; }
+
+.promo__smarter-apprenticeships {
+  background: #393a3c;
+  color: #fff;
+  text-align: center;
+  padding: 53px 20px;
+  padding: 5.3rem 2rem; }
+  .promo__smarter-apprenticeships p {
+    font-weight: 300;
+    max-width: 848px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-size: 2rem; }
+  .promo__smarter-apprenticeships a {
+    display: block;
+    width: 50%;
+    background: url(/images/default-source/icons/brochure-download.png) center top no-repeat;
+    color: #fff;
+    text-align: center;
+    padding-top: 90px;
+    padding-top: 9rem;
+    margin: 33px auto 0;
+    margin: 3.3rem auto 0; }
+  @media (min-width: 1200px) {
+    .promo__smarter-apprenticeships {
+      padding: 31px 20px;
+      padding: 3.1rem 2rem;
+      background: #393a3c url(/images/default-source/study-materials/extra-large/body_apprenticeships_and_internships_smarter_apprenticeships_brochure_download_xlarge.jpg) 60% bottom no-repeat; }
+      .promo__smarter-apprenticeships p {
+        text-align: left; }
+      .promo__smarter-apprenticeships a {
+        font-weight: 600; } }
+    @media (min-width: 1200px) and (min-width: 1200px) {
+      .promo__smarter-apprenticeships a {
+        margin: 33px 0 0;
+        margin: 3.3rem 0 0;
+        background-position: 0 0;
+        background-position: 0 0;
+        text-align: left; } }
+  @media (min-width: 1316px) {
+    .promo__smarter-apprenticeships {
+      padding: 51px 20px;
+      padding: 5.1rem 2rem; } }
 
 body > form {
   position: relative;
