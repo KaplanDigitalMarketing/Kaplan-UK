@@ -1,0 +1,138 @@
+.jobs-board{
+
+  @include rem((
+    margin-bottom: 49px
+  ));
+
+  @media(min-width: 992px) {
+
+    @include rem((
+     margin-bottom: 55px
+    ));
+
+  }
+
+}
+
+#gmfjsearchbox {
+  background: #f4f1ed;
+
+  @include rem((
+    border: 1px solid #f4f1ed,
+    padding: 21px,
+  ));
+
+  h3 {
+    color: #ec796b;
+  }
+
+  label {
+    font-family: "Open Sans" !important;
+    font-weight: 400 !important;
+
+    @include rem((
+      margin-top: 10px
+    ));
+  }
+
+  .btn-default {
+    background: #f4f1ed;
+  }
+
+  .btn-block {
+    @include rem((
+      width: 150px
+    ));
+  }
+}
+
+.form-control {
+  width: 98% !important;
+}
+
+#gmfjresultboxholder {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include rem((
+    max-height: 580px,
+    padding-left: 20px,
+    padding-right: 20px,
+    margin-top: 20px
+  ));
+
+  h3 {
+    color: #ec796b;
+  }
+
+  .row:first-of-type {
+
+    float: left;
+
+    @include rem((
+      height: 48px
+    ));
+
+  }
+}
+
+.gmfjjobbox {
+
+  float: left;
+
+  @include rem((
+    border: 1px solid #f4f1ed,
+    border-radius: 1px,
+    margin-bottom: 15px,
+    margin-right: 15px,
+    margin-left: 2px,
+    padding: 25px 28px 24px 28px,
+  ));
+
+  position: relative;
+  background-color: #f4f1ed;
+
+  h2 {
+    font-size: 1.5625rem;
+    font-weight: bold;
+    color: #ed164f;
+    letter-spacing: -0.05em;
+
+    @include rem((
+      font-size: 32px
+    ))
+
+  }
+
+  b, strong {
+    font-weight: 600;
+  }
+
+  .ribbon {
+    display: none;
+  }
+
+  .btn-default {
+    background: #f4f1ed;
+    padding: 0;
+  }
+
+  .btn-moreinfo {
+    display: none;
+  }
+
+  .btn-applynow {
+
+    @include rem((
+      width: 150px
+    ))
+
+    color: #383a3c;
+  }
+}
+
+
+
+.gmfjthumbnail {
+  display: none;
+}

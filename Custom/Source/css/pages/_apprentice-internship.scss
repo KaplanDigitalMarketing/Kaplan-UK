@@ -1,8 +1,16 @@
 .page__apprentice-internships {
 
+  .hero-banner__body {
+    @media(min-width: 992px) {
+      margin-bottom: 0;
+    }
+  }
+
+
   .col-apprenticeships {
     @media(min-width: $screen-md-min) {
       padding-right: 7px;
+      clear: left;
     }
   }
 

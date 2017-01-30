@@ -1,0 +1,67 @@
+.sf_cols.bullet-lists {
+  @media(min-width: 991px) {
+    margin: 0 auto;
+    width: 64% !important;
+  }
+}
+
+
+.bullet-lists__list {
+  @media(max-width: 767px) {
+    margin-top: 0 !important;
+  }
+
+  @media(max-width: 991px) {
+    margin-top: 0 !important;
+  }
+
+  ul {
+    width: 90%;
+    margin: 0 auto;
+
+    @media(min-width: 767px) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.lists__icon-list {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+.lists__levy-benefits {
+  @include rem((
+    margin-top: 16px
+  ));
+
+}
+
+.list__check-list {
+
+  .sfContentBlock {
+      text-align: center;
+      margin-bottom: 15px;
+
+      &:before {
+          width: 35px;
+          height: 30px;
+          background: url(/images/default-source/responsive-theme/green-tick.png?sfvrsn=2) center 0 no-repeat;
+          display: block;
+          text-align: center;
+          margin: 0 auto 15px;
+          content: "";
+      }
+  }
+
+  .centred-row {
+    .container {
+      @media(min-width: 992px) {
+        width: 720px;
+      }
+    }
+  }
+}

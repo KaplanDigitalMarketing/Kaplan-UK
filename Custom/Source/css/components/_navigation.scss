@@ -1,10 +1,23 @@
 .apprenticeships__navigation {
   background-color: $c-darkgrey;
   position: relative;
-  top: -0.8rem;
+  top: 0;
   display: none;
   @media (min-width: 600px) {
     display: block;
+
+    @include rem((
+      margin-top: 25px
+    ));
+
+  }
+
+  @media(min-width: 899px) {
+
+    @include rem((
+      margin-top: 0
+    ));
+
   }
 
   ul {

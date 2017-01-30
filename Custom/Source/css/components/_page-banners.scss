@@ -35,7 +35,6 @@
 .promo__app-social {
 
    a {
-     background: url(/images/default-source/responsive-theme/apps-social-icons.png) no-repeat;
      display: block;
      width: 75px;
      height: 75px;
@@ -61,6 +60,8 @@
    }
 
    li {
+     list-style: none;
+
      @media (min-width: $screen-sm-min) {
        float: left;
        width: 33%;
@@ -73,15 +74,15 @@
    }
 
    .facebook-icon {
-     background-position: 0 0;
+     background: url(/images/default-source/icons/facebook_icon.png) 0 0 no-repeat;
    }
 
    .twitter-icon {
-     background-position: 50% 0;
+     background: url(/images/default-source/icons/twitter_icon.png) 0 0 no-repeat;
    }
 
    .instagram-icon {
-     background-position: 100% 0;
+     background: url(/images/default-source/icons/instagram_icon.png) 0 0 no-repeat;
    }
 
 }
@@ -177,6 +178,63 @@
     @include rem((
       padding: 51px 20px
     ));
+
+  }
+
+}
+
+.promo__get-ahead-download {
+
+  @media(min-width: 1250px) {
+    background: #383a3c url(/images/default-source/apprenticeships/guide-covers.jpg) 0 bottom no-repeat;
+
+    @include rem((
+      padding-bottom: 58px
+    ));
+
+  }
+
+  a {
+    display: block;
+    width: 50%;
+    background: url(/images/default-source/icons/brochure-download.png) center top no-repeat;
+    color: #fff;
+    text-align: center;
+    float: left;
+
+    @include rem((
+      padding-top: 88px
+    ));
+
+    @media(min-width: 1400px) {
+      background-position: left top;
+      text-align: left;
+    }
+
+  }
+}
+
+.promo__get-ahead-download__download-guide {
+  h2, p {
+   text-align: center;
+
+   @media(min-width: 1250px) {
+     text-align: left;
+   }
+  }
+
+  p {
+    @media(max-width: 1249px) {
+      @include rem((
+        margin-bottom: 35px
+      ));
+    }
+
+    @media(min-width: 1250px) {
+      @include rem((
+        margin-bottom: 26px
+      ))
+    }
 
   }
 

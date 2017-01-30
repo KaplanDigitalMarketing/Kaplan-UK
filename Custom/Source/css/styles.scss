@@ -19,7 +19,6 @@
 
 @import 'components/primary-navigation';
 @import 'components/container';
-@import 'components/check-list';
 @import 'components/numbered-steps';
 @import 'components/hero-banner';
 @import 'components/quote-block';
@@ -37,6 +36,8 @@
 @import 'components/pagination';
 @import 'components/confirmation-banner';
 @import 'components/page-banners';
+@import 'components/lists';
+@import 'components/jobs-board';
 
 @import 'components/mobile-navigation';
 
@@ -45,5 +46,6 @@
 @import 'pages/connects';
 @import 'pages/talent-academy';
 @import 'pages/apprentice-internship';
+@import 'pages/jobs-board';
 
 @import 'sitefinity-rad-editor';

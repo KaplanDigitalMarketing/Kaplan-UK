@@ -1,18 +1,49 @@
 .centred-row {
-  .sf_colsIn {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+
+  h2,
+  h3,
+  p {
+    text-align: center;
   }
 
-  .sfContentBlock {
-    max-width: 768px;
+  h2:first-of-type {
+
+    @include rem((
+      margin-bottom: 24px
+    ));
+
+  }
+
+
+  .container {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding: 0 2*$gutter;
 
+    @media(min-width: 992px) {
+      @include rem((
+        width: 848px,
+        padding: 0,
+      ));
+    }
+
     h2:first-child {
       margin-top: 0;
+
+      @include rem((
+        margin-bottom: 24px
+      ));
+
+    }
+  }
+}
+
+.centred-row__aat-next-steps {
+
+  .container {
+    @media(min-width: 992px) {
+      width: 720px;
     }
   }
 }

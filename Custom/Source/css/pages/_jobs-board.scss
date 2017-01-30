@@ -1,0 +1,18 @@
+.jobs-board__find-apprentice {
+
+  @include rem((
+    padding-top: 31px,
+    padding-bottom: 30px
+  ));
+
+  @media(min-width:600px) {
+
+    @include rem((
+      padding-top: 41px,
+      padding-bottom: 34px
+    ));
+
+  }
+
+
+}
