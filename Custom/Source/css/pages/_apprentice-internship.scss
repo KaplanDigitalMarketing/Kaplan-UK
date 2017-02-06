@@ -20,5 +20,31 @@
     }
   }
 
+  .tabbed-row__header > .centred-row { padding-top: 0; padding-bottom: 0; }
 
+    .sfContentBlock {
+        h2:not(.promo__title) {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ed164f;
+            letter-spacing: -0.05em;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        h3 { color: #ec796b; }
+    }
+    .tabbed-row__tab h3 { font-size: 20px; font-weight: 400; }
+    .tabbed-row__tab h3:first-child { margin-top: 0; }
+}
+
+.apprenticeship-logos {
+    .img-responsive-inline {
+        @media (max-width: $screen-md-max) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+        }
+    }
 }

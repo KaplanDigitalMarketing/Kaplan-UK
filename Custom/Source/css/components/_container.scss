@@ -14,8 +14,7 @@
   &.icecold { background-color: $c-icecold; }
   &.darkgrey {
     background-color: $c-darkgrey; color: #fff;
-
-    a {
+    a, p {
       color: #fff;
     }
   }
@@ -23,7 +22,7 @@
   &.tranquil { background-color: $c-tranquil; }
   &.beige { background-color: $c-beige; }
   &.stone { background-color: $c-stone; }
-
+  &.linen { background-color: $c-linen;}
   &.footnote {padding: 26px 0 16px;}
 
 }

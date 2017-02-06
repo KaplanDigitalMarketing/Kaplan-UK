@@ -5,7 +5,6 @@
   }
 }
 
-
 .bullet-lists__list {
   @media(max-width: 767px) {
     margin-top: 0 !important;
@@ -64,4 +63,39 @@
       }
     }
   }
+}
+
+
+.link-group {
+    text-align: left;
+    a {
+        text-align: left;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+        display: block;
+    }
+    p {
+        margin: 0;
+        margin-bottom: 58px;
+        text-align: left;
+    }
+
+}
+
+
+.list-block {
+    max-width: 940px;
+    margin: 0 auto;
+    h3 {
+        color: #383a3c;
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 27px;
+        font-weight: 600;
+    }
+    p {
+        margin-bottom: 48px;
+    }
+   
 }

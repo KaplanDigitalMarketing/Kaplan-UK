@@ -1,5 +1,5 @@
 ﻿.primary-navigation-container { @media (max-screen: $screen-md-max) { display: none; }}
-.non-mobile-nav-container > .col-md-12 { padding: 0; }
+.non-mobile-nav-container > .col-md-12 { @media (max-screen: $screen-md-max) {padding: 0; } }
 .kaplan__page-header {
     background-color: $brand-colour-primary;
     @media (min-width: $grid-float-breakpoint) {
@@ -148,7 +148,6 @@
                         li {
                             display: block;
                             a {
-                                color: #333;
                                 display: block;
                                 float: none;
                             }
@@ -285,6 +284,9 @@
 
     .navbar-sub-item .pages-list a {
         padding-left: 48px;
+        color: #383a3c;
+        font-weight: 400;
+        font-family: Arial, sans-serif;
         @media (min-width: $screen-md-min) { padding-left: 16px;  }
     }
 }
@@ -364,6 +366,7 @@
         color: #383a3c;
         font-family: "Open Sans", sans-serif;
         text-transform: none;
+        font-weight: 300;
     }
     .text-promo-block {
         .nav-section-heading { float: none; }

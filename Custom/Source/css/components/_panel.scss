@@ -118,6 +118,7 @@
       &__image {
         background-position: 0 0;
         background-repeat: no-repeat;
+        background-size: cover;
         position: relative;
         &:before {
           content: "";
