@@ -13,6 +13,14 @@ a, p { font-weight: 400; }
     font-family: "Open Sans",sans-serif;
 }
 
+p {
+    margin: 0 0 1.25rem;
+}
+
+h2, .h2 {
+    font-size: 32px;
+}
+
 .category-title {
     font-size: 36px;
     font-weight: 300;
@@ -32,4 +40,15 @@ a, p { font-weight: 400; }
     font-size: 12px
   ));
 
+}
+
+
+.cta-listing__title {
+    &--pink {
+        display: block;
+        color: #EB529D;
+        margin-bottom: 3px;
+        line-height: 40px;
+        font-size: 28px;
+    }
 }

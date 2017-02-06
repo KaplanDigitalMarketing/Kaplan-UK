@@ -41,13 +41,25 @@
     @media(min-width: $screen-md-min) {
       padding-left: 7px;
     }
-  }
 
-  .home__latest-news {
-    @media(min-width: $screen-md-min) {
-      padding-top: 0;
+    .container-wrapper.lightgrey {
+        padding-bottom: 0;
+        padding-top: 25px;
     }
   }
 
+    .blue-quote-block { 
+        @media (max-width: $screen-xs-max) {
+            margin-top: 20px; 
+        }
 
+        blockquote {
+            @media (min-width: $screen-md-min) {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+    }
+
+  .insights-see-more { padding-top: 0; }
 }

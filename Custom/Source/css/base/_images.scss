@@ -1,3 +1,83 @@
 .full-width-image {
   width: 100%;
 }
+
+.img-responsive-inline {
+    max-width: 100%;
+    display: inline-block;
+    height: auto;
+}
+
+.why-kaplan-icons {
+    max-width: 512px;
+    margin: 0 auto 40px;
+    @include clearfix-micro();
+    img {
+        max-width: 160px;
+    }
+    &__money, &__folder {
+        margin-bottom: 0;
+    }
+
+    &__container {
+        max-width: 848px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.industry-logos {
+    text-align: center;
+    margin-bottom: 15px;
+    img {
+        margin: 15px 18px 5px;
+    }
+}
+
+.qualification-logos {
+    .sfContentBlock + .sfContentBlock { 
+        margin-bottom: 40px;
+    }
+    .sfContentBlock:last-child {
+        margin-bottom: 0;
+    }
+    a {
+        color: #0069aa;
+        font-size: 21px;
+        font-weight: 600;
+    }
+    @media (min-width: $screen-md-min) {
+        .sfContentBlock {
+            min-height: 90px;
+        }
+    }
+}
+
+.sfimageWrp.img-responsive > img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.photo-grid {
+    img {
+        display: block;
+        height: auto;
+        max-width: 100%; 
+    }
+    @media (min-width: $screen-md-min) {
+       .col-md-6 + .col-md-6 {
+           img {
+               padding-left: 30px;
+               padding-right: 0;
+           }
+       }
+        img {
+            padding-left: 0;
+            padding-right: 30px;
+        }
+    }
+    & + .photo-grid  {
+        margin-top: 80px;
+    }
+}
