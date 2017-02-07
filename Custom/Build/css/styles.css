@@ -2822,7 +2822,7 @@ select[multiple].input-lg,
   .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active,
   .open > .btn-default.dropdown-toggle {
     color: #333;
-    background-color: #e6e6e6;
+    background-color: #e6e5e5;
     border-color: #adadad; }
   .btn-default:active, .btn-default.active,
   .open > .btn-default.dropdown-toggle {
@@ -3847,7 +3847,7 @@ tbody.collapse.in {
   .navbar-default .navbar-brand {
     color: #777; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-      color: #5e5e5e;
+      color: #5e5d5d;
       background-color: transparent; }
   .navbar-default .navbar-text {
     color: #777; }
@@ -5674,13 +5674,14 @@ iframe {
   @media (min-width: 1000px) {
     iframe {
       width: 75%; } }
-  @media (min-width: 1200px) {
-    iframe {
-      width: 100%; } }
 
 .iframe-spacing {
   margin-top: 15px;
   margin-bottom: 30px; }
+
+.row__no-margin {
+  margin-left: 0;
+  margin-right: 0; }
 
 .h2 .highlight {
   color: #1e0576; }
@@ -5734,8 +5735,9 @@ h2, .h2 {
 
 .img-responsive-inline {
   max-width: 100%;
-  display: inline-block;
-  height: auto; }
+  display: block;
+  height: auto;
+  margin: 0 auto; }
 
 .why-kaplan-icons {
   max-width: 512px;
@@ -5797,6 +5799,10 @@ h2, .h2 {
 
 .photo-grid + .photo-grid {
   margin-top: 80px; }
+
+.apprenticeship-logos div:last-of-type img {
+  margin-top: -16px;
+  margin-top: -1.6rem; }
 
 .navbar-brand {
   height: auto; }
@@ -6624,8 +6630,12 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
       max-height: 500px !important; } }
   @media (min-width: 2000px) {
     .hero-banner {
-      min-height: 680px !important;
-      max-height: 680px !important; } }
+      min-height: 730px !important;
+      max-height: 730px !important; } }
+  @media (min-width: 2500px) {
+    .hero-banner {
+      min-height: 800px !important;
+      max-height: 800px !important; } }
   .hero-banner .container {
     padding: 0 20px; }
   .hero-banner img {
@@ -6640,19 +6650,25 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
       .hero-banner h1, .hero-banner h2, .hero-banner p {
         text-align: left; } }
   .hero-banner h1 {
+    font-size: 42px;
+    font-size: 4.2rem;
     margin-bottom: 24px;
     margin-bottom: 2.4rem; }
+    @media (min-width: 1200px) {
+      .hero-banner h1 {
+        font-size: 48px;
+        font-size: 4.8rem; } }
   .hero-banner .btn {
     display: block;
-    background: #0069aa;
-    color: #fff;
-    border-radius: 5px;
+    background: #abe400;
+    color: #383a3c;
+    font-weight: 400;
     width: 200px;
     width: 20rem;
     margin: 24px auto 0;
     margin: 2.4rem auto 0;
-    border: 1px solid #015081;
-    border: 0.1rem solid #015081; }
+    border-radius: 5px;
+    border-radius: 0.5rem; }
   .hero-banner .cta-box {
     background: #fff;
     margin-left: auto;
@@ -6665,8 +6681,8 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     border-radius: 0.6rem;
     margin-top: 46px;
     margin-top: 4.6rem;
-    width: 320px;
-    width: 32rem; }
+    width: 275px;
+    width: 27.5rem; }
     @media (min-width: 900px) {
       .hero-banner .cta-box {
         color: #383a3c;
@@ -6674,9 +6690,13 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     @media (min-width: 900px) {
       .hero-banner .cta-box p {
         text-align: center; } }
+    @media (min-width: 480px) {
+      .hero-banner .cta-box {
+        width: 320px;
+        width: 32rem; } }
 
 .hero-banner__body {
-  margin-top: 45%; }
+  margin-top: 49%; }
   @media (min-width: 799px) {
     .hero-banner__body {
       margin-top: 50%; } }
@@ -6701,6 +6721,9 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   @media (min-width: 2000px) {
     .hero-banner__logo {
       min-height: 479px !important; } }
+  @media (min-width: 2500px) {
+    .hero-banner__logo {
+      min-height: 529px !important; } }
   .hero-banner__logo img {
     display: none; }
     @media (min-width: 1024px) {
@@ -7016,7 +7039,8 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   background-color: #383A3C;
   position: relative;
   top: 0;
-  display: none; }
+  display: none;
+  clear: left; }
   @media (min-width: 600px) {
     .apprenticeships__navigation {
       display: block;
@@ -7062,7 +7086,7 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
   margin-right: 2rem; }
   @media (min-width: 992px) {
     .academy__category-list a {
-      margin-right: 10rem; } }
+      margin-right: 9.8rem; } }
 
 .academy__category-list li:last-of-type a {
   margin-right: 0; }
@@ -7195,6 +7219,25 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
 @media (min-width: 1200px) {
   .borderless .blue-quote-block blockquote footer {
     margin-left: 75px; } }
+
+.check-list .sfContentBlock {
+  text-align: center;
+  margin-bottom: 32px; }
+  .check-list .sfContentBlock:before {
+    width: 35px;
+    height: 30px;
+    background: url(/images/default-source/responsive-theme/green-tick.png?sfvrsn=2) center 0 no-repeat;
+    display: block;
+    text-align: center;
+    margin: 0 auto 15px;
+    content: ""; }
+
+.check-list--red .sf_colsOut .sfContentBlock::before {
+  content: "\2714";
+  background: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ec796b; }
 
 .kaplan-panel {
   margin: 15px 0;
@@ -7794,96 +7837,106 @@ table {
 .courselisting.table-responsive {
   overflow-x: visible; }
 
-.web-lead-form h2 {
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 29px; }
-
-.web-lead-form .form-row {
-  margin-bottom: 8px; }
-
-@media (min-width: 768px) {
+.web-lead-form {
+  padding: 20px 20px 0;
+  padding: 2rem 2rem 0; }
   .web-lead-form {
-    height: auto; }
-  .web-lead-form .form-row {
-    float: left;
-    width: 48%; }
-  .web-lead-form .form-row:nth-child(odd) {
-    margin-right: 16px; }
-  .web-lead-form .submit,
-  .web-lead-form .terms {
+    *zoom: 1; }
+  .web-lead-form:before, .web-lead-form:after {
+    content: "";
+    display: table; }
+  .web-lead-form:after {
+    clear: both; }
+  @media (min-width: 768px) {
+    .web-lead-form {
+      height: auto; } }
+  .web-lead-form h2 {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 29px; }
+  .web-lead-form label {
+    display: block;
+    text-align: center;
+    font-weight: 400; }
+    @media (min-width: 992px) {
+      .web-lead-form label {
+        text-align: left; } }
+    .web-lead-form label sup {
+      color: red; }
+  .web-lead-form input[type=text] {
     width: 100%;
-    margin-right: 0; } }
+    border-radius: 2px;
+    border: 1px solid #d8d8d8; }
+  .web-lead-form select {
+    width: 100%; }
+  .web-lead-form .form-row {
+    margin-bottom: 8px; }
+    @media (min-width: 768px) {
+      .web-lead-form .form-row {
+        float: left;
+        width: 48%; } }
+    @media (min-width: 768px) {
+      .web-lead-form .form-row:nth-child(odd) {
+        margin-right: 16px; } }
+  .web-lead-form .postcode input {
+    display: block;
+    width: 70%;
+    margin: 0 auto; }
+    @media (min-width: 992px) {
+      .web-lead-form .postcode input {
+        margin: 0;
+        width: 50%; } }
+  .web-lead-form .submit input {
+    background: #abe400;
+    display: block;
+    color: #383a3c;
+    border: none;
+    font-weight: 400;
+    border-radius: 6px;
+    border-radius: 0.6rem;
+    width: 182px;
+    width: 18.2rem;
+    font-size: 14px;
+    font-size: 1.4rem;
+    padding: 8px 10px;
+    padding: 0.8rem 1rem;
+    margin: 14px auto;
+    margin: 1.4rem auto; }
+  .web-lead-form .btn {
+    margin: 24px auto;
+    display: block; }
+  .web-lead-form .download-btn,
+  .web-lead-form .cta-btn {
+    margin: 24px auto;
+    display: block; }
+  @media (min-width: 768px) {
+    .web-lead-form .submit,
+    .web-lead-form .terms {
+      width: 100%;
+      margin-right: 0; } }
+  .web-lead-form .terms p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 19px; }
+    @media (min-width: 768px) {
+      .web-lead-form .terms p {
+        margin-top: 0; } }
+  .web-lead-form .lead-source {
+    display: none; }
 
-.web-lead-form label {
-  display: block;
-  text-align: center;
-  font-weight: 400; }
+/* Theming */
+.web-lead-form--beige {
+  background: #f4f1ed; }
 
-.web-lead-form label sup {
-  color: red; }
+.submitted input[type=text]:invalid {
+  border: 1px solid red; }
 
-.web-lead-form .lead-source {
-  display: none; }
-
-.web-lead-form .btn {
-  margin: 24px auto;
-  display: block; }
-
-.web-lead-form input[type=text] {
-  width: 100%;
-  border-radius: 2px;
+.submitted input[type=text]:valid {
   border: 1px solid #d8d8d8; }
 
-.web-lead-form .postcode input {
-  display: block;
-  width: 70%;
-  margin: 0 auto; }
-
-@media (min-width: 992px) {
-  .web-lead-form label {
-    text-align: left; }
-  .web-lead-form .postcode input {
-    margin: 0;
-    width: 50%; } }
-
-.web-lead-form select {
-  width: 100%; }
-
-.mod-content-promo .web-lead-form .download-btn,
-.web-lead-form .cta-btn,
-.web-lead-form .mod-content-promo .download-btn {
-  margin: 24px auto;
-  display: block; }
-
-.web-lead-form .terms p {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 19px; }
-
-@media (min-width: 768px) {
-  .web-lead-form .terms p {
-    margin-top: 0; } }
-
-/* Clearfix Hack */
-.web-lead-form .group::after {
-  visibility: hidden;
-  display: block;
-  content: "";
-  clear: both;
-  height: 0; }
-
-* html .web-lead-form .group, * html .web-lead-form {
-  zoom: 1; }
-
-/* IE6 */
-*:first-child + html .web-lead-form .group {
-  zoom: 1; }
-
-/* IE7 */
-.web-lead-form .group::before {
-  content: "";
-  display: table; }
+.submitted .error {
+  color: red;
+  font-weight: 400; }
 
 .sf_pager {
   text-align: left;
@@ -8069,7 +8122,7 @@ table {
       padding: 51px 20px;
       padding: 5.1rem 2rem; } }
 
-@media (min-width: 1250px) {
+@media (min-width: 1200px) {
   .promo__get-ahead-download {
     background: #383a3c url(/images/default-source/apprenticeships/guide-covers.jpg) 0 bottom no-repeat;
     padding-bottom: 58px;
@@ -8077,33 +8130,44 @@ table {
 
 .promo__get-ahead-download a {
   display: block;
-  width: 50%;
-  background: url(/images/default-source/icons/brochure-download.png) center top no-repeat;
+  width: 100%;
   color: #fff;
-  text-align: center;
-  float: left;
-  padding-top: 88px;
-  padding-top: 8.8rem; }
-  @media (min-width: 1400px) {
-    .promo__get-ahead-download a {
-      background-position: left top;
-      text-align: left; } }
-
-.promo__get-ahead-download__download-guide h2, .promo__get-ahead-download__download-guide p {
   text-align: center; }
   @media (min-width: 1250px) {
-    .promo__get-ahead-download__download-guide h2, .promo__get-ahead-download__download-guide p {
-      text-align: left; } }
+    .promo__get-ahead-download a {
+      text-align: left;
+      padding-left: 115px;
+      padding-left: 11.5rem; } }
+  .promo__get-ahead-download a:not(:last-child) {
+    margin-bottom: 16px;
+    margin-bottom: 1.6rem; }
 
-@media (max-width: 1249px) {
-  .promo__get-ahead-download__download-guide p {
-    margin-bottom: 35px;
-    margin-bottom: 3.5rem; } }
-
-@media (min-width: 1250px) {
-  .promo__get-ahead-download__download-guide p {
-    margin-bottom: 26px;
-    margin-bottom: 2.6rem; } }
+.promo__get-ahead-download__download-guide {
+  background: url(/images/default-source/icons/brochure-download.png) center 54% no-repeat;
+  min-height: 250px; }
+  .promo__get-ahead-download__download-guide {
+    *zoom: 1; }
+  .promo__get-ahead-download__download-guide:before, .promo__get-ahead-download__download-guide:after {
+    content: "";
+    display: table; }
+  .promo__get-ahead-download__download-guide:after {
+    clear: both; }
+  @media (min-width: 1250px) {
+    .promo__get-ahead-download__download-guide {
+      background-position: left 66%; } }
+  .promo__get-ahead-download__download-guide h2, .promo__get-ahead-download__download-guide p {
+    text-align: center; }
+    @media (min-width: 1250px) {
+      .promo__get-ahead-download__download-guide h2, .promo__get-ahead-download__download-guide p {
+        text-align: left; } }
+  @media (max-width: 1249px) {
+    .promo__get-ahead-download__download-guide p {
+      margin-bottom: 115px;
+      margin-bottom: 11.5rem; } }
+  @media (min-width: 1250px) {
+    .promo__get-ahead-download__download-guide p {
+      margin-bottom: 26px;
+      margin-bottom: 2.6rem; } }
 
 @media (min-width: 991px) {
   .sf_cols.bullet-lists {
@@ -8145,22 +8209,26 @@ table {
     margin: 0 auto 15px;
     content: ""; }
 
-@media (min-width: 992px) {
-  .list__check-list .centred-row .container {
-    width: 720px; } }
+.list__check-list .centred-row {
+  padding-top: 0; }
+  @media (min-width: 992px) {
+    .list__check-list .centred-row .container {
+      width: 720px; } }
 
 .link-group {
   text-align: left; }
   .link-group a {
     text-align: left;
-    font-size: 18px;
     font-weight: 600;
     margin-bottom: 1.25rem;
-    display: block; }
+    display: block;
+    font-size: 18px;
+    font-size: 1.8rem; }
   .link-group p {
     margin: 0;
-    margin-bottom: 58px;
-    text-align: left; }
+    text-align: left;
+    margin-bottom: 25px;
+    margin-bottom: 2.5rem; }
 
 .list-block {
   max-width: 940px;
@@ -8549,6 +8617,23 @@ body > form {
 .mp-level .mp-level .mp-level {
   border-right-color: #eb529d; }
 
+.page__home .hero-banner {
+  margin-bottom: 43px;
+  margin-bottom: 4.3rem; }
+  @media (min-width: 992px) {
+    .page__home .hero-banner {
+      margin-bottom: 0; } }
+  .page__home .hero-banner h1 {
+    font-size: 42px;
+    font-size: 4.2rem; }
+    @media (min-width: 1200px) {
+      .page__home .hero-banner h1 {
+        font-size: 48px;
+        font-size: 4.8rem; } }
+  .page__home .hero-banner p {
+    font-size: 21px;
+    font-size: 2.1rem; }
+
 @media (min-width: 992px) {
   .page__home .panel__professional-quals,
   .page__home .panel__apprenticeships {
@@ -8729,6 +8814,10 @@ body > form {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px; } }
+
+.page__insights-detail .web-lead-form form {
+  background: #f4f1ed;
+  padding: 2rem 2rem 0; }
 
 .jobs-board__find-apprentice {
   padding-top: 31px;

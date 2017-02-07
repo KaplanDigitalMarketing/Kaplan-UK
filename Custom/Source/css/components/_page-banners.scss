@@ -185,7 +185,7 @@
 
 .promo__get-ahead-download {
 
-  @media(min-width: 1250px) {
+  @media(min-width: 1200px) {
     background: #383a3c url(/images/default-source/apprenticeships/guide-covers.jpg) 0 bottom no-repeat;
 
     @include rem((
@@ -196,25 +196,39 @@
 
   a {
     display: block;
-    width: 50%;
-    background: url(/images/default-source/icons/brochure-download.png) center top no-repeat;
+    width: 100%;
     color: #fff;
     text-align: center;
-    float: left;
 
-    @include rem((
-      padding-top: 88px
-    ));
-
-    @media(min-width: 1400px) {
-      background-position: left top;
+    @media(min-width: 1250px) {
       text-align: left;
+
+      @include rem((
+        padding-left: 115px
+      ));
+    }
+
+    &:not(:last-child) {
+      @include rem((
+        margin-bottom: 16px
+      ));
     }
 
   }
 }
 
 .promo__get-ahead-download__download-guide {
+
+  @include clearfix-micro();
+
+  background: url(/images/default-source/icons/brochure-download.png) center 54% no-repeat;
+  min-height: 250px;
+
+  @media(min-width: 1250px) {
+    background-position: left 66%;
+
+  }
+
   h2, p {
    text-align: center;
 
@@ -226,7 +240,7 @@
   p {
     @media(max-width: 1249px) {
       @include rem((
-        margin-bottom: 35px
+        margin-bottom: 115px
       ));
     }
 

@@ -57,6 +57,9 @@
   }
 
   .centred-row {
+
+    padding-top: 0;
+
     .container {
       @media(min-width: 992px) {
         width: 720px;
@@ -70,15 +73,23 @@
     text-align: left;
     a {
         text-align: left;
-        font-size: 18px;
         font-weight: 600;
         margin-bottom: 1.25rem;
         display: block;
+
+        @include rem((
+          font-size: 18px
+        ));
+
     }
     p {
         margin: 0;
-        margin-bottom: 58px;
         text-align: left;
+
+        @include rem((
+          margin-bottom: 25px
+        ));
+
     }
 
 }
@@ -97,5 +108,5 @@
     p {
         margin-bottom: 48px;
     }
-   
+
 }
