@@ -1,0 +1,12 @@
+.page__why-aat{
+
+  .hero-banner__logo {
+    img {
+
+      @media(min-width: $screen-lg-min) {
+        bottom: 12%;
+      }
+
+    }
+  }
+}

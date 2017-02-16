@@ -1,0 +1,33 @@
+.sfsearchResultTitle {
+  a {
+    font-weight: 600;
+    display: block;
+
+    @include rem ((
+      font-size: 21px
+    ))
+
+
+  }
+
+}
+
+.sfsearchResultUrl {
+  display: none;
+}
+
+.sfsearchResultHighLighter,
+.sfsearchResultStatistics {
+  @include rem((
+    margin-bottom: 25px
+  ));
+}
+
+.sf_pager {
+  @include clearfix-micro();
+
+  @include rem((
+    margin-top: 25px
+  ));
+
+}

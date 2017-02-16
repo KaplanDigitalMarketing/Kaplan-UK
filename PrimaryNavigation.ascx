@@ -113,9 +113,8 @@
                                     <div class="column-block solo-list">
                                         <h3 class="nav-section-heading next-page">For employers</h3>
                                         <ul class="pages-list ">
-                                            <li><a href="/training-for-businesses/apprenticeships-and-internships" class="page-title">Develop and nature talent</a></li>
+                                            <li><a href="/training-for-businesses/apprenticeships-and-internships" class="page-title">Develop and nurture talent</a></li>
                                             <li><a href="/training-for-businesses/apprenticeships-and-internships/levy-management" class="page-title">Levy management</a></li>
-                                            <li><a href="/training-for-businesses/apprenticeships-and-internships" class="page-title">Hiring an apprentice</a></li>
                                             <li><a href="/training-for-businesses/apprenticeships-and-internships/apprenticeship-qualifications" class="page-title">Apprenticeship qualifications</a></li>
                                             <li><a href="/training-for-businesses/apprenticeships-and-internships/hiring-an-intern" class="page-title">Hiring an intern</a></li>
                                             <li><a href="/training-for-businesses/apprenticeships-and-internships/funding-eligibility" class="page-title">Funding and eligibility</a></li>

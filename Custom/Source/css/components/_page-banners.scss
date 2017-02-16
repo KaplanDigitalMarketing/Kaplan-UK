@@ -165,9 +165,11 @@
 
           @include rem((
             margin: 33px 0 0,
-            background-position: 0 0
+            background-position: 0 0,
+            padding: 27px 0 48px 104px
           ));
 
+          width: 100%;
           text-align: left;
       }
     }

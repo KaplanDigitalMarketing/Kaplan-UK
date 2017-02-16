@@ -2281,7 +2281,7 @@ body #maincontent_div .sf_1col_1in_100 .contact-us{
     }
 
 
-    
+
 .lpd {
   overflow: hidden; }
   .lpd * {
@@ -3202,18 +3202,28 @@ body #maincontent_div .sf_1col_1in_100 .contact-us{
       .lpd .contact-area .ca-content:after {
         clear: both; }
       .lpd .contact-area .ca-content .contact-details {
-        width: 400px;
+        width: 495px;
+        margin-top: -24px;
+        margin-left: 25px;
         float: left; }
         .lpd .contact-area .ca-content .contact-details span.logo {
           display: inline-block;
           width: 57px;
           height: 57px;
           background-image: url(/images/default-source/lpd/ldnasprites.png?sfvrsn=2);
-          background-position: 0 -162px; }
+          background-position: 0 -162px;
+          float: left;
+         }
         .lpd .contact-area .ca-content .contact-details .dtls {
           display: inline-block;
           margin-left: 40px;
-          position: relative; }
+          position: relative;
+          float: left;
+         }
+         .lpd .contact-area .ca-content .contact-details .dtls .contact-us {
+           margin-bottom: 15px;
+         }
+
           .lpd .contact-area .ca-content .contact-details .dtls p.phn-num {
             font-size: 30px; }
           .lpd .contact-area .ca-content .contact-details .dtls a {

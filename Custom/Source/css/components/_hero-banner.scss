@@ -11,9 +11,9 @@
     background-color: #fff;
   }
 
-  @media(min-width: 1200px) {
-    min-height: 500px !important;
-    max-height: 500px !important;
+  @media(min-width: $screen-lg-min) {
+    min-height: 476px !important;
+    max-height: 476px !important;
   }
 
   @media(min-width: 2000px) {
@@ -34,7 +34,7 @@
    display: block;
    margin: 0 auto;
 
-   @media(min-width: 899px) {
+   @media(min-width: $screen-lg-min) {
      margin: 0;
    }
 
@@ -43,7 +43,7 @@
   h1, h2, p {
     text-align: center;
 
-    @media(min-width: 900px) {
+    @media(min-width: $screen-lg-min) {
       text-align: left;
     }
 
@@ -80,13 +80,13 @@
     margin-left: auto;
     margin-right: auto;
 
-    @media(min-width: 900px) {
+    @media(min-width: $screen-lg-min) {
       color: #383a3c;
       margin-left: 0;
     }
 
     p {
-      @media(min-width: 900px) {
+      @media(min-width: $screen-lg-min) {
         text-align: center;
       }
     }
@@ -121,10 +121,16 @@
     margin-top: 50%;
   }
 
-  @media(min-width: 900px) {
-    margin: 3% 0;
-    padding-left: 0;
-    width: 65%;
+  @media(min-width: 940px) {
+    margin-top: 56%;
+  }
+
+  @media(min-width: 992px) {
+    margin-top: 47%;
+  }
+
+  @media(min-width: 1000px) {
+    margin-top: 44%;
   }
 
   @media(min-width: 1200px) {
@@ -141,23 +147,19 @@
 
   display: none;
 
-  @media(min-width: 1024px) {
+  @media(min-width: $screen-lg-min) {
     display: block;
-    min-height: 386px !important;
+    min-height: 437px !important;
   }
 
   @media(min-width: 2000px) {
-    min-height: 479px !important;
-  }
-
-  @media(min-width: 2500px) {
-    min-height: 529px !important;
+    min-height: 550px !important;
   }
 
   img {
     display: none;
 
-    @media(min-width: 1024px) {
+    @media(min-width: $screen-lg-min) {
       display: block;
       position: absolute;
       right: 0;
@@ -172,7 +174,7 @@
 
   color: #383a3c;
 
-  @media(min-width: 900px) {
+  @media(min-width: $screen-lg-min) {
     color: #fff;
   }
 
