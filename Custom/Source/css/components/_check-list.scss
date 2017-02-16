@@ -1,6 +1,7 @@
 .check-list .sfContentBlock {
     text-align: center;
     margin-bottom: 32px;
+
     &:before {
         width: 35px;
         height: 30px;
@@ -10,4 +11,13 @@
         margin: 0 auto 15px;
         content: "";
     }
+}
+
+
+.check-list--red .sf_colsOut .sfContentBlock::before {
+  content: "\2714";
+  background: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ec796b;
 }

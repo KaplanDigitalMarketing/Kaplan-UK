@@ -29,14 +29,16 @@ strong {
 iframe {
     width: 100%;
     @media (min-width: 1000px) {
-        width: 75%;
-    }
-    @media (min-width: 1200px) {
-        width: 100%;
+        width:75%;
     }
 }
 
 .iframe-spacing {
     margin-top: 15px;
     margin-bottom: 30px;
+}
+
+.row__no-margin {
+  margin-left: 0;
+  margin-right: 0;
 }

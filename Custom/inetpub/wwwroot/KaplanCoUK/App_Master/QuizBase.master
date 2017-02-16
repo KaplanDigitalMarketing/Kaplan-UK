@@ -1,0 +1,388 @@
+<%@ Master Language="VB" CodeFile="QuizBase.master.vb" Inherits="App_Master_QuizBase" %>
+<%@ Register Assembly="Telerik.Sitefinity" Namespace="Telerik.Sitefinity.Web.UI" TagPrefix="sf" %>
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html class="no-js ie" lang="en">
+<![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js" lang="en" ng-app="quiz">
+<!--<![endif]-->
+<head runat="server">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+
+  .pages-list li > .nav-block {
+    visibility:hidden;
+  }
+
+  .pages-list li:hover > .visible-sub-nav{
+    visibility: visible;
+    max-height: 306px;
+    transition: max-height 0.8s;
+  }
+
+  .pages-list li:hover .nav-block{
+    visibility: visible;
+    transition: visibility 0.5s linear 0.8s;
+  }
+
+
+  </style>
+
+</head>
+  <body>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5DN2D2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5DN2D2');</script>
+  <!-- End Google Tag Manager -->
+    <form id="form1" runat="server">
+      <asp:ScriptManager ID="ScriptManager1" runat="server" />
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="kaplan__page-header">
+      <div class="container">
+          <div class="col-md-12">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" id="menu-toggle" data-toggle="slide" data-target="#navbar-content" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+        </button>
+        <a class="navbar-brand" href="/">Kaplan</a>
+        </div>
+        <div class="group" id="navbar-content">
+        <nav class="group">
+          <div class="navbar-top-support" id="navbar-top-support">
+            <ul class="pages-list">
+              <li><a href="#site-search" class="page-title">Search</a></li>
+              <li><a href="https://mykaplan.co.uk/Login/" target="_blank" class="page-title">MyKaplan</a></li>
+            </ul>
+          </div>
+          <div class="navbar-top-level" id="navbar-top-level">
+            <h2 class="navbar-heading"><a href="/" class="home-link">Home</a></h2>
+              <ul class="pages-list" role="menubar">
+                <li class="first-list-item" role="menuitem" tabindex="0" aria-haspopup="true"><a href="/lpd" class="top-level-title page-title next-page" id="leadership-nav-title">Leadership &amp; Professional Development </a>
+                  <div id="lpd-nav-item" class="navbar-sub-item">
+                    <h2 class="navbar-heading">Leadership &amp; Professional Development</h2>
+                    <a href="#navbar-top-level" class="navbar-back">Back <span>&rsaquo;</span></a>
+                    <div class="nav-block">
+                      <ul class="pages-list" aria-label="submenu">
+                        <li>
+                          <a href="/lpd/overview" class="page-title">Overview</a>
+                        </li>
+                        <li>
+                          <a href="/lpd/our-approach" class="page-title">Our approach</a>
+                        </li>
+                        <li>
+                          <a href="/lpd/technical-competence" class="page-title">Technical competence</a>
+                        </li>
+                        <li>
+                          <a href="/lpd/behavioural-confidence" class="page-title">Behavioural confidence</a>
+                        </li>
+                        <li>
+                          <a href="/lpd/our-team" class="page-title">Our team</a>
+                        </li>
+                        <li>
+                          <a href="/lpd/success-stories" class="page-title">Success stories</a>
+                        </li>
+                        <li>
+                          <a href="/lpd/global-reach" class="page-title">Global reach</a>
+                        </li>
+                        <li>
+                          <a href="/lpd/diagnostics" class="page-title">Diagnostics</a>
+                        </li>
+                        <li>
+                          <a href="/insights/leadership-professional-development" class="page-title">Insights</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div></li>
+                <li role="menuitem" tabindex="-1" aria-haspopup="true">
+                  <a href="/qualifications" class="top-level-title page-title next-page" id="qualifications-nav-title">Professional Qualifications</a>
+                  <div id="qualifications-nav-item" class="navbar-sub-item three-col-sub-item">
+                    <h2 class="navbar-heading">Professional Qualifications</h2>
+                    <a href="#navbar-top-level" class="navbar-back">Back <span>&rsaquo;</span></a>
+                    <div class="nav-block">
+                      <div class="column-block no-top-border-block" id="accountancy-tax-block">
+                        <h3 class="nav-section-heading next-page">Accountancy and Tax</h3>
+                        <div class="navbar-sub-child-item">
+                          <a href="#navbar-top-level" class="navbar-back navbar-sub-back">Back <span>&rsaquo;</span></a>
+                        <ul class="pages-list">
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/AAT/Pages/default.aspx" target="_blank" class="page-title">AAT</a></li>
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/ACCA/Pages/default.aspx" target="_blank" class="page-title">ACCA</a></li>
+
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/ACA(ICAEW)/Pages/default.aspx" target="_blank" class="page-title">ACA(ICAEW)</a></li>
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/att/Pages/default.aspx" target="_blank" class="page-title">ATT</a></li>
+
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/CIMA/Pages/default.aspx" target="_blank" class="page-title">CIMA</a></li>
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/cfab/Pages/default.aspx" target="_blank" class="page-title">CFAB(ICAEW)</a></li>
+
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/bookkeeping/Pages/default.aspx" target="_blank" class="page-title">Bookkeeping</a></li>
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/CIPFA/Pages/default.aspx" target="_blank" class="page-title">CIPFA</a></li>
+
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/icb/Pages/default.aspx" target="_blank" class="page-title">ICB</a></li>
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Accountancy/FIA/Pages/default.aspx" target="_blank" class="page-title">FIA</a></li>
+
+                        </ul>
+                        </div>
+                      </div>
+                      <div class="column-block center-column-block" id="banking-financial-block">
+                        <h3 class="nav-section-heading next-page">Banking and Financial Services</h3>
+                        <div class="navbar-sub-child-item">
+                          <a href="#navbar-top-level" class="navbar-back navbar-sub-back">Back <span>&rsaquo;</span></a>
+                        <ul class="pages-list">
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/CAIA/Pages/default.aspx" class="page-title" target="_blank">CAIA</a></li>
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/cemap/Pages/default.aspx" class="page-title" target="_blank">CeMAP</a></li>
+
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/CFA/Pages/default.aspx" class="page-title" target="_blank">CFA</a></li>
+
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/IOC/Pages/default.aspx" class="page-title" target="_blank">IOC</a></li>
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/IMC/Pages/default.aspx" class="page-title" target="_blank">IMC</a></li>
+
+                          <li><a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/FRM/Pages/default.aspx" class="page-title" target="_blank">FRM</a></li>
+                        </ul>
+                        <a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/cisicertificates/Pages/default.aspx" class="full-width-link" target="_blank">Capital Markets Programme</a>
+                        <a href="http://financial.kaplan.co.uk/TrainingandQuals/Financialservices/Excel-for-Financial-Management-and-Modelling/Pages/default.aspx" class="full-width-link" target="_blank">Excel for Financial Market Modelling</a>
+                        </div>
+                      </div>
+                    <div class="column-block right-column-block">
+                      <div class="text-promo-block staff-training">
+                        <h3 class="nav-section-heading">Are you a business looking to train your staff?</h3>
+                        <a href="/training-for-businesses/accountancy-training">Accountancy training for businesses</a>
+                        <a href="/training-for-businesses/banking-financial-services">Financial Services training for businesses</a>
+                      </div>
+                      <div class="text-promo-block">
+                        <h3 class="nav-section-heading">Legal</h3>
+                        <a href="http://www.altior.co.uk/" target="_blank">Go to Kaplan Altior website &rsaquo;</a>
+                      </div>
+                    </div>
+                    <!--<div class="dropdown-callout">
+                      <h3>Not sure which course is right for you?</h3>
+                      <a href="http://financial.kaplan.co.uk/TrainingandQuals/Internationalstudents/Pages/request-a-prospectus.aspx" target="_blank">Kaplan course prospectus &rsaquo;</a>
+                    </div> -->
+                  </div>
+                  </div>
+                </li>
+                <li role="menuitem" tabindex="-1" aria-haspopup="true">
+                  <a href="/training-for-businesses/apprenticeships-and-internships" class="top-level-title page-title next-page" id="apprenticeship-nav-title">Apprenticeships &amp; Internships</a>
+                  <div id="apprenticeships-nav-item" class="navbar-sub-item">
+                    <h2 class="navbar-heading">Apprenticeships &amp; Internships</h2>
+                    <a href="#navbar-top-level" class="navbar-back">Back <span>&rsaquo;</span></a>
+                    <div class="nav-block">
+                      <div class="column-block no-top-border-block">
+                        <ul class="pages-list">
+                          <li class="nav-section-heading">For apprentices</li>
+                          <li><a href="/apprenticeships-and-internships" class="page-title">About</a></li>
+                          <li><a href="/apprenticeships-and-internships/jobs-board" class="page-title">Jobs Board</a></li>
+                          <li><a href="/apprenticeships-and-internships/apprenticeships" class="page-title">Apprenticeships</a></li>
+                          <li><a href="/apprenticeships-and-internships/internships" class="page-title">Internships</a></li>
+                          <li><a href="/apprenticeships-and-internships/talent-academy" class="page-title">Talent Academy</a></li>
+                        </ul>
+                      </div>
+                      <div class="column-block">
+                        <ul class="pages-list">
+                          <li class="nav-section-heading">For employers</li>
+                          <li><a href="/training-for-businesses/apprenticeships-and-internships" class="page-title">Develop and nuture talent</a></li>
+                          <li><a href="/training-for-businesses/apprenticeships-and-internships/levy-management" class="page-title">Levy management</a></li>
+                          <li><a href="/training-for-businesses/apprenticeships-and-internships/find-develop-apprentices" class="page-title">Hiring an apprentice</a></li>
+                          <li><a href="/training-for-businesses/apprenticeships-and-internships/apprenticeship-qualifications" class="page-title">Apprenticeship qualifications</a></li>
+                          <li><a href="/training-for-businesses/apprenticeships-and-internships/hiring-an-intern" class="page-title">Hiring an intern</a></li>
+                          <li><a href="/training-for-businesses/apprenticeships-and-internships/funding-eligibility" class="page-title">Funding and eligibility</a></li>
+                          <li><a href="/insights/apprenticeships" class="page-title">Insights</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li role="menuitem" tabindex="-1" aria-haspopup="true">
+                  <a href="http://kaplan-publishing.kaplan.co.uk" target="_blank" class="top-level-title page-title next-page" id="study-nav-title">Study Materials</a>
+                  <div id="study-materials-nav-item" class="navbar-sub-item">
+                    <h2 class="navbar-heading">Study Materials</h2>
+                    <a href="#navbar-top-level" class="navbar-back">Back <span>&rsaquo;</span></a>
+                    <!--<div class="promo-block"></div> -->
+                    <div class="nav-block">
+                      <div class="column-block no-top-border-block">
+                          <ul class="pages-list">
+                            <li class="nav-section-heading">By qualification</li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/aat-aq2013/Pages/default.aspx" class="page-title" target="_blank">AAT</a></li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/acca-books/Pages/default.aspx" class="page-title" target="_blank">ACCA</a></li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/cima/Pages/default.aspx" class="page-title" target="_blank">CIMA</a></li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/cat-books/Pages/default.aspx" class="page-title" target="_blank">FIA</a></li>
+                          </ul>
+                      </div>
+                      <div class="column-block">
+                          <ul class="pages-list">
+                            <li class="nav-section-heading">By type</li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/study-materials/study-text/Pages/default.aspx" class="page-title" target="_blank">Study texts</a></li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/study-materials/exam-kits/Pages/default.aspx" class="page-title" target="_blank">Exam kits</a></li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/study-materials/e-learning/Pages/default.aspx" class="page-title" target="_blank">eLearning</a></li>
+                            <li><a href="http://kaplan-publishing.kaplan.co.uk/Business-books/Pages/default.aspx" class="page-title" target="_blank">Student guides</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li role="menuitem" tabindex="-1" aria-haspopup="true">
+                  <a href="/insights" class="top-level-title page-title next-page" id="insights-nav-title">Insights</a>
+                  <div id="insights-materials-nav-item" class="navbar-sub-item">
+                    <h2 class="navbar-heading">Insights</h2>
+                    <a href="#navbar-top-level" class="navbar-back">Back <span>&rsaquo;</span></a>
+                    <!--<div class="promo-block"></div> -->
+                    <div class="nav-block">
+                      <div class="column-block">
+                          <ul class="pages-list">
+                            <li class="nav-section-heading">By topic</li>
+                            <li><a href="/insights/leadership-professional-development" class="page-title">Leadership and professional development</a></li>
+                            <li><a href="/insights/accountancy-tax" class="page-title">Accountancy and tax</a></li>
+                            <!--<li><a href="/insights/banking-and-financial-services" class="page-title">Banking and financial services</a></li>-->
+                            <li><a href="/insights/apprenticeships" class="page-title" target="_blank">Apprenticeships</a></li>
+                            <li><a href="/insights/kaplan-news" class="page-title">Kaplan news</a></li>
+                            <li><a href="/insights/study-tips" class="page-title">Study tips</a></li>
+                          </ul>
+                      </div>
+                      <div class="column-block">
+                          <ul class="pages-list">
+                            <li class="nav-section-heading">By type</li>
+                            <li><a href="/insights/articles" class="page-title">Articles</a></li>
+                            <li><a href="/insights/infographics" class="page-title">Infographics</a></li>
+                            <li><a href="/insights/webinars" class="page-title">Webinars</a></li>
+                            <li><a href="/insights/whitepapers" class="page-title">Whitepapers</a></li>
+                            <li><a href="/insights/videos" class="page-title">Videos</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li role="menuitem" tabindex="-1" aria-haspopup="true">
+                  <a href="/about-us" class="top-level-title page-title next-page" id="about-nav-title">About Kaplan</a>
+                  <div id="about-nav-item" class="navbar-sub-item">
+                    <h2 class="navbar-heading">About Kaplan</h2>
+                    <a href="#navbar-top-level" class="navbar-back">Back <span>&rsaquo;</span></a>
+                    <!--<div class="promo-block"></div> -->
+                    <div class="nav-block">
+
+                        <ul class="pages-list">
+                          <li>
+                            <a href="http://financial.kaplan.co.uk/AboutKaplan/OurLocations/Pages/default.aspx" class="page-title" target="_blank">Training locations</a>
+                          </li>
+                          <li>
+                            <a href="/about-us/careers/current-vacancies" class="page-title">Careers</a>
+                          </li>
+                          <li>
+                            <a href="/insights/kaplan-news" class="page-title">Company news</a>
+                          </li>
+                          <li>
+                            <a href="/about-us/request-callback" class="page-title">Contact us</a>
+                          </li>
+                          <li>
+                            <a href="/corporate-social-responsibility" class="page-title">Corporate social responsibility</a>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="mobile-only-item"><a href="https://mykaplan.co.uk/Login/" target="_blank" class="page-title">MyKaplan</a></li>
+              </ul>
+          </div>
+        </nav>
+        </div>
+    </div>
+      </div>
+    </header>
+    <div class="kaplan__search-box">
+      <div class="kaplan__search-container container">
+        <input type="text" class="kaplan__search-text" id="searchTextBox" placeholder="Search for..." />
+        <input name="search-index" type="hidden" value="pages-search" />
+        <input type="button" class="cta-btn primary-btn" value="Search" />
+        <a href="#" class="kaplan__search-close">close</a>
+      </div>
+    </div>
+    <div class="nav-overlay"></div>
+    <section class="kaplan__page-content">
+      <asp:ContentPlaceHolder ID="maincontent_holder" runat="server">
+      </asp:ContentPlaceHolder>
+    </section>
+    <footer class="kaplan__page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-3">
+            <asp:ContentPlaceHolder ID="footerlogo_holder" runat="server">
+            </asp:ContentPlaceHolder>
+          </div>
+          <div class="col-xs-12 col-md-9">
+            <asp:ContentPlaceHolder ID="footerlist_holder" runat="server">
+            </asp:ContentPlaceHolder>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/ng-template" id="/quizTemp.html">
+    <div class="intro text-center animate-slide" ng-hide="inProgress">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <img src="/images/default-source/appsquiz/topper.png">
+            <h1>Which accountancy profession suits you?</h1>
+            <p>Have you thought about becoming an Accountant, but don't know whether you'd be better as a Financial or Management Accountant? Don't know the difference between an Auditor or a Bookkeeper?</p>
+            <p>Take this short quiz to discover the accounting careers and salaries that might suit you.</p>
+            <a class="kaplan-btn" ng-click="start()">Take the quiz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quiz-area animate-slide" ng-show="inProgress && !result">
+      <div class="container text-center">
+        <div class="row question" ng-repeat="(key, question) in questions" ng-class="{'visible': isCurrentIndex(key), 'back': !orientation}">
+          <div class="col-md-offset-1 col-md-10">
+            <p class="number">{{key + 1}}/9</p>
+            <img src="{{question.image}}" class="big">
+            <h2 class="text">{{question.text}}</h2>
+            <rzslider rz-slider-model="slider.value" rz-slider-options="slider.options" ng-show="key%2 == 0"></rzslider>
+            <div class="options">
+              <div ng-repeat="option in question.options" ng-class="{'slider': key%2 == 0}">
+                <div class="option" ng-click="selectOption(key, $index)" ng-class="{'selected': toggleOption(key, $index), 'letter': key%2 == 1}" data-id="{{$index}}"><span ng-show="key%2 == 1">{{$index | numberToAlphabet}}</span>{{option}}</div>
+              </div>
+            </div>
+            <a ng-click="prevQuestion()" class="prev-question" ng-hide="{{key == 0}}">previous</a>
+            <a ng-click="nextQuestion()" class="kaplan-btn next-question">next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="animate-slide" ng-show="result">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="result-header">{{resultHeader}}</h2>
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <h3 class="sub-header">{{resultSubHeader}}</h3>
+            <p class="result-text">{{resultText}}</p>
+            <a class="kaplan-cta-btn" href="{{resultURL}}"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="btn-text">{{resultURLText}}</span></a>
+          </div>
+          <div class="col-md-8 col-sm-10 col-xs-12">
+            <canvas id="myChart" class="desktop"></canvas>
+            <h4 class="explanation">Click results to view a career guide</h4>
+            <div class="axis management-accountant" ng-class="{'winner': resultIndex == 0}"><a class="axis-text" href="http://www.kaplan.co.uk/insights/accountancy-tax/detail/insights/2016/09/20/how-to-become-a-management-accountant" target="_blanc">Management Accountant</a></div>
+            <div class="axis bookkeeper" ng-class="{'winner': resultIndex == 1}"><a class="axis-text" href="http://www.kaplan.co.uk/insights/accountancy-tax/detail/insights/2016/09/20/how-to-become-a-bookkeeper" target="_blanc">Bookkeeper</a></div>
+            <div class="axis auditor" ng-class="{'winner': resultIndex == 2}"><a class="axis-text" href="http://www.kaplan.co.uk/insights/accountancy-tax/detail/insights/2016/09/20/how-to-become-an-auditor" target="_blanc">Auditor</a></div>
+            <div class="axis financial-accountant" ng-class="{'winner': resultIndex == 3}"><a class="axis-text" href="http://www.kaplan.co.uk/insights/accountancy-tax/detail/insights/2016/09/20/how-to-become-a-financial-accountant" target="_blanc">Financial Accountant</a></div>
+            <div class="axis tax-technician" ng-class="{'winner': resultIndex == 4}"><a class="axis-text" href="http://www.kaplan.co.uk/insights/accountancy-tax/detail/insights/2016/09/20/how-to-become-a-tax-technician" target="_blanc">Tax Technician</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </script>
+
+  </form>
+</body>
+</html>
