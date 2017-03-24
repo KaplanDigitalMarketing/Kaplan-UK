@@ -1,230 +1,280 @@
+.row__mobile {
+  display: none;
+
+  @media(min-width: $screen-md-min) {
+    display: block;
+  }
+
+
+
+
+
+
+
+
+
+
+}
+
 .kaplan__page-footer {
-    background: url(/images/default-source/responsive-theme/kaplan-logo.png) center 16px no-repeat #383a3c;
-    color: #fff;
-    padding-top: 32px;
-    padding-bottom: 64px;
-    font-family: 'Open Sans',sans-serif;
+  background: #383a3c url(/images/default-source/responsive-theme/kaplan-logo.png) center center no-repeat;
+  padding: 60px 0;
 
-    h2 {
-        font-size: 16px;
-        margin-top: 0;
-        line-height: 16px;
-    }
-    .col-xs-12 { display: none; }
-    ul {
-        padding-left: 0;
-        margin-top: 32px;
-    }
 
-    li { list-style: none; line-height: 16px; }
-    .glyphicon {
-        display: inline-block;
-        width: auto;
-        color: #fff;
-        margin-top: -1px;
-        margin-left: 1px;
-        font-size: 9px;
-    }
 
-    @media(min-width: $screen-md-min) {
-        background: #383a3c;
-        .row { margin-left:0; }
-        .col-xs-12 { display:block; }
-        ul { margin-top: 8px; }
-    }
-    @media(min-width: $screen-md-min) {
-        .col-md-3 {
-            width: 25% !important;
-            padding-left: 0;
-        }
-        .col-md-9 {
-            padding-left: 0;
-            margin-left: -5px;
-        }
-    }
-    @media(min-width: $screen-lg) {
-        padding-top: 64px;
-        padding-bottom: 64px;
-        ul { margin-top: 0; }
-    }
+
+
+
+
+  @media(min-width: $screen-md-min) {
+    background: #383a3c;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
 }
 
-.kaplan-subject-list {
-    display: none;
-    @media(min-width: $screen-md-min) { display: block; }
+a.kaplan-k {
+  background: url(/images/default-source/base-template/k-logo.png) 0 0 no-repeat;
+
+
+
+
+
+
+
+
+  display: block;
+  width: 78px;
+  height: 76px;
+  text-indent: -5000px;
+  cursor: pointer;
+
+
+
+
+
+
+
+
+
+
 }
 
-.footer-list {
-    padding-left: 0;
-    a {
-        color: #fff;
-        font-weight: 600;
-        font-size: 12px;
-    }
-    span {
-        font-weight: 400;
-        color: #c9cbcc;
-        display: block;
-        margin-top: 8px;
-        line-height: 16px;
-        font-size: 11px;
-    }
-    .list-item {
-        margin-bottom: 19px;
-        min-height: 80px
-    }
-    .sfContentBlock {
-        margin-bottom: 22px;
-    }
-    .sf_3cols_2_34 .sf_3cols_2in_34,.sf_3cols_3_33 .sf_3cols_3in_33 {
-        margin-left: 7px;
-    }
+.social-icons {
+  margin-top: 38px;
+  margin-top: 2.375rem;
+
+
+
+
+
+
+  margin-bottom: 24px;
+  margin-bottom: 2.5rem;
+
+
+
+
+
+
+
+
+
+
 }
 
-.social-icon-list {
-    margin-top: 88px !important;
-    a {
-        background: url(/images/default-source/responsive-theme/footer_social_icons.png) no-repeat;
-        display: block;
-        height: 42px;
-        width: 50px;
-        color: #fff;
-        padding-top: 16px;
-        margin-bottom: 16px;
-        text-indent: -9999px
-    }
-    .youtube { background-position: 0 -190px; }
-    .google-plus { background-position: 0 -46px; }
-    .linked-in { background-position: 0 -142px; }
-    .twitter { background-position: 0 -94px; }
-    .facebook { background-position: 0 0; }
-    li {
-        list-style: none;
-        display: inline-block;
-    }
+.social-icon a {
+  display: block;
+  width: 42px;
+  height: 42px;
+  background: url(/images/default-source/base-template/social-icons.png) 0 0 no-repeat;
+  text-indent: -5000px;
+  cursor: pointer;
 }
 
+.social-icon--facebook a {
+  background-position: 0 0;
 
-.social-icon-list .sf_4cols_2_25 .sf_4cols_2in_25,.social-icon-list .sf_4cols_3_25 .sf_4cols_3in_25,.social-icon-list .sf_4cols_4_25 .sf_4cols_4in_25 {
-    margin-left: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-.footer-link-list {
-    margin-top: 32px;
-    li {
-        float: left;
-        margin-right: 13px;
-        &:nth-child(5) { margin-right: 0; }
-    }
-    a {
-        color: #fff;
-        margin: 8px 0;
-        display: block;
-        font-size: 11px;
-    }
-    @media(min-width: 888px) {
-        width:344px;
-        float: right;
-    }
-    @media(min-width: $screen-lg) { 
-        margin-top: 0;
-        display: flex;
-        a { margin:0; }
-        li { margin-right: 16px; }
-    }
+.social-icon--twitter a {
+  background-position: -56px 0;
+
+
 }
 
-.footer-centre-list li,.footer-course-list li {
-    margin-right: 28.8px;
-    margin-bottom: 3px;
-    float: left;
+.social-icon--linkedin a {
+  background-position: -112px 0;
+
+
+
+
 }
 
-.join-us {
-    font-size: 12px;
-    p {
-        margin-left: 8px;
-        color: #fff;
-    }
+.social-icon--youtube a {
+  background-position: -168px 0;
+
+
+
+
+
 }
 
-.copyright .col-md-4 {
-    display: none;
-    @media(min-width: $screen-md-min) {
-        .col-md-4 {
-            display:block
-        }
-    }
+.legal-notice  {
+  font-size: 11px;
+  color: #fff;
+
+  .sfContentBlock {
+    margin-left: 17px;
+
+
+
+
+  }
+
+
+
+
+
 }
 
-.kaplan-course-list { display: none; }
-
-.footer-centre-list {
-    margin-top: 16px !important;
-    border-top: 1px solid #666;
-    padding-top: 35px !important;
-    ul {
-        margin-top: -1px;
-    }
-
-    a {
-        color: #fff;
-        font-size: 12px;
-    }
+.legal-notice p:first-of-type {
+  font-weight: 600;
 }
 
+.legal-notice p:nth-child(2) {
+  margin-bottom: 2px;
 
-.footer-course-list {
-    margin-top: 32px !important;
-    float: left;
-    a {
-        color: #fff;
-        font-size: 12px;
-    }
 
-    .course-list {
-        margin-top: -0.3rem!important;
-    }
+
+
 }
 
-.footer-legal {
-    margin-top: 38px !important;
-    p {
-        font-size: 11px;
-        line-height: 18px;
-        color: #fff;
-        margin-bottom: 18px;
-        font-weight: lighter
-    }
-    span { font-weight: 600; display: block; }
+.legal-notice p:last-child {
+  color: #c9cbcc;
+
 }
 
-.blog__article h2 a,.blog__article-type,.footer-legal span {
+.kaplan__footer-links {
+
+
+
+
+  color: #fff;
+
+
+
+
+
+
+  h3 {
+    font-size: 13px;
+    font-size: 1.29rem;
+    text-transform: inherit;
+    margin-bottom: 8px;
+    margin-bottom: 1.1rem;
     font-weight: 600;
-    display: block;
-}
+  }
 
-.footer-privacy {
-    margin-top: 32px !important;
-    a {
-        font-size: 11px;
-        color: #fff;
+  a {
+    color: #c9cbcc;
+    font-size: 13px;
+    font-size: 1.29rem;
+    display: block;
+    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
+
+    &:hover {
+      text-decoration: none;
+
+
+
     }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+/*
+To be enabled once A-Z link is added
+*
+  .sf_4cols_4in_25 li:last-of-type a {
+    margin-top: 23px;
+    margin-top: 2.3rem;
+  }
+  */
 }
 
-.footer-privacy .sf_3cols_2_34 .sf_3cols_2in_34,.footer-privacy .sf_3cols_3_33 .sf_3cols_3in_33 { 
-    margin: 0
+
+
+@media(min-width: $screen-md-min) {
+
+  .kaplan__page-footer .social-icon {
+    width: 15% !important;
+  }
+
+  .legal-notice .col-md-12,
+  .legal-notice .col-lg-12 {
+    padding-left: 0;
+  }
 }
 
-.footer-brand, .navbar-brand {
-    display: block;
-    text-indent: -5000px;
-    width: 74px;
-    height: 85px;
-    margin-top: 5px;
-}
+@media(min-width: $screen-lg-min) {
 
-.footer-brand {
-    background: url(/images/default-source/responsive-theme/kaplan-logo-mobile-footer.png) 0 5px no-repeat;
-    margin-top: -5px;
+  .kaplan__page-footer {
+    padding: 64px 0;
+
+
+  }
+
+
+
+
 }

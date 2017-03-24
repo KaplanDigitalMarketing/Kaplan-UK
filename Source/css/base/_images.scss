@@ -4,8 +4,9 @@
 
 .img-responsive-inline {
     max-width: 100%;
-    display: inline-block;
+    display: block;
     height: auto;
+    margin: 0 auto;
 }
 
 .why-kaplan-icons {
@@ -35,7 +36,7 @@
 }
 
 .qualification-logos {
-    .sfContentBlock + .sfContentBlock { 
+    .sfContentBlock + .sfContentBlock {
         margin-bottom: 40px;
     }
     .sfContentBlock:last-child {
@@ -63,7 +64,7 @@
     img {
         display: block;
         height: auto;
-        max-width: 100%; 
+        max-width: 100%;
     }
     @media (min-width: $screen-md-min) {
        .col-md-6 + .col-md-6 {
@@ -80,4 +81,17 @@
     & + .photo-grid  {
         margin-top: 80px;
     }
+}
+
+
+.apprenticeship-logos {
+
+  div:last-of-type {
+    img {
+      @include rem((
+        margin-top: -16px
+      ));
+    }
+  }
+
 }

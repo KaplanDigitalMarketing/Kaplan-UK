@@ -1,4 +1,4 @@
-﻿.hero-banner {
+.hero-banner {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100%;
@@ -11,16 +11,20 @@
     background-color: #fff;
   }
 
-  @media(min-width: 1200px) {
-    min-height: 500px !important;
-    max-height: 500px !important;
+  @media(min-width: $screen-lg-min) {
+    min-height: 476px !important;
+    max-height: 476px !important;
   }
 
   @media(min-width: 2000px) {
-    min-height: 680px !important;
-    max-height: 680px !important;
+    min-height: 730px !important;
+    max-height: 730px !important;
   }
 
+  @media(min-width: 2500px) {
+    min-height: 800px !important;
+    max-height: 800px !important;
+  }
 
   .container {
     padding: 0 20px;
@@ -30,7 +34,7 @@
    display: block;
    margin: 0 auto;
 
-   @media(min-width: 899px) {
+   @media(min-width: $screen-lg-min) {
      margin: 0;
    }
 
@@ -39,7 +43,7 @@
   h1, h2, p {
     text-align: center;
 
-    @media(min-width: 900px) {
+    @media(min-width: $screen-lg-min) {
       text-align: left;
     }
 
@@ -47,20 +51,27 @@
 
   h1 {
     @include rem((
-      margin-bottom: 24px
+      font-size: 42px,
+      margin-bottom: 24px,
     ));
+
+    @media(min-width: $screen-lg-min) {
+      @include rem((
+        font-size: 48px
+      ));
+    }
   }
 
   .btn {
     display: block;
-    background: #0069aa;
-    color: #fff;
-    border-radius: 5px;
+    background: #abe400;
+    color: #383a3c;
+    font-weight: 400;
 
     @include rem((
       width: 200px,
       margin: 24px auto 0,
-      border: 1px solid #015081
+      border-radius: 5px
     ));
   }
 
@@ -69,13 +80,13 @@
     margin-left: auto;
     margin-right: auto;
 
-    @media(min-width: 900px) {
+    @media(min-width: $screen-lg-min) {
       color: #383a3c;
       margin-left: 0;
     }
 
     p {
-      @media(min-width: 900px) {
+      @media(min-width: $screen-lg-min) {
         text-align: center;
       }
     }
@@ -85,8 +96,18 @@
       padding: 20px,
       border-radius: 6px,
       margin-top: 46px,
-      width: 320px
+      width: 275px
     ));
+
+    @media(min-width: $screen-xs-min) {
+
+      @include rem((
+        width: 320px
+      ));
+
+    }
+
+
   }
 
 }
@@ -94,16 +115,22 @@
 
 .hero-banner__body {
 
-  margin-top: 45%;
+  margin-top: 49%;
 
   @media(min-width: 799px) {
     margin-top: 50%;
   }
 
-  @media(min-width: 900px) {
-    margin: 3% 0;
-    padding-left: 0;
-    width: 65%;
+  @media(min-width: 940px) {
+    margin-top: 56%;
+  }
+
+  @media(min-width: 992px) {
+    margin-top: 47%;
+  }
+
+  @media(min-width: 1000px) {
+    margin-top: 44%;
   }
 
   @media(min-width: 1200px) {
@@ -120,19 +147,19 @@
 
   display: none;
 
-  @media(min-width: 1024px) {
+  @media(min-width: $screen-lg-min) {
     display: block;
-    min-height: 386px !important;
+    min-height: 437px !important;
   }
 
   @media(min-width: 2000px) {
-    min-height: 479px !important;
+    min-height: 550px !important;
   }
 
   img {
     display: none;
 
-    @media(min-width: 1024px) {
+    @media(min-width: $screen-lg-min) {
       display: block;
       position: absolute;
       right: 0;
@@ -147,7 +174,7 @@
 
   color: #383a3c;
 
-  @media(min-width: 900px) {
+  @media(min-width: $screen-lg-min) {
     color: #fff;
   }
 

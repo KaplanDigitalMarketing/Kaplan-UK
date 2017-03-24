@@ -1,6 +1,8 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Stereotypes.master.cs" Inherits="Stereotypes" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Global.master.cs" Inherits="Global" %>
 
 <%@ Register Src="~/Custom/Controls/Template/PrimaryNavigation.ascx" TagPrefix="Ctrl" TagName="PrimaryNavigation" %>
+<%@ Register Assembly="Appius.Widgets" Namespace="Appius.Widgets" TagPrefix="Ctrl" %>
+<%@ Register Src="~/Custom/Controls/Template/Styles.ascx" TagName="CustomStyles" TagPrefix="Ctrl" %>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -20,7 +22,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">																	 
+
 </head>
 <body>
 
@@ -59,6 +62,26 @@
             <section class="MAIN" id="content">
                 <asp:ContentPlaceHolder ID="main" runat="server">Main Content</asp:ContentPlaceHolder>
             </section>
+        </div>
+        <footer class="kaplan__page-footer">
+            <div class="container">
+                <div class="row row__mobile">
+                    <div class="col-xs-12 col-md-4">
+                        <asp:ContentPlaceHolder ID="footerlogo_holder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                        <asp:ContentPlaceHolder ID="footerlist_holder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="ScriptWrapper" clientidmode="static" runat="server" title="Only place scripts and styles in this region">
+            <script>window.jQuery || document.write('<script src="/Custom/Build/js/vendor/jquery.1.11.0.min.js"><\/script>')</script>
+            <script type="text/javascript" src="<%= Page.ResolveUrl("~/Custom/Build/js/scripts.min.js") %>"></script>
+            <asp:ContentPlaceHolder ID="ScriptsAndStyles" runat="server" />
         </div>
     </form>
 </body>

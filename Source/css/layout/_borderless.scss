@@ -1,13 +1,16 @@
-
 .borderless {
   padding: 0;
   display: table;
+
   &--lightgrey { background-color: $c-lightgray;  }
   &--lightbrown { background-color: $c-lightbrown;  }
   &--paleyellow { background-color: $c-paleyellow;  }
   &--sand { background-color: $c-sand;  }
 
   &__image {
+
+      position: relative;
+
       @media(min-width: $screen-md) { height: ($screen-md / 32) * 9; }
       @media(min-width: $screen-lg) { height: ($screen-lg / 32) * 9; }
       @media(min-width: 1400px) {height: (1400px / 32) * 9; }
@@ -33,7 +36,7 @@
   }
 
   &__content {
-       vertical-align: middle;
+    vertical-align: middle;
   }
 
   & > .sf_colsOut {
@@ -58,8 +61,8 @@
       padding: 2*$gutter;
       text-align: left;
     }
-    @media (min-width: $screen-md)  { width: (970px / 2); }
-    @media (min-width: $screen-lg) { width: (1170px / 2); }
+    //@media (min-width: $screen-md)  { width: (970px / 2); }
+    //@media (min-width: $screen-lg) { width: (1170px / 2); }
 
     h2:first-child {
       margin-top: 0;
@@ -108,6 +111,11 @@
         padding-top: 17px;
         margin-left: 49px;
         margin-top: -1px;
+
+        span {
+          display: block;
+          font-weight: normal;
+        }
     }
 }
 
@@ -123,4 +131,12 @@
 .sfPageEditor .borderless__image img {
   position: static;
   transform: none;
+}
+
+.borderless__quote {
+  .borderless__content {
+    .sfContentBlock {
+      background: url(/images/default-source/corporate-social/quote-mark-open.png?sfvrsn=2) 3% 11% no-repeat;
+    }
+  }
 }
