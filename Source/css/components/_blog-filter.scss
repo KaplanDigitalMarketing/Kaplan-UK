@@ -1,0 +1,77 @@
+.insights-container {
+    background-color: #e4e5e5;
+}
+
+.blog-filter {
+    text-align: right;
+    font-size: 14px;
+    &__title {
+        color: $c-darkgrey;
+        padding-right: 25px;
+        display: inline-block;
+        font-weight: 400;
+    }
+    &__selectors {
+        border-bottom: 1px solid $c-insights-darkgrey;
+    }
+    &__selector {
+        display: inline-block;
+        &-item {
+            display: inline-block;
+            padding: 15px 10px;
+            color: $c-darkgrey;
+            &:after {
+                color: $c-darkgrey;
+                content: url(/custom/build/images/down-arrow.png);
+                display: inline-block;
+                position: relative;
+                bottom: 2px;
+                margin-left: 5px;
+            }
+            &.selected {
+                background-color: $c-insights-darkgrey;
+            }
+            &:hover, &:active, &:focus { text-decoration: none; color: $c-darkgrey; }
+        }
+    }
+    &__clear {
+        display: inline-block;
+        color: $c-darkgrey;
+        padding-right: 5px;
+        &:after {
+            content: url(/custom/build/images/cross.png);
+            color: $c-darkgrey;
+            position: relative;
+            margin-left: 5px;
+        }
+        &:hover, &:active, &:focus { text-decoration: none; color: $c-darkgrey; }
+    }
+
+    &__set {
+        border-bottom: 1px solid $c-insights-darkgrey;
+        padding: 15px 0;
+        display:none;
+        &.active {
+            display: block;
+        }
+    }
+    &__item {
+        display: inline-block;
+        background-color: white;
+        color: $c-darkgrey;
+        padding: 3px 8px;
+        margin: 10px 8px;
+        font-size: 13px;
+        border-radius: 3px;
+        font-weight: 400;
+        &:hover, &:active, &:focus { text-decoration: none; color: $c-darkgrey; }
+        &:after { display: none; }
+        &.selected {
+            background-color: #ffc425;
+        }
+        &.no-items {
+            opacity: .3;
+            pointer-events: none;
+        }
+    }
+}

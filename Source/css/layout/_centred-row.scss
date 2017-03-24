@@ -1,0 +1,85 @@
+.centred-row {
+
+  h2,
+  h3,
+  p {
+    text-align: center;
+  }
+
+   p {
+       margin: 0 0 1.25rem;
+   }
+
+  h2:first-of-type {
+
+    @include rem((
+      margin-bottom: 24px
+    ));
+
+  }
+
+  @media(min-width: 992px) {
+    @include rem((
+    max-width: 848px,
+    padding: 0,
+    ));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 0 2*$gutter;
+
+    @media(min-width: 992px) {
+      @include rem((
+        width: 848px,
+        padding: 0,
+      ));
+    }
+
+    h2:first-child {
+      margin-top: 0;
+
+      @include rem((
+        margin-bottom: 24px
+      ));
+
+    }
+  }
+
+    @media(min-width: $screen-md-min) {
+        padding: 4rem 1.25rem;
+        h2 {
+            font-size: 32px;
+        }
+    }
+    &--minimal-padding-bot {
+        padding-bottom: 1rem;
+    }
+    &--minimal-padding-top {
+        padding-top: 1rem;
+    }
+}
+
+.centred-row__aat-next-steps {
+
+  .container {
+    @media(min-width: 992px) {
+      width: 720px;
+    }
+  }
+}
+
+
+.narrow-row {
+    @media(min-width: 992px) {
+      @include rem((
+        width: 848px,
+        padding: 0,
+      ));
+    }
+}

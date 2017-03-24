@@ -1,0 +1,49 @@
+﻿.mod-expandable-tabs, .accordion {
+    padding: 0;
+    margin-top: 32px;
+    margin-bottom: 15px;
+    .content {
+        border-bottom: 1px solid #bebeb9;
+        border-left: 1px solid #bebeb9;
+        border-right: 1px solid #bebeb9;
+        padding: 32px;
+        background: #fff;
+        h2 {
+            margin-top: 0
+        }
+        h3 {
+            text-transform: uppercase;
+            background: #f4f1ed;
+            padding: 8px 13px;
+        }
+
+        a {
+          display: inline;
+        }
+
+    }
+    .content-expander {
+        display: block;
+        padding: 7px 20px;
+        border: 1px solid #bebeb9;
+        color: #666;
+        font-weight: 600;
+        background: url(/images/default-source/responsive-theme/tab-icons.png) 98% 96% no-repeat #e9e3db;
+        text-align: left;
+        margin-top: 10px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    .plus-expand { background-position: 98% 0; }
+
+    @media(min-width: $screen-md) {
+        width: 848px;
+        margin: -8px auto 15px;
+    }
+}
+
+// Current vacancy accordion
+
+.accordion--vacancy {
+  padding-top: 0;
+}

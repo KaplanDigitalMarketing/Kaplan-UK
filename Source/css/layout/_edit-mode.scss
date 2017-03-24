@@ -1,0 +1,15 @@
+﻿body.EditMode, body.DesignMode {
+    [id$=zoneEnvelope] {
+        padding: 30px;
+        background-color: rgba(255,0,0,0.1);
+    }
+
+    .main-content { margin-top: 0; }
+    HEADER {
+        position: initial;
+    }
+
+    .coloured-container .LayoutTable {
+        width: 100%;
+    }
+}

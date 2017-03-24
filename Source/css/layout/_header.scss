@@ -1,0 +1,67 @@
+.navbar-brand {
+    height: auto;
+    @media (min-width: $grid-float-breakpoint-max) {
+
+    }
+}
+
+body .HEADER.kaplan__page-header {
+    padding-top: 0;
+    .navbar-brand {
+        margin: 20px 45px 5px 30px;
+        display: block;
+        @media (min-width: $screen-md-min) {
+            display: none;
+        }
+    }
+}
+
+.header {
+    &__top {
+        background-color: $c-darkgrey;
+    }
+
+    &__tertiary {
+        display: inline-block;
+        float: right;
+        padding-top: 15px;
+    }
+
+}
+
+.non-mobile-nav-container {
+    position: relative;
+}
+
+.audience-switcher {
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+
+
+    li {
+        list-style: none;
+        display: inline-block;
+
+        &.active { background-color: $brand-colour-primary; }
+    }
+    &__link {
+        padding: 15px 30px;
+        color: white;
+        display: block;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .mobile-nav-container & {
+        width: 100%;
+        li {
+            width: 50%;
+            background-color: #383a3c;
+            a {
+                color: white;
+            }
+            &.active { background-color: $brand-colour-primary; }
+        }
+    }
+}

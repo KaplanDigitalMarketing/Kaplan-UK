@@ -1,0 +1,248 @@
+﻿@import 'base/lpd';
+
+.lpd {
+
+    .fixed-container {
+        width: 960px !important;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .cta-btn, .mod-content-promo .download-btn, .quote-text p, .sub-intro, h1, h2, h3, h4, h5, h6, p {
+        font-family: "Open Sans", sans-serif!important;
+    }
+
+    h2, h3, h4, h5, a, p { font-weight: 400; }
+
+    section, footer { float: none; }
+
+    .full-width-hero { background: url(http://kaplan.co.uk/images/default-source/lpd/video-image.png?sfvrsn=2) 0 0 no-repeat; }
+    .fba {
+        background-image: url("http://kaplan.co.uk/images/default-source/lpd/bg_2.jpg?sfvrsn=2");
+        background-position: 50% -32.8px;
+    }
+
+    // Our Approach Page
+    .contact-area {
+        margin-top: -64px;
+    }
+
+    .full-width-hero {
+        background-image: url('http://kaplan.co.uk/images/default-source/lpd/our-approach-hero-images-up.png?sfvrsn=2');
+    }
+
+    .fba {
+        background-image: url("http://kaplan.co.uk/images/default-source/lpd/bg_3.jpg?sfvrsn=2");
+        background-position: 50% -5.6px;
+    }    
+
+    /* Overrides */
+    .full-width-hero .hero-overlay.video-bg .overlay-content a::after {
+        height: 13px;
+        margin-top: -6px;
+    }
+
+    section.overview { padding-top: 110px; }
+    .widget-area-ld { height: 461px; }
+    section.mca.global-reach {
+        padding-top: 104px;
+        height: 406px !important;
+    }
+
+    section.mca.global-reach {
+        padding-top: 124px;
+        height: 396px!important;
+    }
+
+    .contact-area .ca-content .contact-details .dtls p.phn-num {
+        line-height: 15px;
+    }
+
+    .ldna-our-approach::after {
+        bottom: -32px;
+        height: 40px;
+    }
+
+
+    .white-bg-area .white-content-carousel .carousel-item img {
+        display: block;
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .white-bg-area .white-content-carousel .carousel-item a { font-size: 13px; }
+
+    .our-client-say .testimonial-wrapper .testimonial-container p {
+        color: #fff;
+        font-size: 12px;
+    }
+
+
+    /* Page Specific Styling*/
+
+    .lpd-home {
+        section.mca { height: 534px!important; }
+    }
+
+
+    section.mca.our-team { height: 242px!important; }
+    .lpd-our-team {
+    }
+
+    .widget-area-ld.x-bg { min-height: 401px;}
+    
+    &-our-approach {
+        .contact-area { margin-top: -40px;  }
+    }
+
+    &-diagnostics {
+        .widget-area-ld p {
+            width: 738px;
+            color: #333 !important;
+            display: block;
+            margin: 15px auto;
+            font-size: 16px;
+            line-height: 21px;
+            text-align: center;
+        }
+        .centered-btn {
+            width: 542px !important;
+            color: #fff !important;
+            font-weight: normal !important;
+        }
+        .contact-area { margin-top: -33px !important;  }
+    }
+
+    section.mca.technical-competence {
+        padding-top: 124px;
+        height: 332px!important;
+    }
+
+    &-financial-literacy {
+        .full-width-hero.single-landing .profile-des {
+            line-height: 50px;
+            padding-top: 259px !important;
+            font-weight: 300;
+            font-size: 18px;
+            text-align: center;
+            color: #A6D7EB;
+            text-transform: uppercase;
+        }
+        .page-title {
+            text-align: center;
+            width: 100%;
+            font-size: 55px;
+            color: #0069aa;
+            margin-bottom: 15px;
+            line-height: 37px;
+        }
+
+        .sub-heading {
+            color: #1E0576;
+            text-align: center;
+            margin-top: 7px !important;
+        }
+
+        .main-content { 
+            min-height: 1110px; width: 100%; padding: 0 20px !important; 
+            h2 {
+                color: #1E0576;
+                font-size: 24px;
+                margin-bottom: 20px !important;
+            }
+             h3 {
+                color: #0192c9 !important;
+                font-size: 21px;
+            }
+            h3, h4 { margin: 10px 0 !important; }
+            ul { margin-left: 17px !important; }
+            li {
+                margin: 8px 0px !important;
+                line-height: 21px;
+            }
+        }
+        .first-column {
+            width: 60%;
+            float: left;
+        }
+        .download-material {
+            width: 21%;
+            float: left;
+            padding-left: 100px !important;
+        }
+
+        .brochure {
+            width: 185px;
+            display: block;
+            margin: 0 auto 30px auto !important;
+            text-decoration: none;
+            span {
+                display: block;
+            }
+            &-title {
+                color: #1E0576;
+                text-align: center;
+                margin-top: 15px !important;
+                font-size: 16px;
+            }
+
+            &-download {
+                margin: 0 auto;
+                width: 185px;
+                text-align: center;
+                margin-top: 20px !important;
+                background: #FFC627;
+                padding: 10px 0px !important;
+                color: #000;
+                font-weight: bold;
+            }
+        }
+        .widget-area-ld { height: 514px !important; }
+        .widget-area-ld h2 { text-align: center; }
+        .web-lead {
+            float: none;
+            margin: 45px auto !important;
+            background: none;
+            width: 80%;
+            .form-row {
+                margin-bottom: 10px !important;
+                float: left;
+                width: 50%;
+                label {
+                    color: #fff;
+                    width: 100px;
+                    font-weight: 400;
+                }
+                &.employees > span { font-weight: 400;}
+                .text-input {
+                    padding: 3px !important;
+                    width: 70%;
+                }
+
+                &.lead-source { display: none; }
+            }
+            .submit {
+                margin-top: 20px !important;
+                width: 100%;
+                float: left;
+            }
+            .submit input {
+                color: #fff;
+                font-size: 13px;
+                font-weight: 600;
+                border-radius: 5px;
+                border: 1px solid #015081;
+                background: #0069aa;
+                padding: 8px 14px !important;
+                display: block;
+                float: none;
+                margin: 0 auto !important;
+            }
+            .job-title { clear: left; }
+        }
+    }
+}
