@@ -13,7 +13,7 @@
                 <div class="navbar-top-support" id="navbar-top-support">
                     <ul class="pages-list">
                         <li><a href="#site-search" class="page-title">Search</a></li>
-                        <li><a href="https://sso.kaplan.co.uk/Pages/EcommerceLogin.aspx" target="_blank" class="page-title">MyKaplan</a></li>
+                        <li><a href="https://mykaplan.co.uk/" class="page-title">MyKaplan</a></li>
                     </ul>
                 </div>
                 <div class="navbar-top-level" id="navbar-top-level">
@@ -113,7 +113,8 @@
                                     <div class="column-block solo-list">
                                         <h3 class="nav-section-heading next-page">For employers</h3>
                                         <ul class="pages-list ">
-                                            <li><a href="/training-for-businesses/apprenticeships-and-internships" class="page-title">Hiring an apprentice</a></li>
+                                            <li><a href="/training-for-businesses/apprenticeships-and-internships" class="page-title">Develop and nurture talent</a></li>
+                                            <li><a href="/training-for-businesses/apprenticeships-and-internships/levy-management" class="page-title">Levy management</a></li>
                                             <li><a href="/training-for-businesses/apprenticeships-and-internships/apprenticeship-qualifications" class="page-title">Apprenticeship qualifications</a></li>
                                             <li><a href="/training-for-businesses/apprenticeships-and-internships/hiring-an-intern" class="page-title">Hiring an intern</a></li>
                                             <li><a href="/training-for-businesses/apprenticeships-and-internships/funding-eligibility" class="page-title">Funding and eligibility</a></li>
@@ -188,16 +189,18 @@
                                 <a href="#navbar-top-level" class="navbar-back">Back <span>›</span></a>
                                 <div class="nav-block">
                                     <ul class="pages-list">
-                                        <li><a href="http://financial.kaplan.co.uk/AboutKaplan/OurLocations/Pages/default.aspx" class="page-title" target="_blank">Training locations</a></li>
-                                        <li><a href="/about-us/careers/current-vacancies" class="page-title">Careers</a></li>
-                                        <li><a href="/insights/kaplan-news" class="page-title">Company news</a></li>
                                         <li><a href="/about-us/request-callback" class="page-title">Contact us</a></li>
-                                        <li><a href="/corporate-social-responsibility" class="page-title">Corporate social responsibility</a></li>
+										<li><a href="http://financial.kaplan.co.uk/AboutKaplan/OurLocations/Pages/default.aspx" class="page-title" target="_blank">Training locations</a></li>
+                                        <li><a href="/insights/kaplan-news" class="page-title">Company news</a></li>
+										<li><a href="/heritage" class="page-title">Heritage</a></li>
+										<li><a href="/meet-the-experts">Meet the experts</a></li>
+										<li><a href="/corporate-social-responsibility" class="page-title">Corporate social responsibility</a></li>
+										<li><a href="/about-us/careers/current-vacancies" class="page-title">Careers</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
-                        <li class="mobile-only-item"><a href="https://sso.kaplan.co.uk/Pages/EcommerceLogin.aspx" target="_blank" class="page-title">MyKaplan</a></li>
+                        <li class="mobile-only-item"><a href="https://mykaplan.co.uk/" target="_blank" class="page-title">MyKaplan</a></li>
                     </ul>
                 </div>
             </nav>

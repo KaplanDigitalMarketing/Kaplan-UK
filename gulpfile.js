@@ -55,12 +55,12 @@ gulp.task('default', function(callback) {
 });
 
 gulp.task('clean-styles', 'Remove old styles', function() {
-  return gulp.src('./Custom/Build/css', { read: false })
+  return gulp.src('./Build/css', { read: false })
     .pipe($.clean());
 });
 
 gulp.task('clean-scripts', 'Remove old scripts', function() {
-  return gulp.src('./Custom/Build/js', { read: false })
+  return gulp.src('./Build/js', { read: false })
     .pipe($.clean());
 });
 
@@ -69,9 +69,9 @@ gulp.task('styles', 'Compile, prefix & minify all SCSS', ['clean-styles'], funct
   var minFilter = $.filter(['**/*', '!**/*.min.*'], { restore: true });
 
   return gulp.src([
-    './Custom/Source/css/**/*.scss',
-    './Custom/Source/css/**/*.css',
-    '!./Custom/Source/css/**/_*.scss'
+    './Source/css/**/*.scss',
+    './Source/css/**/*.css',
+    '!./Source/css/**/_*.scss'
   ])
     .pipe($.plumber())
     .pipe(minFilter)
@@ -79,14 +79,14 @@ gulp.task('styles', 'Compile, prefix & minify all SCSS', ['clean-styles'], funct
     .pipe(sassFilter)
     .pipe($.sass({
       'precision': 8,
-      includePaths: ['./Custom/Source/css']
+      includePaths: ['./Source/css']
     })
       .on('error', function(err) {
         $.util.log(err);
         this.emit('end');
       }))
     .pipe(sassFilter.restore)
-  .pipe(gulp.dest('./Custom/Build/css'))
+  .pipe(gulp.dest('./Build/css'))
     .pipe($.rename({ extname: '.min.css' }))
     .pipe($.bytediff.start())
     .pipe($.cleanCss({ 'compatibility': 'ie7' }))
@@ -94,7 +94,7 @@ gulp.task('styles', 'Compile, prefix & minify all SCSS', ['clean-styles'], funct
     .pipe($.bytediff.stop(outputDiff))
     .pipe($.sourcemaps.write('.'))
     .pipe(minFilter.restore)
-  .pipe(gulp.dest('./Custom/Build/css'))
+  .pipe(gulp.dest('./Build/css'))
     .on('error', $.util.log);
 });
 
@@ -102,13 +102,13 @@ gulp.task('scripts', 'Compile & minify all Javascript', ['clean-scripts'], funct
   var minFilter = $.filter(['**/*', '!**/*.min.*'], { restore: true });
 
   return gulp.src([
-    './Custom/Source/js/**/*.js',
-    '!./Custom/Source/js/**/_*.js'
+    './Source/js/**/*.js',
+    '!./Source/js/**/_*.js'
   ])
     .pipe($.plumber())
     .pipe(minFilter)
     .pipe($.include())
-  .pipe(gulp.dest('./Custom/Build/js'))
+  .pipe(gulp.dest('./Build/js'))
     .pipe($.sourcemaps.init())
     .pipe($.bytediff.start())
     .pipe($.uglify())
@@ -116,13 +116,13 @@ gulp.task('scripts', 'Compile & minify all Javascript', ['clean-scripts'], funct
     .pipe($.rename({ extname: '.min.js' }))
     .pipe($.sourcemaps.write('.'))
     .pipe(minFilter.restore)
-  .pipe(gulp.dest('./Custom/Build/js'))
+  .pipe(gulp.dest('./Build/js'))
     .on('error', $.util.log);
 });
 
 gulp.task('watch', 'Automatically rebuild scripts & styles (long-running)', ['build'], function() {
-  gulp.watch(['./Custom/Source/css/**/*.scss', './Custom/Build/css/**/*.css'], ['styles']);
-  gulp.watch(['./Custom/Source/js//**/*.js'], ['scripts']);
+  gulp.watch(['./Source/css/**/*.scss', './Build/css/**/*.css'], ['styles']);
+  gulp.watch(['./Source/js//**/*.js'], ['scripts']);
 });
 
 gulp.task('build', 'Recompile styles & scripts', function(callback) {

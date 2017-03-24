@@ -6,7 +6,7 @@
   background-position: top 50%;
   padding: 32px 0 48px;
   @media (max-width: $screen-sm-max) {
-      padding-bottom: 30px; 
+      padding-bottom: 30px;
   }
   .h2,.h3,.h4,h2,h3,h4 { text-transform: none; }
   a { color: #00a5d9; }
@@ -145,6 +145,6 @@
   }
 }
 
-.sfPageEditor & .tabbed-row__tabpanel {
+.sfPageEditor .tabbed-row__tabpanel {
   display: block;
 }

@@ -7,8 +7,6 @@
 //= include vendor/modernizr.custom.js
 //= include vendor/_mlpushmenu.js
 
-require('masonry-layout');
-
 $(document).ready(function () {
     new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('menu-toggle'), {
         type: 'cover'

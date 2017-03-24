@@ -3,7 +3,7 @@
   padding: 0;
   display: table;
   &--lightgrey { background-color: $c-lightgray;  }
-  &--lightbrown { background-color: $c-lightbrown;  } 
+  &--lightbrown { background-color: $c-lightbrown;  }
   &--paleyellow { background-color: $c-paleyellow;  }
   &--sand { background-color: $c-sand;  }
 
@@ -90,7 +90,7 @@
         padding-left: 48px;
         padding-right: 48px;
         background: url(/images/default-source/corporate-social/quote-mark-close.png?sfvrsn=2) right bottom no-repeat;
-        color: #282828;    
+        color: #282828;
 
         @media (min-width: 1290px) {
             font-size: 28px;
@@ -120,7 +120,7 @@
   }
 }
 
-.sfPageEditor & .borderless__image img {
+.sfPageEditor .borderless__image img {
   position: static;
   transform: none;
 }
