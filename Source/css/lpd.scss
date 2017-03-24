@@ -1,4 +1,4 @@
-﻿@import 'base/lpd';
+@import 'base/lpd';
 
 .lpd {
 
@@ -34,7 +34,7 @@
     .fba {
         background-image: url("http://kaplan.co.uk/images/default-source/lpd/bg_3.jpg?sfvrsn=2");
         background-position: 50% -5.6px;
-    }    
+    }
 
     /* Overrides */
     .full-width-hero .hero-overlay.video-bg .overlay-content a::after {
@@ -94,7 +94,7 @@
     }
 
     .widget-area-ld.x-bg { min-height: 401px;}
-    
+
     &-our-approach {
         .contact-area { margin-top: -40px;  }
     }
@@ -147,8 +147,8 @@
             margin-top: 7px !important;
         }
 
-        .main-content { 
-            min-height: 1110px; width: 100%; padding: 0 20px !important; 
+        .main-content {
+            min-height: 1110px; width: 100%; padding: 0 20px !important;
             h2 {
                 color: #1E0576;
                 font-size: 24px;
