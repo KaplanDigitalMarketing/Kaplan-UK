@@ -48,56 +48,76 @@
                     <div class="container">
                         <Ctrl:AudienceSwitcher runat="server" ID="AudienceSwitcher" />
                         <div class="header__tertiary">
+                            <a class="search-toggle search-toggle--desktop" href="#site-search">Search</a>
                             Tertiary content here
                             <asp:ContentPlaceHolder ID="tertiaryHeaderContent" runat="server"></asp:ContentPlaceHolder>
                         </div>
-                        <div class="kaplan__search-box" style="display: none;">
-                            <div class="kaplan__search-container container">
-                                <input type="text" class="kaplan__search-text" id="searchTextBox" placeholder="Search for..." />
-                                <input name="search-index" type="hidden" value="pages-search" />
-                                <input type="button" class="cta-btn primary-btn" value="Search" />
-                                <a href="#" class="kaplan__search-close" style="display: none;">close</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="non-mobile-nav-container">
                     <button type="button" class="navbar-toggle" id="menu-toggle" data-toggle="slide" data-target="#navbar-content" aria-expanded="false">
-                        <span class="sr-only">Menu</span>
+                        <span>Menu</span>
                     </button>
-                    <a class="navbar-brand" href="/">Kaplan</a>
+                    <a class="search-toggle search-toggle--mobile" href="#site-search">Search</a>
+                    <a class="navbar-brand navbar-brand--mobile" href="/">Kaplan</a>
                     <Ctrl:PrimaryNavigation runat="server" ID="DynamicPrimaryNavigation" />
                 </div>
-                <%--<Nav:PrimaryNavigation runat="server" ID="PrimaryNavigation" />--%>
-                <Ctrl:MobileNavigation runat="server" ID="DynamicMobileNavigation" />
+                <Ctrl:MobileNavigation runat="server" ID="DynamicMobileNavigation">
+                    <TertiaryLinks>
+                        <ul class="mobile-tertiary">
+                            <li>
+                                <a href="#">Contact us</a>
+                            </li>
+                            <li>
+                                <a href="#">MyKaplan</a>
+                            </li>
+                            <li>
+                                <a href="#">Basket</a>
+                            </li>
+                        </ul>
+                    </TertiaryLinks>
+                </Ctrl:MobileNavigation>
                 <asp:ContentPlaceHolder ID="headerContent" runat="server"></asp:ContentPlaceHolder>
             </header>
+
+            <div class="kaplan__search-box clearfix" style="display: none;">
+                <div class="kaplan__search-container container">
+                    <input type="text" class="kaplan__search-text" id="searchTextBox" placeholder="Search for..." />
+                    <input name="search-index" type="hidden" value="pages-search" />
+                    <input type="button" class="cta-btn primary-btn" value="Search" />
+                    <a href="#" class="kaplan__search-close" style="display: none;">close</a>
+                </div>
+            </div>
 
             <section class="MAIN" id="content">
                 <asp:ContentPlaceHolder ID="main" runat="server">Main Content</asp:ContentPlaceHolder>
             </section>
-        </div>
-        <footer class="kaplan__page-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-md-3">
-                        <asp:ContentPlaceHolder ID="footerlogo_holder" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                    <div class="col-xs-12 col-md-9">
-                        <asp:ContentPlaceHolder ID="footerlist_holder" runat="server">
-                        </asp:ContentPlaceHolder>
+            <footer class="kaplan__page-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3">
+                            <asp:ContentPlaceHolder ID="footerlogo_holder" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div class="col-xs-12 col-md-9">
+                            <asp:ContentPlaceHolder ID="footerlist_holder" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
 
         <div id="ScriptWrapper" clientidmode="static" runat="server" title="Only place scripts and styles in this region">
-            <script>window.jQuery || document.write('<script src="/Custom/Build/js/vendor/jquery.1.11.0.min.js"><\/script>')</script>
- 
-            <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+            <script>                jQueryIsLoaded = (window.hasOwnProperty('jQuery'));
+            </script>
+            <script src="/Custom/Build/js/vendor/jquery.1.11.0.min.js"></script>
+            <script>
+                if (jQueryIsLoaded) { // in SF backend                    $bootstrapjQuery = jQuery.noConflict(true);
+                }            </script>
 
-            <script type="text/javascript" src="<%= Page.ResolveUrl("~/Custom/Build/js/scripts.min.js") %>"></script>
+            <script type="text/javascript" src="<%= Page.ResolveUrl("~/Custom/Build/js/scripts.js") %>"></script>
             <asp:ContentPlaceHolder ID="ScriptsAndStyles" runat="server" />
         </div>
     </form>

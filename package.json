@@ -7,6 +7,7 @@
   },
   "author": "Phil Hazelton <phil@appius.com>",
   "dependencies": {
+    "browserify": "^14.3.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-bytediff": "^1.0.0",
@@ -25,7 +26,15 @@
     "gulp-sourcemaps": "^2.4.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.8",
+    "masonry-layout": "^4.1.1",
+    "mustache": "^2.3.0",
     "run-sequence": "^1.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "yargs": "^6.6.0"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "vinyl-paths": "^2.1.0"
   }
 }

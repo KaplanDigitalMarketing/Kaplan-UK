@@ -4,7 +4,6 @@ $(document).ready(function() {
         var $parentItem = $(this).parents(".blog-filter__selector");
         var i = $parentItem.find(".blog-filter__selector-item").index($(this));
         toggleSelector($(this), i);
-        console.log(i);
     });
 
     function toggleSelector($elem, i) {

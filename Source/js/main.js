@@ -1,13 +1,37 @@
-﻿//= include _appius.kaplan.tabbed-row.js
-//= include _appius.equalise.js
-//= include _appius.kaplan.accordion.js
-//= include _appius.kaplan.blogFilters.js
-//= include _search.js
+// Avoid conflicts with Sitefinity's built-in AMD loader
+if (typeof define == 'function' && define.amd) {
+	var SitefinityDefine = window.define;
+	window.define = null;
+}
 
-//= include vendor/modernizr.custom.js
-//= include vendor/_mlpushmenu.js
+require('./appius.kaplan.accordion.js');
+require('./appius.kaplan.blogFilters.js');
+require('./appius.kaplan.blogFilter.lazyLoading.js');
+require('./search.js');
+require('./vendor/modernizr.custom.js');
+require('./vendor/mlpushmenu.js');
+require('./appius.kaplan.primary-nav.js')
+
+window.appius = {
+	tabbedRow: require('./appius.kaplan.tabbed-row.js'),
+	equalise: require('./appius.equalise.js')
+};
+
+window.Cookies = require('./vendor/_cookie.js');
+
+// Restore Sitefinity's built-in AMD loader
+if (SitefinityDefine) {
+	window.define = SitefinityDefine;
+}
 
 $(document).ready(function () {
+	appius.tabbedRow.init();
+	appius.equalise.init();
+});
+
+$(document).ready(function () {
+	removeEmptyTags();
+
     new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('menu-toggle'), {
         type: 'cover'
     }, document.getElementById('close-menu'));
@@ -15,29 +39,15 @@ $(document).ready(function () {
     if (window.innerWidth < 992) {
         mobileInsightsMenu();
     }
-
-    if (!$('.tag-cloud li').length) {
-        $('.tag-cloud').remove();
-    }
-
-    $('.insight-articles').masonry({
-        itemSelector: '.insight-articles__item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: 15
-    });
 });
 
-$(window).load(function() {
-    $('.insight-articles').masonry({
-        itemSelector: '.insight-articles__item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: 15
-    });
-});
-
-
+function removeEmptyTags() {
+	$('.tag-list, .tag-list').each(function() {
+		if ($(this).find("li").length <= 0) {
+			$(this).remove();
+		}
+	});
+}
 function mobileInsightsMenu() {
     $('.blog__menu-grouping p').on('click', function () {
         event.stopPropagation();
