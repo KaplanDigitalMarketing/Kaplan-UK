@@ -59,11 +59,16 @@ gulp.task('default', function(callback) {
   return prompter;
 });
 
+/* CLEANING
+ ********************/
+
+// TODO: Phil to review as they use the new clean NPM package
 gulp.task('cleanse-scripts', 'Remove old scripts', function() {
   return gulp.src('./Build/js/*', { read: false })
 	.pipe(vinylPaths(del));
 });
 
+// TODO: Phil to review as they use the new clean NPM package
 gulp.task('cleanse-styles', 'Remove old styles', function() {
   return gulp.src('./Build/css/*', { read: false })
 	.pipe(vinylPaths(del));
@@ -79,6 +84,8 @@ gulp.task('clean-scripts', 'Remove old scripts', function() {
     .pipe($.clean());
 });
 
+/* STYLES
+ ********************/
 gulp.task('styles', 'Compile, prefix & minify all SCSS', ['cleanse-styles'], function() {
   var sassFilter = $.filter(['**/*.scss'], { restore: true });
   var minFilter = $.filter(['**/*', '!**/*.min.*'], { restore: true });
@@ -113,13 +120,14 @@ gulp.task('styles', 'Compile, prefix & minify all SCSS', ['cleanse-styles'], fun
     .on('error', $.util.log);
 });
 
-gulp.task('scripts', 'Compile & minify all Javascript', ['build-scripts'], function() {
-    return gulp.src('./Source/js/**/*.min.js')
-      .pipe(gulp.dest('./Build/js'))
-      .on('error', $.util.log);
+
+/* SCRIPTS
+ ********************/
+gulp.task('scripts', 'Compile & minify all Javascript', function(callback) {
+    runSequence(['cleanse-scripts', 'build-scripts', 'publish-scripts'], callback)
 });
 
-gulp.task('build-scripts', ['cleanse-scripts'], function() {
+gulp.task('build-scripts', function() {
   var bundler = browserify({
     entries: './Source/js/main.js',
     debug: true
@@ -141,6 +149,12 @@ gulp.task('build-scripts', ['cleanse-scripts'], function() {
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./Build/js'))
     .on('error', $.util.log);
+});
+
+gulp.task('publish-scripts', 'Publish the remaining Javascript files to the output directory', function() {
+	return gulp.src('./Source/js/**/*.min.js*')
+        .pipe(gulp.dest('./Build/js'))
+        .on('error', $.util.log);
 });
 
 gulp.task('watch', 'Automatically rebuild scripts & styles (long-running)', ['build'], function() {

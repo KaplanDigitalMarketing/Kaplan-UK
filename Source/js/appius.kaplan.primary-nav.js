@@ -1,11 +1,35 @@
-var GROUP_RESET_TIMER = 5000;
 var GROUP_DATA_ATTR = 'data-navpanel';
 
 var navTimer = null;
+var groupPageRequiresReset = false;
 
 $(document).ready(function() {
+    $('.primary-nav__link:not([data-grouppage])').on('mousedown, touchstart', function(e) {
+        e.stopImmediatePropagation();
+        if (groupPageRequiresReset) {
+            window.location.href = $(this).attr("href");
+        }
+    });
+
     $('.primary-nav__link[data-grouppage]').on('click', function(e) {
+        e.stopPropagation();
+
         groupPageClick($(this));
+    });
+
+    $('.primary-nav__link[data-grouppage=true]').on('blur', function(e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        if (groupPageRequiresReset) {
+            resetGroupPage();
+        }
+    });
+
+    $(window).on('scroll', function() {
+        if (groupPageRequiresReset) {
+            resetGroupPage();
+        }
     });
 });
 
@@ -16,7 +40,7 @@ function groupPageClick($elem) {
 
     clearCurrentActive();
     setCurrentActive(navPanel);
-    resetGroupPage();
+    groupPageRequiresReset = true;
 }
 
 // Remove all active pages
@@ -39,10 +63,7 @@ function setCurrentActive(item) {
 
 function resetGroupPage() {
     // Clear any existing timers
-    clearTimeout(navTimer);
-
-    navTimer = setTimeout(function() {
-        clearCurrentActive();
-        resetCurrentActive();
-    }, GROUP_RESET_TIMER);
+    clearCurrentActive();
+    resetCurrentActive();
+    groupPageRequiresReset = false;
 }

@@ -17,8 +17,6 @@ window.appius = {
 	equalise: require('./appius.equalise.js')
 };
 
-window.Cookies = require('./vendor/_cookie.js');
-
 // Restore Sitefinity's built-in AMD loader
 if (SitefinityDefine) {
 	window.define = SitefinityDefine;

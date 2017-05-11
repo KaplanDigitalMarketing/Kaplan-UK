@@ -3,7 +3,7 @@ var Mustache = require('mustache');
 
 var BLOG_FILTER_SERVICE = '/custom/services/blogpostsservice.asmx/GetPosts';
 var LOAD_FAILURE_ERROR_TEXT = 'There has been an issue getting posts, please try again';
-var TIMEOUT_ERROR_TEXT = 'The service took too long';
+var TIMEOUT_ERROR_TEXT = LOAD_FAILURE_ERROR_TEXT;
 var SERVICE_TIMEOUT_PERIOD = 5000;
 
 var template;
@@ -11,7 +11,7 @@ var msnry;
 var params;
 
 
-// This value is used to check how many times to silently attempt to reload
+// This value is used to see how many times to silently attempt to reload
 // the ajax request to get items from the service.
 var reloadAttempts = 2;
 var reloadAttemptsDefault = reloadAttempts;
@@ -85,6 +85,7 @@ function initialiseLazyLoad($elem, initialLoad) {
         params.Inclusive = false;
         params.scrollPosition = undefined;
         params.PageSize = blogOptions.pageSize;
+        params.SkipAmount = 1;
     }
 
     queueBlogRequests();
@@ -104,6 +105,7 @@ function queueBlogRequests() {
                 queueBlogRequests();
             } else {
                 setHistoryData();
+                hideLoadingIcon();
             }
         });
     }
@@ -126,6 +128,8 @@ function requestBlogItemsFromService(displayErrors, callback) {
                     data.d.Posts[0].FirstItem = true;
                 }
                 updateContent(data.d);
+            } else {
+                $('.blog__lazy-load').hide();
             }
             callback(true);
         },
