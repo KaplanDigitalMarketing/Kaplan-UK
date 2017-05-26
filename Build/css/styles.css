@@ -6189,7 +6189,7 @@ body.EditMode .coloured-container .LayoutTable, body.DesignMode .coloured-contai
     @media (min-width: 992px) {
       .audience-switcher__link {
         text-align: left; } }
-    .audience-switcher__link:hover {
+    .audience-switcher__link:hover, .audience-switcher__link:active, .audience-switcher__link:focus {
       color: white; }
   .mobile-nav-container .audience-switcher {
     width: 100%; }

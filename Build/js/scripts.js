@@ -464,13 +464,12 @@ $(document).ready(function() {
 
 },{}],5:[function(require,module,exports){
 var GROUP_DATA_ATTR = 'data-navpanel';
-
-var navTimer = null;
 var groupPageRequiresReset = false;
 
 $(document).ready(function() {
-    $('.primary-nav__link:not([data-grouppage])').on('mousedown, touchstart', function(e) {
+    $('.primary-nav__link:not([data-grouppage])').on('click', function (e) {
         e.stopImmediatePropagation();
+
         if (groupPageRequiresReset) {
             window.location.href = $(this).attr("href");
         }
@@ -482,9 +481,7 @@ $(document).ready(function() {
         groupPageClick($(this));
     });
 
-    $('.primary-nav__link[data-grouppage=true]').on('blur', function(e) {
-        e.stopPropagation();
-        e.stopImmediatePropagation();
+    $('.MAIN').on('click', function(e) {
 
         if (groupPageRequiresReset) {
             resetGroupPage();
