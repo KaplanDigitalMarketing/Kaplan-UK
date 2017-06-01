@@ -429,13 +429,19 @@ window.addEventListener("beforeunload", function (e) {
     setHistoryData();
 });
 
-},{"masonry-layout":15,"mustache":16}],4:[function(require,module,exports){
+},{"masonry-layout":16,"mustache":17}],4:[function(require,module,exports){
+window.Cookies = require('./vendor/_cookie.js');
+
 $(document).ready(function() {
     $('.blog-filter__selector-item').on('click', function(e) {
         e.preventDefault();
+
+        // Grab the index of the selected item
         var $parentItem = $(this).parents(".blog-filter__selector");
         var i = $parentItem.find(".blog-filter__selector-item").index($(this));
+
         toggleSelector($(this), i);
+        setCookieOnSelected(i);
     });
 
     function toggleSelector($elem, i) {
@@ -452,17 +458,36 @@ $(document).ready(function() {
         $('.blog-filter__selector-item[data-classification]').each(function() {
             var classification = $(this).attr('data-classification');
             if (url.indexOf(classification) !== -1) {
-                var $parentItem = $(this).parents(".blog-filter__selector");
-                var i = $parentItem.find(".blog-filter__selector-item").index($(this));
+                // var $parentItem = $(this).parents(".blog-filter__selector");
+                // var i = $parentItem.find(".blog-filter__selector-item").index($(this));
+                var i = readCookieOfSelected();
                 toggleSelector($(this), i);
+                $('.blog-filter__selector-item.selected').removeClass('selected');
+                $('.blog-filter__selector-item').eq(i).addClass('selected');
             }
         });
     }
 
+    function checkForSelectedTab() {
+        var i = readCookieOfSelected();
+        if (typeof i !== "undefined") {
+            toggleSelector($(this), i);
+        }
+    }
+
+    function setCookieOnSelected(index) {
+        Cookies.set('insight-filter-index', index, {expires: 7, path: ''});
+    }
+
+    function readCookieOfSelected() {
+        return Cookies.get('insight-filter-index');
+    }
+
     checkURLForActive();
+    // checkForSelectedTab();
 });
 
-},{}],5:[function(require,module,exports){
+},{"./vendor/_cookie.js":9}],5:[function(require,module,exports){
 var GROUP_DATA_ATTR = 'data-navpanel';
 var groupPageRequiresReset = false;
 
@@ -639,6 +664,7 @@ require('./vendor/modernizr.custom.js');
 require('./vendor/mlpushmenu.js');
 require('./appius.kaplan.primary-nav.js')
 
+
 window.appius = {
 	tabbedRow: require('./appius.kaplan.tabbed-row.js'),
 	equalise: require('./appius.equalise.js')
@@ -699,7 +725,7 @@ function mobileInsightsMenu() {
     });
 }
 
-},{"./appius.equalise.js":1,"./appius.kaplan.accordion.js":2,"./appius.kaplan.blogFilter.lazyLoading.js":3,"./appius.kaplan.blogFilters.js":4,"./appius.kaplan.primary-nav.js":5,"./appius.kaplan.tabbed-row.js":6,"./search.js":8,"./vendor/mlpushmenu.js":9,"./vendor/modernizr.custom.js":10}],8:[function(require,module,exports){
+},{"./appius.equalise.js":1,"./appius.kaplan.accordion.js":2,"./appius.kaplan.blogFilter.lazyLoading.js":3,"./appius.kaplan.blogFilters.js":4,"./appius.kaplan.primary-nav.js":5,"./appius.kaplan.tabbed-row.js":6,"./search.js":8,"./vendor/mlpushmenu.js":10,"./vendor/modernizr.custom.js":11}],8:[function(require,module,exports){
 $('.kaplan__page-header a[href="#site-search"]').click(function () {
 
     $('.kaplan__search-box').slideToggle({ duration: 400, start: slideStart });
@@ -759,6 +785,173 @@ $('.kaplan__search-text').keypress(function (e) {
 });
 
 },{}],9:[function(require,module,exports){
+/*!
+ * JavaScript Cookie v2.1.4
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+;(function (factory) {
+	var registeredInModuleLoader = false;
+	if (typeof define === 'function' && define.amd) {
+		define(factory);
+		registeredInModuleLoader = true;
+	}
+	if (typeof exports === 'object') {
+		module.exports = factory();
+		registeredInModuleLoader = true;
+	}
+	if (!registeredInModuleLoader) {
+		var OldCookies = window.Cookies;
+		var api = window.Cookies = factory();
+		api.noConflict = function () {
+			window.Cookies = OldCookies;
+			return api;
+		};
+	}
+}(function () {
+	function extend () {
+		var i = 0;
+		var result = {};
+		for (; i < arguments.length; i++) {
+			var attributes = arguments[ i ];
+			for (var key in attributes) {
+				result[key] = attributes[key];
+			}
+		}
+		return result;
+	}
+
+	function init (converter) {
+		function api (key, value, attributes) {
+			var result;
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			// Write
+
+			if (arguments.length > 1) {
+				attributes = extend({
+					path: '/'
+				}, api.defaults, attributes);
+
+				if (typeof attributes.expires === 'number') {
+					var expires = new Date();
+					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
+					attributes.expires = expires;
+				}
+
+				// We're using "expires" because "max-age" is not supported by IE
+				attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+				try {
+					result = JSON.stringify(value);
+					if (/^[\{\[]/.test(result)) {
+						value = result;
+					}
+				} catch (e) {}
+
+				if (!converter.write) {
+					value = encodeURIComponent(String(value))
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+				} else {
+					value = converter.write(value, key);
+				}
+
+				key = encodeURIComponent(String(key));
+				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
+				key = key.replace(/[\(\)]/g, escape);
+
+				var stringifiedAttributes = '';
+
+				for (var attributeName in attributes) {
+					if (!attributes[attributeName]) {
+						continue;
+					}
+					stringifiedAttributes += '; ' + attributeName;
+					if (attributes[attributeName] === true) {
+						continue;
+					}
+					stringifiedAttributes += '=' + attributes[attributeName];
+				}
+				return (document.cookie = key + '=' + value + stringifiedAttributes);
+			}
+
+			// Read
+
+			if (!key) {
+				result = {};
+			}
+
+			// To prevent the for loop in the first place assign an empty array
+			// in case there are no cookies at all. Also prevents odd result when
+			// calling "get()"
+			var cookies = document.cookie ? document.cookie.split('; ') : [];
+			var rdecode = /(%[0-9A-Z]{2})+/g;
+			var i = 0;
+
+			for (; i < cookies.length; i++) {
+				var parts = cookies[i].split('=');
+				var cookie = parts.slice(1).join('=');
+
+				if (cookie.charAt(0) === '"') {
+					cookie = cookie.slice(1, -1);
+				}
+
+				try {
+					var name = parts[0].replace(rdecode, decodeURIComponent);
+					cookie = converter.read ?
+						converter.read(cookie, name) : converter(cookie, name) ||
+						cookie.replace(rdecode, decodeURIComponent);
+
+					if (this.json) {
+						try {
+							cookie = JSON.parse(cookie);
+						} catch (e) {}
+					}
+
+					if (key === name) {
+						result = cookie;
+						break;
+					}
+
+					if (!key) {
+						result[name] = cookie;
+					}
+				} catch (e) {}
+			}
+
+			return result;
+		}
+
+		api.set = api;
+		api.get = function (key) {
+			return api.call(api, key);
+		};
+		api.getJSON = function () {
+			return api.apply({
+				json: true
+			}, [].slice.call(arguments));
+		};
+		api.defaults = {};
+
+		api.remove = function (key, attributes) {
+			api(key, '', extend(attributes, {
+				expires: -1
+			}));
+		};
+
+		api.withConverter = init;
+
+		return api;
+	}
+
+	return init(function () {});
+}));
+
+},{}],10:[function(require,module,exports){
 /**
  * mlpushmenu.js v1.0.0
  * http://www.codrops.com
@@ -1009,12 +1202,12 @@ $('.kaplan__search-text').keypress(function (e) {
 
 })(window);
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /*! modernizr 3.4.0 (Custom Build) | MIT *
  * https://modernizr.com/download/?-csstransforms3d-domprefixes-prefixes-setclasses-shiv-testallprops-testprop-teststyles !*/
 !function(e,t,n){function r(e,t){return typeof e===t}function o(){var e,t,n,o,i,s,a;for(var l in S)if(S.hasOwnProperty(l)){if(e=[],t=S[l],t.name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(n=0;n<t.options.aliases.length;n++)e.push(t.options.aliases[n].toLowerCase());for(o=r(t.fn,"function")?t.fn():t.fn,i=0;i<e.length;i++)s=e[i],a=s.split("."),1===a.length?Modernizr[a[0]]=o:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=o),C.push((o?"":"no-")+a.join("-"))}}function i(e){var t=_.className,n=Modernizr._config.classPrefix||"";if(N&&(t=t.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+n+"no-js(\\s|$)");t=t.replace(r,"$1"+n+"js$2")}Modernizr._config.enableClasses&&(t+=" "+n+e.join(" "+n),N?_.className.baseVal=t:_.className=t)}function s(e,t){return!!~(""+e).indexOf(t)}function a(){return"function"!=typeof t.createElement?t.createElement(arguments[0]):N?t.createElementNS.call(t,"http://www.w3.org/2000/svg",arguments[0]):t.createElement.apply(t,arguments)}function l(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function u(){var e=t.body;return e||(e=a(N?"svg":"body"),e.fake=!0),e}function c(e,n,r,o){var i,s,l,c,f="modernizr",d=a("div"),p=u();if(parseInt(r,10))for(;r--;)l=a("div"),l.id=o?o[r]:f+(r+1),d.appendChild(l);return i=a("style"),i.type="text/css",i.id="s"+f,(p.fake?p:d).appendChild(i),p.appendChild(d),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(t.createTextNode(e)),d.id=f,p.fake&&(p.style.background="",p.style.overflow="hidden",c=_.style.overflow,_.style.overflow="hidden",_.appendChild(p)),s=n(d,e),p.fake?(p.parentNode.removeChild(p),_.style.overflow=c,_.offsetHeight):d.parentNode.removeChild(d),!!s}function f(e,t){return function(){return e.apply(t,arguments)}}function d(e,t,n){var o;for(var i in e)if(e[i]in t)return n===!1?e[i]:(o=t[e[i]],r(o,"function")?f(o,n||t):o);return!1}function p(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function m(t,n,r){var o;if("getComputedStyle"in e){o=getComputedStyle.call(e,t,n);var i=e.console;if(null!==o)r&&(o=o.getPropertyValue(r));else if(i){var s=i.error?"error":"log";i[s].call(i,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else o=!n&&t.currentStyle&&t.currentStyle[r];return o}function h(t,r){var o=t.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(p(t[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var i=[];o--;)i.push("("+p(t[o])+":"+r+")");return i=i.join(" or "),c("@supports ("+i+") { #modernizr { position: absolute; } }",function(e){return"absolute"==m(e,null,"position")})}return n}function g(e,t,o,i){function u(){f&&(delete F.style,delete F.modElem)}if(i=r(i,"undefined")?!1:i,!r(o,"undefined")){var c=h(e,o);if(!r(c,"undefined"))return c}for(var f,d,p,m,g,v=["modernizr","tspan","samp"];!F.style&&v.length;)f=!0,F.modElem=a(v.shift()),F.style=F.modElem.style;for(p=e.length,d=0;p>d;d++)if(m=e[d],g=F.style[m],s(m,"-")&&(m=l(m)),F.style[m]!==n){if(i||r(o,"undefined"))return u(),"pfx"==t?m:!0;try{F.style[m]=o}catch(y){}if(F.style[m]!=g)return u(),"pfx"==t?m:!0}return u(),!1}function v(e,t,n,o,i){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+k.join(s+" ")+s).split(" ");return r(t,"string")||r(t,"undefined")?g(a,t,o,i):(a=(e+" "+w.join(s+" ")+s).split(" "),d(a,t,n))}function y(e,t,r){return v(e,n,n,t,r)}var C=[],S=[],E={_version:"3.4.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){S.push({name:e,fn:t,options:n})},addAsyncTest:function(e){S.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=E,Modernizr=new Modernizr;var b=E._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];E._prefixes=b;var x="Moz O ms Webkit",w=E._config.usePrefixes?x.toLowerCase().split(" "):[];E._domPrefixes=w;var _=t.documentElement,N="svg"===_.nodeName.toLowerCase();N||!function(e,t){function n(e,t){var n=e.createElement("p"),r=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",r.insertBefore(n.lastChild,r.firstChild)}function r(){var e=C.elements;return"string"==typeof e?e.split(" "):e}function o(e,t){var n=C.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),C.elements=n+" "+e,u(t)}function i(e){var t=y[e[g]];return t||(t={},v++,e[g]=v,y[v]=t),t}function s(e,n,r){if(n||(n=t),f)return n.createElement(e);r||(r=i(n));var o;return o=r.cache[e]?r.cache[e].cloneNode():h.test(e)?(r.cache[e]=r.createElem(e)).cloneNode():r.createElem(e),!o.canHaveChildren||m.test(e)||o.tagUrn?o:r.frag.appendChild(o)}function a(e,n){if(e||(e=t),f)return e.createDocumentFragment();n=n||i(e);for(var o=n.frag.cloneNode(),s=0,a=r(),l=a.length;l>s;s++)o.createElement(a[s]);return o}function l(e,t){t.cache||(t.cache={},t.createElem=e.createElement,t.createFrag=e.createDocumentFragment,t.frag=t.createFrag()),e.createElement=function(n){return C.shivMethods?s(n,e,t):t.createElem(n)},e.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+r().join().replace(/[\w\-:]+/g,function(e){return t.createElem(e),t.frag.createElement(e),'c("'+e+'")'})+");return n}")(C,t.frag)}function u(e){e||(e=t);var r=i(e);return!C.shivCSS||c||r.hasCSS||(r.hasCSS=!!n(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),f||l(e,r),e}var c,f,d="3.7.3",p=e.html5||{},m=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,h=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,g="_html5shiv",v=0,y={};!function(){try{var e=t.createElement("a");e.innerHTML="<xyz></xyz>",c="hidden"in e,f=1==e.childNodes.length||function(){t.createElement("a");var e=t.createDocumentFragment();return"undefined"==typeof e.cloneNode||"undefined"==typeof e.createDocumentFragment||"undefined"==typeof e.createElement}()}catch(n){c=!0,f=!0}}();var C={elements:p.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:d,shivCSS:p.shivCSS!==!1,supportsUnknownElements:f,shivMethods:p.shivMethods!==!1,type:"default",shivDocument:u,createElement:s,createDocumentFragment:a,addElements:o};e.html5=C,u(t),"object"==typeof module&&module.exports&&(module.exports=C)}("undefined"!=typeof e?e:this,t);var z="CSS"in e&&"supports"in e.CSS,P="supportsCSS"in e;Modernizr.addTest("supports",z||P);var k=E._config.usePrefixes?x.split(" "):[];E._cssomPrefixes=k;var j=E.testStyles=c,T={elem:a("modernizr")};Modernizr._q.push(function(){delete T.elem});var F={style:T.elem.style};Modernizr._q.unshift(function(){delete F.style});E.testProp=function(e,t,r){return g([e],n,t,r)};E.testAllProps=v,E.testAllProps=y,Modernizr.addTest("csstransforms3d",function(){var e=!!y("perspective","1px",!0),t=Modernizr._config.usePrefixes;if(e&&(!t||"webkitPerspective"in _.style)){var n,r="#modernizr{width:0;height:0}";Modernizr.supports?n="@supports (perspective: 1px)":(n="@media (transform-3d)",t&&(n+=",(-webkit-transform-3d)")),n+="{#modernizr{width:7px;height:18px;margin:0;padding:0;border:0}}",j(r+n,function(t){e=7===t.offsetWidth&&18===t.offsetHeight})}return e}),o(),i(C),delete E.addTest,delete E.addAsyncTest;for(var M=0;M<Modernizr._q.length;M++)Modernizr._q[M]();e.Modernizr=Modernizr}(window,document);
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /**
  * matchesSelector v2.0.2
  * matchesSelector( element, '.selector' )
@@ -1069,7 +1262,7 @@ $('.kaplan__search-text').keypress(function (e) {
 
 }));
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /**
  * EvEmitter v1.0.3
  * Lil' event emitter
@@ -1180,7 +1373,7 @@ return EvEmitter;
 
 }));
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /**
  * Fizzy UI utils v2.0.4
  * MIT license
@@ -1420,7 +1613,7 @@ return utils;
 
 }));
 
-},{"desandro-matches-selector":11}],14:[function(require,module,exports){
+},{"desandro-matches-selector":12}],15:[function(require,module,exports){
 /*!
  * getSize v2.0.2
  * measure size of elements
@@ -1631,7 +1824,7 @@ return getSize;
 
 });
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /*!
  * Masonry v4.1.1
  * Cascading grid layout library
@@ -1838,7 +2031,7 @@ return getSize;
 
 }));
 
-},{"get-size":14,"outlayer":18}],16:[function(require,module,exports){
+},{"get-size":15,"outlayer":19}],17:[function(require,module,exports){
 /*!
  * mustache.js - Logic-less {{mustache}} templates with JavaScript
  * http://github.com/janl/mustache.js
@@ -2470,7 +2663,7 @@ return getSize;
   return mustache;
 }));
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /**
  * Outlayer Item
  */
@@ -3025,7 +3218,7 @@ return Item;
 
 }));
 
-},{"ev-emitter":12,"get-size":14}],18:[function(require,module,exports){
+},{"ev-emitter":13,"get-size":15}],19:[function(require,module,exports){
 /*!
  * Outlayer v2.1.0
  * the brains and guts of a layout library
@@ -3966,6 +4159,6 @@ return Outlayer;
 
 }));
 
-},{"./item":17,"ev-emitter":12,"fizzy-ui-utils":13,"get-size":14}]},{},[7])
+},{"./item":18,"ev-emitter":13,"fizzy-ui-utils":14,"get-size":15}]},{},[7])
 
 //# sourceMappingURL=scripts.js.map

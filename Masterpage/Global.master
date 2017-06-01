@@ -49,7 +49,10 @@
                         <Ctrl:AudienceSwitcher runat="server" ID="AudienceSwitcher" />
                         <div class="header__tertiary">
                             <a class="search-toggle search-toggle--desktop" href="#site-search">Search</a>
-                            Tertiary content here
+                            <ul class="list-inline list-unstyled header__tertiary-items">
+                                <li><a href="/about-us/contact-us">Contact us</a></li>
+                                <li><a href="https://mykaplan.co.uk/Login/Login">MyKaplan</a></li>
+                            </ul>
                             <asp:ContentPlaceHolder ID="tertiaryHeaderContent" runat="server"></asp:ContentPlaceHolder>
                         </div>
 
@@ -66,15 +69,8 @@
                 <Ctrl:MobileNavigation runat="server" ID="DynamicMobileNavigation">
                     <TertiaryLinks>
                         <ul class="mobile-tertiary">
-                            <li>
-                                <a href="#">Contact us</a>
-                            </li>
-                            <li>
-                                <a href="#">MyKaplan</a>
-                            </li>
-                            <li>
-                                <a href="#">Basket</a>
-                            </li>
+                            <li><a href="/about-us/contact-us">Contact us</a></li>
+                            <li><a href="https://mykaplan.co.uk/Login/Login">MyKaplan</a></li>
                         </ul>
                     </TertiaryLinks>
                 </Ctrl:MobileNavigation>

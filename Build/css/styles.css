@@ -5848,6 +5848,11 @@ body .HEADER.kaplan__page-header {
   @media (max-width: 991px) {
     .header__tertiary {
       display: none; } }
+  .header__tertiary-items {
+    display: inline-block; }
+    .header__tertiary-items a {
+      color: white;
+      margin: 0 18px; }
 
 .non-mobile-nav-container {
   position: relative; }
@@ -9155,6 +9160,31 @@ body > form {
 .mp-menu .mobile-tertiary {
   margin-top: 30px; }
 
+.sfsearchResultTitle a {
+  font-weight: 600;
+  display: block;
+  font-size: 21px;
+  font-size: 2.1rem; }
+
+.sfsearchResultUrl {
+  display: none; }
+
+.sfsearchResultHighLighter,
+.sfsearchResultStatistics {
+  margin-bottom: 25px;
+  margin-bottom: 2.5rem; }
+
+.sf_pager {
+  margin-top: 25px;
+  margin-top: 2.5rem; }
+  .sf_pager {
+    *zoom: 1; }
+  .sf_pager:before, .sf_pager:after {
+    content: "";
+    display: table; }
+  .sf_pager:after {
+    clear: both; }
+
 .page__home .hero-banner {
   margin-bottom: 43px;
   margin-bottom: 4.3rem; }
@@ -9422,10 +9452,97 @@ body > form {
       padding-bottom: 34px;
       padding-bottom: 3.4rem; } }
 
-/*@import 'pages/apprenticeships';
-@import 'pages/why-aat';
-@import 'pages/competition';
-@import 'pages/accountancy';*/
+.csr__charities .centred-row {
+  padding-top: 0;
+  padding-bottom: 21px;
+  padding-bottom: 2.1rem; }
+
+.csr__charities img {
+  display: block;
+  margin: 0 auto; }
+
+.csr__charities p {
+  font-size: 26px;
+  font-size: 2.6rem;
+  font-weight: 300; }
+
+.csr-logo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  background: url(/images/default-source/corporate-social/volunteering-logo-sprite-sml.jpg) 0 0 no-repeat; }
+  @media (min-width: 1200px) {
+    .csr-logo {
+      background: url(/images/default-source/corporate-social/volunteering-logo-sprite.jpg) 0 0 no-repeat;
+      width: 145px;
+      height: 142px; } }
+
+.csr-logo__give-gain {
+  background-position: 0 0; }
+
+.csr-logo__wood-street {
+  background-position: -86px 0; }
+  @media (min-width: 1200px) {
+    .csr-logo__wood-street {
+      background-position: -145px 0; } }
+
+.csr-logo__rnli {
+  background-position: -165px 0; }
+  @media (min-width: 1200px) {
+    .csr-logo__rnli {
+      background-position: -278px 0; } }
+
+.csr-logo__cubs {
+  background-position: -249px 0; }
+  @media (min-width: 1200px) {
+    .csr-logo__cubs {
+      background-position: -416px 0; } }
+
+.csr-logo__rspb {
+  background-position: -332px 0; }
+  @media (min-width: 1200px) {
+    .csr-logo__rspb {
+      background-position: -564px 0; } }
+
+@media (min-width: 1200px) {
+  .page__apprenticeships .hero-banner {
+    min-height: 525px !important;
+    max-height: 525px !important;
+    background-size: cover; } }
+
+.page__apprenticeships .hero-banner h1 {
+  font-size: 38px;
+  font-size: 3.8rem; }
+
+@media (min-width: 1200px) {
+  .page__apprenticeships .hero-banner__body {
+    margin-top: 2%;
+    margin-bottom: 0; } }
+
+@media (min-width: 1200px) {
+  .page__why-aat .hero-banner__logo img {
+    bottom: 12%; } }
+
+.sf_cols.page__competition {
+  width: 100%; }
+  @media (min-width: 992px) {
+    .sf_cols.page__competition {
+      width: 960px;
+      margin: 0 auto; } }
+  .sf_cols.page__competition iframe {
+    width: 100%; }
+    @media (min-width: 992px) {
+      .sf_cols.page__competition iframe {
+        width: 960px;
+        margin: 0 auto; } }
+
+@media (min-width: 1200px) {
+  .page__accountancy .hero-banner__body {
+    margin: 4% 0; } }
+
 li.tick-list {
   list-style: none;
   background: url(/images/default-source/responsive-theme/green-tick.png?sfvrsn=2) 0 0 no-repeat;
