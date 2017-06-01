@@ -65,15 +65,17 @@
     color: #ec796b;
   }
 
-  .row:first-of-type {
-
+  .row{
     float: left;
+    &:first-of-type {
+      @include rem((
+        height: 48px
+      ));
+    }
 
-    @include rem((
-      height: 48px
-    ));
-
-  }
+    &.gmfjjobboxsingle{
+      height:auto;
+    }
 }
 
 .gmfjjobbox {
