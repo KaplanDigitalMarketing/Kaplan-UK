@@ -1,0 +1,44 @@
+.audience-switcher {
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    @media (max-width: $screen-xs-max) {
+        width: 100%;
+    }
+    li {
+        list-style: none;
+        display: inline-block;
+        @media (max-width: $screen-xs-max) {
+            width: 50%;
+        }
+        &.active {
+            background-color: $brand-colour-primary;
+            .audience-switcher__link { color: white; }
+        }
+    }
+    &__link {
+        padding: 15px 30px;
+        color: white;
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        @media (min-width: $screen-md-min) {
+            text-align: left;
+        }
+        &:hover, &:active, &:focus { color: white; }
+    }
+
+    .mobile-nav-container & {
+        width: 100%;
+        li {
+            width: 50%;
+            background-color: #383a3c;
+            a {
+                color: white;
+                padding: 12px 8px;
+            }
+            &.active { background-color: $brand-colour-primary; }
+        }
+    }
+}

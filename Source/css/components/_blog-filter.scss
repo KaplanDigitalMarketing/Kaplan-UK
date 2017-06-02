@@ -3,23 +3,50 @@
 }
 
 .blog-filter {
-    text-align: right;
     font-size: 14px;
+    @media (min-width: $screen-sm-min) {
+        text-align: right;
+    }
     &__title {
         color: $c-darkgrey;
         padding-right: 25px;
         display: inline-block;
         font-weight: 400;
+        margin-left: 10px;
+        float: left;
+        @media (min-width: $screen-sm-min) {
+            float: none;
+            margin-left: 0px;
+        }
+
+        @media (max-width: 500px) {
+            float: none;
+            text-align: left;
+            display: block;
+        }
     }
     &__selectors {
         border-bottom: 1px solid $c-insights-darkgrey;
+
+        text-align: right;
+        @media (min-width: $screen-sm-min) {
+            text-align: right;
+        }
     }
     &__selector {
         display: inline-block;
+
+        @media (max-width: 500px) {
+            text-align: left;
+            display: block;
+        }
         &-item {
             display: inline-block;
-            padding: 15px 10px;
+            padding: 18px 12px 15px;
             color: $c-darkgrey;
+            @media (min-width: $screen-sm-min) {
+                padding: 18px 19px 15px;
+            }
             &:after {
                 color: $c-darkgrey;
                 content: url(/custom/build/images/down-arrow.png);
@@ -37,7 +64,7 @@
     &__clear {
         display: inline-block;
         color: $c-darkgrey;
-        padding-right: 5px;
+        padding: 18px 0 15px 9px;
         &:after {
             content: url(/custom/build/images/cross.png);
             color: $c-darkgrey;
@@ -73,5 +100,27 @@
             opacity: .3;
             pointer-events: none;
         }
+    }
+}
+
+.blog__lazy-load {
+    margin: 0 auto 10px;
+    text-align: center;
+    padding: 4px 10px 15px 10px;
+    display: inline-block;
+    position: relative;
+    color: $x-deepGrey;
+    font-weight: 600;
+    &:hover, &:focus { text-decoration: none; color: black; }
+    &:after {
+        color: $x-deepGrey;
+        content: url(/custom/build/images/cheveron-down.png);
+        width: 12px;
+        height: 8px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        left: 0;
     }
 }

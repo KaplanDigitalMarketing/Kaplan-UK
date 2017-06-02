@@ -34,7 +34,6 @@ $('.kaplan__search-close').click(function () {
 
 //Perform search
 function searchRecords() {
-    console.log("search");
     var searchIndex = $('.kaplan__search-box input[name="search-index"]').val();
     var searchText = $('.kaplan__search-text').val().trim();
 

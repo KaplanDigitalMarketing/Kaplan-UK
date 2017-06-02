@@ -9,6 +9,7 @@
 
 .insights__detail {
   margin-top: 2.4rem;
+
 }
 
 @media (min-width: $screen-md-min) {
@@ -59,8 +60,10 @@
     }
     &__articles {
         padding-top: 24px;
-        margin-left: -16px;
-        margin-right: -14px;
+        @media (min-width: $screen-md-min) {
+            margin-left: -16px;
+            margin-right: -14px;
+        }
     }
 
     &__article {
@@ -72,9 +75,10 @@
         }
         h2 a {
             font-size: 21px;
-            line-height: 24px;
+            line-height: 1.2;
             margin-top: 0;
             color: #383a3c;
+            display: inline-block;
         }
         img {
             display: block;
@@ -88,6 +92,12 @@
             font-size: 16px;
             color: #383a3c;
             > a:hover { text-decoration: none; }
+        }
+
+        &-image {
+            height: 0;
+            padding-bottom: 56.25%;
+            overflow: hidden;
         }
 
         &-content {
@@ -403,14 +413,250 @@
 }
 
 .insight-articles__item  {
-    width: 24%;
     display: inline-block;
     float: left;
-    padding: 0;
-    /*margin: 0 15px 20px;*/
-    margin: 0;
-    margin-bottom: 20px;
-    &.hero-article { width: 49.5%; }
+    padding: 7px;
+    width: 100%;
+    margin-bottom: 0;
+    @media (min-width: 600px) {
+        width: 50%;
+        &.hero-article { width: 100%; }
+    }
+
+    @media (min-width: 1024px) {
+        width: 33%;
+        &.hero-article { width: 50%; }
+    }
+
+    @media (min-width: 1024px) {
+        width: 25%;
+    }
 }
 
-.grid-sizer { width: 24%; }
+.grid-sizer {
+    width: 100%;
+    @media (min-width: 600px) {
+        width: 50%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 33%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 25%;
+    }
+}
+
+
+
+/* Clean up above Appius new below  */
+.insight-event {
+    &__heading {
+        text-align: center;
+        font-weight: bold;
+        color: $c-darkgrey;
+        font-size: 32px;
+    }
+
+    &__subtitle {
+        text-align: center;
+        display: block;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    &__speaker {
+        text-align: center;
+        display: block;
+        max-width: 450px;
+        margin: 0 auto 20px;
+        &-heading {
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+.insight-loader {
+    display: block;
+    &:before {
+        background: url(/custom/build/images/insights-loader.gif) no-repeat 0 0;
+        width: 30px;
+        height: 30px;
+        display: block;
+        content: "";
+        margin: 0 auto 5px;
+    }
+}
+
+.insights__error {
+    display: block;
+    text-align: center;
+}
+
+.insight-articles.no-animation {
+    .insight-articles__item {
+        /*transition: none !important;*/ // TODO: Decide about the transition
+    }
+}
+.insight-article {
+    background-color: white;
+    padding: 15px;
+    &__author {
+        font-weight: bold;
+        font-size: 13px;
+        color: $c-darkgrey;
+        margin-right: 5px;
+        display: inline-block;
+    }
+
+    h1 {
+        @media (max-width: $screen-sm-min) {
+            text-align: center;
+        }
+    }
+
+    &__info {
+        @media (max-width: $screen-sm-min) {
+            text-align: center;
+        }
+    }
+
+    &__date {
+        font-size: 13px;
+        color: $c-darkgrey;
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+
+    &__main-image {
+        margin-bottom: 20px;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__body {
+        img { max-width: 100%; } // Automatically resize images so they don't fall outside of the body
+    }
+    &__supporting-content {
+        margin-bottom: 20px;
+        > a {
+            margin-bottom: 15px;
+            display: block;
+        }
+        .web-lead-form {
+            background-color: #e0e1e1;
+            padding: 20px 32px;
+            h2 {
+                text-align: center;
+                font-weight: bold;
+                line-height: 1.1;
+                color: #383a3c;
+                padding: 0 20px;
+                margin-bottom: 20px;
+            }
+            .terms {
+                font-size: 12px;
+                font-weight: normal;
+                input[type=checkbox] {
+                    margin-right: 8px;
+                    top: 2px;
+                    position: relative;
+                }
+            }
+            .form-row {
+                width: 100%;
+                margin-bottom: 13px;
+                input[type=text], input[type=email], select {
+                    width: 100% !important;
+                    border-radius: 4px;
+                    border: 1px solid #bebeb8;
+                    padding: 4px 10px;
+                }
+
+                label {
+                    color: $c-text;
+                    font-size: 16px;
+                    sup {
+                        color: #ed174f;
+                        font-weight: bold;
+                        top: 1px;
+                        margin-left: 5px;
+                        font-size: 15px;
+                    }
+                }
+
+                &.submit input {
+                    border: 1px solid #94c61d;
+                }
+            }
+        }
+    }
+}
+
+.related-articles {
+    margin-bottom: 15px;
+    &__heading {
+        text-align: center;
+        display: block;
+        font-size: 16px;
+        background-color: white;
+        padding: 15px 0;
+        margin-bottom: 0;
+        color: $c-darkgrey;
+        font-weight: normal;
+    }
+
+    &__title {
+        color: $c-darkgrey;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+        padding: 15px 20px;
+        background-color: white;
+        font-family: "Open Sans",sans-serif;
+    }
+
+    &__item {
+        display: block;
+        margin: 2px 0;
+    }
+}
+
+.tag-list {
+    background-color: #f0ebe6;
+    padding: 15px;
+    margin-bottom: 15px;
+    &__heading {
+        text-align: center;
+        display: block;
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: $c-darkgrey;
+        font-weight: normal;
+    }
+
+    &__tags {
+        .sfTagsList {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+            }
+        }
+        span {
+            background-color: white;
+            color: $c-darkgrey;
+            display: inline-block;
+            padding: 3px 8px;
+            margin: 0 8px 10px;
+            font-size: 13px;
+            border-radius: 3px;
+            font-weight: 400;
+        }
+    }
+}

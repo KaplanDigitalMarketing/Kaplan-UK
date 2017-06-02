@@ -1,0 +1,81 @@
+.csr__charities {
+
+  .centred-row {
+    padding-top: 0;
+
+    @include rem((
+      padding-bottom: 21px
+    ));
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  p {
+    @include rem((
+      font-size: 26px
+    ));
+
+    font-weight: 300;
+  }
+
+}
+
+.csr-logo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  background: url(/images/default-source/corporate-social/volunteering-logo-sprite-sml.jpg) 0 0 no-repeat;
+
+  @media(min-width: $screen-lg-min) {
+    background: url(/images/default-source/corporate-social/volunteering-logo-sprite.jpg) 0 0 no-repeat;
+    width: 145px;
+    height: 142px;
+  }
+
+
+}
+
+.csr-logo__give-gain {
+  background-position: 0 0;
+}
+
+.csr-logo__wood-street {
+  background-position: -86px 0;
+
+  @media(min-width: $screen-lg-min) {
+    background-position: -145px 0;
+  }
+
+}
+
+.csr-logo__rnli {
+  background-position: -165px 0;
+
+  @media(min-width: $screen-lg-min) {
+    background-position: -278px 0;
+  }
+
+}
+
+.csr-logo__cubs {
+  background-position: -249px 0;
+
+  @media(min-width: $screen-lg-min) {
+    background-position: -416px 0;
+  }
+
+}
+
+.csr-logo__rspb {
+  background-position: -332px 0;
+
+  @media(min-width: $screen-lg-min) {
+    background-position: -564px 0;
+  }
+}

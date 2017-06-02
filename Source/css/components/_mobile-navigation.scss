@@ -29,7 +29,6 @@ body > form {
     @media (min-width: $grid-float-breakpoint) { display: none;  }
     .sr-only {
         position: relative;
-        background: red;
         background-size: 27px 20px;
         margin-top: 2px;
         display: block;
@@ -91,6 +90,9 @@ body > form {
 	width: 300px;
 	height: 100%;
 	transform: translate3d(-100%, 0, 0);
+    @media (max-width: 340px) {
+        width: 270px;
+    }
 }
 
 .mp-level {
@@ -104,19 +106,20 @@ body > form {
 }
 
 .menu-open .mp-pusher:before {
-    @media (max-width: $screen-xs-max) {
-        content: "X";
+    @media (max-width: $screen-sm-max) {
+        background: url(/custom/build/images/mobile-close-menu.png) no-repeat 50% 50%;
+        content: "";
         display: block;
         position: absolute;
         left: 0;
-        top: 0px;
+        top: 0;
         z-index: 100000;
-        color: white;
-        padding: 5px 15px;
-        font-size: 32px;
-        font-family: "Open Sans",arial,sans-serif;
-        line-height: 1.1;
-        font-weight: bold;
+        color: #fff;
+        padding: 20px 15px;
+        width: 25px;
+        height: 25px;
+        background-size: 50%;
+        cursor: pointer;
     }
 }
 
@@ -241,7 +244,6 @@ body > form {
     line-height: 24px;
     padding: 16px 32px;
     margin: 0;
-    font-family: "Open Sans", sans-serif;
     color: #383a3c;
 }
 
@@ -255,11 +257,10 @@ body > form {
 	display: block;
 	outline: none;
     color: black;
-    padding: 12px 8px 12px 21px;
+    padding: 12px 8px 12px 36px;
     display: block;
     font-size: 16px;
     font-weight: normal;
-    font-family: "Open-Sans", sans-serif;
     &:hover {
         text-decoration: none;
     }
@@ -329,7 +330,7 @@ body > form {
 }
 
 .mp-level li.icon-arrow-right {
-    background: url(/custom/build/images/nav-item-arrow.png) 95% center no-repeat;
+    background: url(/custom/build/images/nav-item-arrow.png) 100% center no-repeat;
     padding-right: 10%;
 }
 .mp-menu .nav-heading {
@@ -340,4 +341,8 @@ body > form {
     font-size: 16px;
     font-weight: 400;
     font-family: 'Open Sans',sans-serif;
+}
+
+.mp-menu .mobile-tertiary {
+    margin-top: 30px;
 }

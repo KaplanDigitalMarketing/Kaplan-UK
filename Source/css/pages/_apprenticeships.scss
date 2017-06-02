@@ -1,0 +1,28 @@
+.page__apprenticeships {
+
+  .hero-banner {
+    @media (min-width: $screen-lg-min) {
+      min-height: 525px !important;
+      max-height: 525px !important;
+      background-size: cover;
+    }
+
+    h1 {
+      @include rem((
+        font-size: 38px
+      ));
+    }
+
+  }
+
+
+  .hero-banner__body {
+
+    @media(min-width: $screen-lg-min) {
+      margin-top: 2%;
+      margin-bottom: 0;
+    }
+
+  }
+
+}

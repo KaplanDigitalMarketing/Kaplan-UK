@@ -5,7 +5,12 @@ var gulp = require('gulp-help')(require('gulp'), {
 });
 var argv = require('yargs').argv;
 var runSequence = require('run-sequence');
+var browserify = require ('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var $ = require('gulp-load-plugins')();
+var del = require('del');
+var vinylPaths = require('vinyl-paths');
 
 var config;
 var srcPaths = {};
@@ -54,6 +59,21 @@ gulp.task('default', function(callback) {
   return prompter;
 });
 
+/* CLEANING
+ ********************/
+
+// TODO: Phil to review as they use the new clean NPM package
+gulp.task('cleanse-scripts', 'Remove old scripts', function() {
+  return gulp.src('./Build/js/*', { read: false })
+	.pipe(vinylPaths(del));
+});
+
+// TODO: Phil to review as they use the new clean NPM package
+gulp.task('cleanse-styles', 'Remove old styles', function() {
+  return gulp.src('./Build/css/*', { read: false })
+	.pipe(vinylPaths(del));
+});
+
 gulp.task('clean-styles', 'Remove old styles', function() {
   return gulp.src('./Build/css', { read: false })
     .pipe($.clean());
@@ -64,7 +84,9 @@ gulp.task('clean-scripts', 'Remove old scripts', function() {
     .pipe($.clean());
 });
 
-gulp.task('styles', 'Compile, prefix & minify all SCSS', ['clean-styles'], function() {
+/* STYLES
+ ********************/
+gulp.task('styles', 'Compile, prefix & minify all SCSS', ['cleanse-styles'], function() {
   var sassFilter = $.filter(['**/*.scss'], { restore: true });
   var minFilter = $.filter(['**/*', '!**/*.min.*'], { restore: true });
 
@@ -98,26 +120,41 @@ gulp.task('styles', 'Compile, prefix & minify all SCSS', ['clean-styles'], funct
     .on('error', $.util.log);
 });
 
-gulp.task('scripts', 'Compile & minify all Javascript', ['clean-scripts'], function() {
-  var minFilter = $.filter(['**/*', '!**/*.min.*'], { restore: true });
 
-  return gulp.src([
-    './Source/js/**/*.js',
-    '!./Source/js/**/_*.js'
-  ])
+/* SCRIPTS
+ ********************/
+gulp.task('scripts', 'Compile & minify all Javascript', function(callback) {
+    runSequence(['cleanse-scripts', 'build-scripts', 'publish-scripts'], callback)
+});
+
+gulp.task('build-scripts', function() {
+  var bundler = browserify({
+    entries: './Source/js/main.js',
+    debug: true
+  });
+
+  return bundler.bundle()
+    .pipe(source('main.js'))
+    .pipe(buffer())
     .pipe($.plumber())
-    .pipe(minFilter)
-    .pipe($.include())
-  .pipe(gulp.dest('./Build/js'))
-    .pipe($.sourcemaps.init())
+    .pipe($.sourcemaps.init({ loadMaps: true }))
+    .pipe($.rename({ basename: 'scripts' }))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('./Build/js'))
+    .pipe($.filter(['**/*.js']))
     .pipe($.bytediff.start())
     .pipe($.uglify())
     .pipe($.bytediff.stop(outputDiff))
-    .pipe($.rename({ extname: '.min.js' }))
+    .pipe($.rename({ suffix: '.min' }))
     .pipe($.sourcemaps.write('.'))
-    .pipe(minFilter.restore)
-  .pipe(gulp.dest('./Build/js'))
+    .pipe(gulp.dest('./Build/js'))
     .on('error', $.util.log);
+});
+
+gulp.task('publish-scripts', 'Publish the remaining Javascript files to the output directory', function() {
+	return gulp.src('./Source/js/**/*.min.js*')
+        .pipe(gulp.dest('./Build/js'))
+        .on('error', $.util.log);
 });
 
 gulp.task('watch', 'Automatically rebuild scripts & styles (long-running)', ['build'], function() {
